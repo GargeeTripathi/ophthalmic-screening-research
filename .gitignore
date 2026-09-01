@@ -56,3 +56,6 @@ desktop.ini
 # Vercel CLI writes a project link and an OIDC token into the deployed directory.
 .vercel/
 .env.local
+
+# The Colab upload bundle: resized ODIR copies, ~200 MB, and not ours to redistribute.
+colab_bundle.zip
