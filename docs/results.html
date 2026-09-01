@@ -1,0 +1,286 @@
+<!doctype html><html lang=en><head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Results</title><style>
+:root{
+  --ground:#F1F4F3; --surface:#fff; --surface-2:#E8EDEB;
+  --ink:#141D1C; --ink-2:#3B4B48; --muted:#64756F; --rule:#D2DAD7;
+  --accent:#0E5C58; --accent-soft:#D8E7E4;
+  --defer:#A32118; --defer-bg:#F7E2E0;
+  --warn:#B85A11; --warn-bg:#F9EADB;
+  --accept:#3F6B3A; --accept-bg:#E4EFE2;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);
+  font:14px/1.45 Inter,-apple-system,Segoe UI,system-ui,sans-serif}
+a{color:var(--accent)}
+header{background:var(--surface);border-bottom:1px solid var(--rule);padding:24px 32px}
+.eyebrow{font-size:10px;font-weight:600;letter-spacing:.12em;color:var(--muted);
+  text-transform:uppercase;margin:0}
+h1{font-size:26px;font-weight:600;letter-spacing:-.02em;margin:4px 0 0}
+.sub{color:var(--ink-2);font-size:13px;margin:4px 0 0;max-width:80ch}
+.wrap{padding:20px 32px 32px}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;
+  margin-bottom:20px}
+.tile{background:var(--surface);border:1px solid var(--rule);border-radius:10px;padding:14px 18px}
+.tile b{display:block;font-size:26px;font-weight:600;line-height:1.15}
+.tile span{font-size:11px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;background:var(--surface);
+  border:1px solid var(--rule);border-radius:10px;overflow:hidden}
+th{background:var(--surface-2);color:var(--muted);font-size:10px;font-weight:600;
+  letter-spacing:.09em;text-transform:uppercase;text-align:left;padding:12px 20px}
+td{padding:14px 20px;border-bottom:1px solid var(--rule);font-size:12px;color:var(--ink-2)}
+tr.defer td{background:var(--defer-bg)}
+tr:last-child td{border-bottom:0}
+td.case{font-weight:500;color:var(--ink)}
+td.reason{font-size:11px}
+tr.defer td.reason{color:var(--defer)}
+.chip{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.08em;
+  padding:5px 9px;border-radius:4px}
+.chip.defer{background:var(--defer);color:#fff}
+.chip.accept{background:var(--accept-bg);color:var(--accept)}
+.chip.warn{background:var(--warn-bg);color:var(--warn)}
+.banner{display:flex;gap:16px;align-items:center;background:var(--defer-bg);
+  border-left:5px solid var(--defer);border-radius:8px;padding:16px 20px;margin-bottom:20px}
+.banner.accept{background:var(--accept-bg);border-left-color:var(--accept)}
+.banner b{display:block;font-size:14px;color:var(--defer)}
+.banner.accept b{color:var(--accept)}
+.banner p{margin:3px 0 0;font-size:12px;color:var(--ink-2)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+@media(max-width:1000px){.cols{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--rule);border-radius:10px;
+  padding:18px 20px;margin-bottom:20px}
+.label{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 12px}
+.finding{font-size:20px;font-weight:600;letter-spacing:-.01em;margin:0}
+.conf{font-size:22px;font-weight:600;color:var(--accent);margin:8px 0 0}
+.note{font-size:11px;color:var(--muted);margin:2px 0 0}
+img.fundus{width:100%;border-radius:8px;display:block;background:#16100c}
+img.doc{width:100%;border-radius:6px;border:1px solid var(--rule);display:block}
+.bar{display:grid;grid-template-columns:150px 1fr 44px;gap:12px;align-items:center;
+  margin:8px 0;font-size:12px}
+.track{height:10px;border-radius:99px;background:var(--surface-2);overflow:hidden}
+.track i{display:block;height:10px;border-radius:99px;background:var(--accent)}
+.track i.dim{background:var(--muted)}
+.fields{width:100%;border-collapse:collapse;border:0;background:none}
+.fields td{padding:8px 0;border-bottom:1px solid var(--rule);font-size:12px}
+.fields td:first-child{color:var(--muted);width:150px}
+.rel{display:flex;gap:10px;align-items:center;background:var(--warn-bg);
+  border-radius:6px;padding:10px 12px;margin-top:12px}
+.rel b{font-size:15px;color:var(--warn)}
+.rel span{font-size:11px;color:var(--ink-2)}
+.disc{background:var(--defer-bg);border-radius:6px;padding:12px 14px}
+.disc.ok{background:var(--accept-bg)}
+.disc b{font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--defer)}
+.disc.ok b{color:var(--accept)}
+.disc p{margin:6px 0 0;font-size:12px;color:var(--ink-2)}
+.qa{border-top:1px solid var(--rule);padding:10px 0}
+.qa b{display:block;font-size:12px}
+.qa p{margin:4px 0 0;font-size:12px;color:var(--ink-2)}
+footer{background:var(--defer-bg);border-top:1px solid var(--rule);padding:18px 32px 24px}
+footer b{font-size:12px;color:var(--defer)}
+footer p{margin:6px 0 0;font-size:11px;color:var(--ink-2);max-width:110ch}
+form.upload{display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;
+  background:var(--surface);border:1px solid var(--rule);border-radius:10px;
+  padding:16px 20px;margin-bottom:20px}
+form.upload label{display:block;font-size:10px;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+form.upload input[type=file]{font-size:12px}
+button{background:var(--accent);color:#fff;border:0;border-radius:6px;
+  padding:10px 18px;font-size:13px;font-weight:500;cursor:pointer}
+button:hover{filter:brightness(1.1)}
+.back{font-size:12px;text-decoration:none}
+
+.site{max-width:1100px;margin:0 auto;padding:0 32px}
+nav{display:flex;gap:18px;padding:14px 0;font-size:13px;border-bottom:1px solid var(--rule)}
+nav a{text-decoration:none}
+figure{margin:0 0 28px}
+figure img{width:100%;border:1px solid var(--rule);border-radius:8px;background:var(--surface)}
+figcaption{font-size:12px;color:var(--muted);margin-top:8px}
+.finding{background:var(--surface);border:1px solid var(--rule);border-left:5px solid var(--accent);
+  border-radius:8px;padding:16px 20px;margin:14px 0}
+.finding h3{margin:0 0 6px;font-size:15px}
+.finding p{margin:0;font-size:13px;color:var(--ink-2)}
+li{font-size:13px;color:var(--ink-2);margin:4px 0}
+h2{margin-top:34px;font-size:20px} h3{font-size:15px}
+table{margin:14px 0;font-size:12px}
+</style></head><body>
+<header><div class=site>
+  <p class=eyebrow>Ophthalmic screening support</p>
+  <h1>Results</h1>
+  <p class=sub>Generated from results/ by scripts/summarise_results.py — no number here is transcribed by hand.</p>
+</div></header>
+<div class=site>
+<nav><a href="./">Overview</a><a href="worklist.html">Worklist</a>
+<a href="case_review.html">Case review</a><a href="figures.html">Figures</a>
+<a href="results.html">Full results</a></nav>
+<h2>Results</h2>
+<p>Every number here is read from <code>results/</code> by <code>scripts/summarise_results.py</code>. Nothing is transcribed by hand.</p>
+<p><strong>Not a medical device. Synthetic documents are not clinical data. No clinical validation is claimed.</strong></p>
+<h3>1. Dataset</h3>
+<p>ODIR-5K, four-class subset: <strong>5058 images</strong> from <strong>2910 patients</strong>.</p>
+<table>
+<tr><th>class</th><th>images</th><th>patients</th><th>multi-finding</th><th>mean age</th></tr>
+<tr><td>C</td><td>293</td><td>203</td><td>31 (10.6%)</td><td>66.8</td></tr>
+<tr><td>D</td><td>1608</td><td>1027</td><td>223 (13.9%)</td><td>55.7</td></tr>
+<tr><td>G</td><td>284</td><td>182</td><td>66 (23.2%)</td><td>63.0</td></tr>
+<tr><td>N</td><td>2873</td><td>1852</td><td>57 (2.0%)</td><td>57.2</td></tr>
+</table>
+<li><strong>2148 patients contribute both eyes</strong> - the mechanism behind patient-level leakage.</li>
+<li>354 patients carry different diagnoses in each eye, so grouping is by patient but stratification is at eye level.</li>
+<li>91 distinct resolutions, no EXIF: ODIR provenance cannot be labelled cleanly.</li>
+<p><strong>Confounds to report, not hide.</strong> Cataract patients average ~11 years older than diabetic-retinopathy patients; sex distribution differs by class; and 23.2% of glaucoma rows name a second condition in the annotation. ODIR is <em>less confounded</em>, not clean.</p>
+<h3>2. Provenance audit (RQ1)</h3>
+<p>The merged four-class benchmark is not one dataset. Acquisition source is assigned from file properties alone - never from the class folder - and it almost determines the label.</p>
+<li>Majority-class baseline: <strong>26.0%</strong></li>
+<li>Source lookup table alone: <strong>69.1%</strong> (no model, no pixels)</li>
+<table>
+<tr><th>experiment</th><th>question</th><th>baseline</th><th>probe</th><th>lift</th></tr>
+<tr><td>E0a</td><td>class from file metadata only</td><td>0.260</td><td><strong>0.667</strong></td><td>+0.407</td></tr>
+<tr><td>E0b</td><td>source from FOV-normalised pixels</td><td>0.398</td><td><strong>0.749</strong></td><td>+0.351</td></tr>
+<tr><td>E0c-i</td><td>source from geometry only</td><td>0.398</td><td><strong>0.702</strong></td><td>+0.304</td></tr>
+<tr><td>E0c-ii[odir_jpg512]</td><td>predict class from pixels within source=odir_jpg512</td><td>0.640</td><td><strong>0.644</strong></td><td>+0.004</td></tr>
+<tr><td>E0c-ii[crop_jpg256]</td><td>predict class from pixels within source=crop_jpg256</td><td>0.516</td><td><strong>0.736</strong></td><td>+0.219</td></tr>
+<tr><td>E0c-ii[png_highres]</td><td>predict class from pixels within source=png_highres</td><td>0.497</td><td><strong>0.781</strong></td><td>+0.284</td></tr>
+</table>
+<p><strong>The anti-circularity control (E0c-ii).</strong> Within a single acquisition source, provenance is constant, so anything a probe achieves must come from retinal content:</p>
+<li><code>odir_jpg512</code> (n=1678): 0.640 -&gt; 0.644, lift <strong>+0.004</strong></li>
+<li><code>crop_jpg256</code> (n=1240): 0.516 -&gt; 0.736, lift <strong>+0.219</strong></li>
+<li><code>png_highres</code> (n=201): 0.497 -&gt; 0.781, lift <strong>+0.284</strong></li>
+<p>Every diabetic-retinopathy image is a <code>.jpeg</code> and no other class contains one, so file extension alone is a perfect DR detector on this benchmark. The cataract/glaucoma sources split roughly 50/50, so provenance explains the DR and normal classes almost entirely and contributes little to separating cataract from glaucoma. Both halves of that belong in the paper.</p>
+<h3>3. Deduplication</h3>
+<p>Detector: FOV-normalised 64x64 fingerprint, cosine similarity. Rejected alternative: ImageNet ResNet50 embedding cosine - see calibration table.</p>
+<li>Ground truth: <strong>1654 known duplicate pairs</strong> (a merged-benchmark image sharing a filename with an ODIR image), calibrated against the hardest available negatives.</li>
+<li>Operating threshold <strong>0.999</strong>: precision <strong>0.9895</strong>, recall <strong>0.9728</strong>.</li>
+<li>Within ODIR: <strong>2 duplicate groups</strong>, 2 images removed -&gt; 5056 images, 2909 patients.</li>
+<li><strong>1626 merged-benchmark images are ODIR copies</strong> and are therefore excluded from cross-source test data.</li>
+<p><em>Caveat carried into the paper:</em> recall is measured over ODIR&lt;-&gt;merged ground-truth pairs; recall for within-ODIR duplicates is not directly measurable.</p>
+<p>A methods note worth publishing on its own: ImageNet-embedding cosine similarity <strong>fails</strong> as a duplicate detector on fundus images. At threshold 0.999 it recovers 0% of known duplicates, while the FOV-normalised fingerprint recovers 97%. Fundus images are visually homogeneous and the copies differ by a large downscale, which ImageNet features are not invariant to.</p>
+<h3>4. Protocol ladder (RQ2)</h3>
+<p>Model held fixed, only the split varies. Frozen ResNet50 features with a logistic head.</p>
+<table>
+<tr><th>rung</th><th>n</th><th>accuracy</th><th>macro-F1</th><th>95% CI</th></tr>
+<tr><td>image_level</td><td>5058</td><td>0.5975</td><td>0.5496</td><td>[0.5308, 0.5677]</td></tr>
+<tr><td>patient_disjoint</td><td>5058</td><td>0.5951</td><td>0.5444</td><td>[0.5248, 0.5622]</td></tr>
+<tr><td>patient_disjoint_dedup</td><td>5056</td><td>0.5949</td><td>0.5476</td><td>[0.5282, 0.5675]</td></tr>
+<tr><td>provenance_controlled</td><td>1535</td><td>0.6098</td><td>0.5048</td><td>[0.4735, 0.5383]</td></tr>
+</table>
+<table>
+<tr><th>comparison</th><th>macro-F1 drop</th><th>McNemar p</th></tr>
+<tr><td>image_level -&gt; patient_disjoint</td><td>+0.0052</td><td>0.746733</td></tr>
+<tr><td>image_level -&gt; patient_disjoint_dedup</td><td>+0.0019</td><td>0.750243</td></tr>
+<tr><td>image_level -&gt; provenance_controlled</td><td>+0.0447</td><td>0.143081</td></tr>
+</table>
+<p><strong>Result: H2 is falsified as run.</strong> No rung differs significantly from any other; all confidence intervals overlap.</p>
+<p><strong>The limitation that must accompany it.</strong> A frozen linear head has almost no capacity to memorise, and leakage inflates a score by letting a model recall a near-copy it has already seen. This therefore measures a <em>lower bound</em> on protocol inflation, not the inflation a fine-tuned backbone would show. Settling that requires the GPU baselines in <code>colab/train_models.ipynb</code>.</p>
+<h3>4b. Does inflation depend on memorisation? (E1b)</h3>
+<p>E1&#x27;s null invites an obvious objection: a frozen linear head cannot memorise, and leakage is exploited <em>by</em> memorisation. So rather than reaching for a GPU, sweep the variable that actually matters - capacity - holding features and splits fixed. 1-NN is a pure retriever: if a patient&#x27;s fellow eye is in the training set, it will find it.</p>
+<table>
+<tr><th>model</th><th>image-level</th><th>patient-disjoint</th><th>inflation</th><th>McNemar p</th></tr>
+<tr><td>logistic</td><td>0.5496</td><td>0.5444</td><td><strong>+0.0052</strong></td><td>0.746733</td></tr>
+<tr><td>mlp</td><td>0.5843</td><td>0.5569</td><td><strong>+0.0274</strong></td><td>0.200594</td></tr>
+<tr><td>knn_5</td><td>0.5250</td><td>0.5044</td><td><strong>+0.0207</strong></td><td>0.000646</td></tr>
+<tr><td>knn_1</td><td>0.5576</td><td>0.5124</td><td><strong>+0.0453</strong></td><td>0.0</td></tr>
+</table>
+<p><strong>Verdict: inflation grows with memorisation capacity - E1&#x27;s null was an artefact of using a low-capacity head.</strong></p>
+<p>This corrects E1. Patient leakage on this dataset <strong>is</strong> real and <strong>is</strong> exploitable - by models that memorise. A pure retriever gains +0.045 macro-F1 from ignoring patient identity, at p ~ 0. The parametric models show smaller, non-significant gains. The practical implication for anyone using this benchmark is that patient-disjoint splitting matters more as model capacity rises, which is precisely the direction the field is moving.</p>
+<h3>4c. Transfer to unseen acquisition sources (E5)</h3>
+<p>Trained on 5056 ODIR images; tested on merged-benchmark images after removing 1626 confirmed ODIR copies, so nothing in the test set was seen in training.</p>
+<table>
+<tr><th>source</th><th>n</th><th>classes</th><th>majority-class acc</th><th>model acc</th><th>macro-F1</th></tr>
+<tr><td>crop_jpg256</td><td>1223</td><td>C,G</td><td>0.517</td><td><strong>0.330</strong></td><td>0.228</td></tr>
+<tr><td>eyepacs_jpeg</td><td>1098</td><td>D</td><td>1.000</td><td><strong>0.297</strong></td><td>0.115</td></tr>
+<tr><td>odir_jpg512</td><td>69</td><td>C,G,N</td><td>0.449</td><td><strong>0.507</strong></td><td>0.412</td></tr>
+<tr><td>png_highres</td><td>201</td><td>C,G</td><td>0.502</td><td><strong>0.104</strong></td><td>0.093</td></tr>
+</table>
+<p><strong>The model does not transfer.</strong> On three of four sources it scores <em>below</em> the accuracy of always guessing that source&#x27;s majority class. Each source is class-restricted - itself a symptom of the provenance confound - so results are reported per source and never pooled.</p>
+<p>Two caveats. The in-domain model is itself weak (macro-F1 0.55 on frozen features), so poor transfer is partly a weak model rather than purely a domain gap. And this measures transfer under a documented change of acquisition source, not <em>generalisation</em> in the unqualified sense.</p>
+<h3>4d. Is it a disease detector or a demographics detector? (E11)</h3>
+<p>ODIR is less confounded, not clean: cataract patients average 11 years older than diabetic-retinopathy patients, and the sex distribution differs by class. Networks read age and sex from fundus photographs accurately, so this is testable rather than merely a limitations-section caveat.</p>
+<p><strong>Demographics alone, no image:</strong> accuracy 0.5560 against a 0.5678 majority baseline (lift -0.0119), macro-F1 0.2531. Age and sex carry no usable class signal here - the classifier does <em>worse</em> than always guessing the majority class.</p>
+<table>
+<tr><th>condition</th><th>n</th><th>patients</th><th>macro-F1</th><th>95% CI</th><th>cataract AUROC</th></tr>
+<tr><td>unrestricted</td><td>5056</td><td>2909</td><td>0.5476</td><td>[0.5283, 0.5668]</td><td><strong>0.9462</strong></td></tr>
+<tr><td>age_matched</td><td>964</td><td>779</td><td>0.5385</td><td>[0.5030, 0.5718]</td><td><strong>0.9414</strong></td></tr>
+<tr><td>sex_matched</td><td>972</td><td>792</td><td>0.5302</td><td>[0.4999, 0.5619]</td><td><strong>0.9406</strong></td></tr>
+<tr><td>multi_finding_removed</td><td>4679</td><td>2738</td><td>0.5478</td><td>[0.5255, 0.5682]</td><td><strong>0.9560</strong></td></tr>
+</table>
+<li>age_matched              macro-F1 -0.0091 vs unrestricted; CIs overlap</li>
+<li>sex_matched              macro-F1 -0.0174 vs unrestricted; CIs overlap</li>
+<li>multi_finding_removed    macro-F1 +0.0002 vs unrestricted; CIs overlap</li>
+<p><strong>Image performance survives every control.</strong> Cataract-vs-rest AUROC stays near 0.94 under age matching and sex matching, and every confidence interval overlaps the unrestricted one. The demographic confound is real in the data but is not what the model is using.</p>
+<p><em>Method:</em> matching is by downsampling within strata, so it closes the demographic route without reweighting or modelling.</p>
+<h3>5. Document extraction (E7)</h3>
+<p>Two extractors, developed on layouts A-C and evaluated on sealed layouts D-F which were opened once, after both were frozen.</p>
+<table>
+<tr><th>extractor</th><th>split</th><th>precision</th><th>recall</th><th>F1</th><th>exact match</th><th>n</th></tr>
+<tr><td>E1</td><td>dev</td><td>0.696</td><td>0.534</td><td><strong>0.604</strong></td><td>0.568</td><td>1620</td></tr>
+<tr><td>E1</td><td>sealed</td><td>0.726</td><td>0.235</td><td><strong>0.355</strong></td><td>0.297</td><td>1620</td></tr>
+<tr><td>E2</td><td>dev</td><td>0.687</td><td>0.679</td><td><strong>0.683</strong></td><td>0.691</td><td>1620</td></tr>
+<tr><td>E2</td><td>sealed</td><td>0.563</td><td>0.430</td><td><strong>0.488</strong></td><td>0.453</td><td>1620</td></tr>
+</table>
+<p><em>synthetic documents; a technical evaluation under controlled degradation, not clinical validation.</em></p>
+<h3>6. Reliability of the extraction signal (RQ3)</h3>
+<p>Is raw OCR confidence a usable estimate of whether an extracted clinical field is correct? Trained on development layouts, evaluated on sealed ones.</p>
+<table>
+<tr><th>extractor</th><th>signal</th><th>AUROC</th><th>Brier</th><th>ECE</th></tr>
+<tr><td>E1</td><td>raw ocr confidence</td><td><strong>0.5214</strong></td><td>0.2473</td><td>0.2254</td></tr>
+<tr><td>E1</td><td>learned estimator</td><td><strong>0.9799</strong></td><td>0.0542</td><td>0.0294</td></tr>
+<tr><td>E2</td><td>raw ocr confidence</td><td><strong>0.6389</strong></td><td>0.3806</td><td>0.3854</td></tr>
+<tr><td>E2</td><td>learned estimator</td><td><strong>0.9871</strong></td><td>0.0427</td><td>0.0151</td></tr>
+</table>
+<h3>7. Deferral (RQ4, RQ5)</h3>
+<p><strong>The document never changes the predicted class.</strong> <code>argmax(p_img)</code> is the answer whenever the system answers; the document and its read-reliability only decide <em>whether</em> to answer.</p>
+<table>
+<tr><th>system</th><th>AURC</th><th>error-detection AUROC</th><th>acc@90%</th><th>acc@75%</th><th>acc@50%</th></tr>
+<tr><td>image_confidence_only</td><td><strong>0.3889</strong></td><td>0.5875</td><td>0.5432</td><td>0.5481</td><td>0.5889</td></tr>
+<tr><td>system_A_rules</td><td><strong>0.1973</strong></td><td>0.8817</td><td>0.5741</td><td>0.6593</td><td>0.8667</td></tr>
+<tr><td>system_B_learned</td><td><strong>0.2107</strong></td><td>0.8692</td><td>0.5679</td><td>0.6444</td><td>0.8889</td></tr>
+<tr><td>system_B_without_c_hat</td><td><strong>0.2032</strong></td><td>0.8705</td><td>0.5802</td><td>0.637</td><td>0.8667</td></tr>
+</table>
+<p>Lower AURC is better. <code>system_B_without_c_hat</code> isolates what the learned extraction-reliability estimate contributes - the one architectural claim this project makes.</p>
+<h3>7b. Explainability (E12)</h3>
+<p>Model: frozen ImageNet ResNet50 + linear head on cached embeddings. Head fitted on 4044 training-fold embeddings; attribution over held-out fold 0 - the head never saw these images.</p>
+<table>
+<tr><th>measure</th><th>value</th></tr>
+<tr><td>FOV-mass ratio (observed)</td><td><strong>0.8364</strong></td></tr>
+<tr><td>uniform-attribution baseline</td><td>0.5348</td></tr>
+<tr><td>concentration ratio</td><td><strong>1.564x</strong></td></tr>
+<tr><td>deletion AUC (mean)</td><td>0.4687</td></tr>
+<tr><td>randomisation sanity check</td><td><strong>PASS</strong> (r = -0.0943)</td></tr>
+</table>
+<p>Attribution concentrates inside the retinal field of view at 1.56x what uniform attribution would give, and the method passes the randomisation sanity check, so the maps do depend on the learned weights.</p>
+<p><strong>What this permits us to say:</strong> attribution falls on retinal tissue rather than on borders or letterbox artefacts. <strong>What it does not permit:</strong> any claim that the model is looking at a lesion. There are no lesion masks and no ophthalmologist. The FOV-mass ratio answers a shortcut question, not a clinical one.</p>
+<p><em>Caveat:</em> masking creates out-of-distribution inputs, so deletion AUC conflates attribution quality with behaviour on corrupted images. And not a fine-tuned diagnostic model; re-run after the Colab baselines.</p>
+<h3>9. Statistical validation (E13)</h3>
+<p><strong>Seed stability.</strong> Every earlier result used split seed 42. The leakage comparison is re-run across [42, 7, 2024]; a finding that holds for only one random partition is not a finding.</p>
+<table>
+<tr><th>seed</th><th>model</th><th>image-level</th><th>patient-disjoint</th><th>inflation</th><th>p</th></tr>
+<tr><td>42</td><td>logistic</td><td>0.5514</td><td>0.5476</td><td><strong>+0.0038</strong></td><td>0.619208</td></tr>
+<tr><td>42</td><td>knn_1</td><td>0.5585</td><td>0.5101</td><td><strong>+0.0484</strong></td><td>0.0</td></tr>
+<tr><td>7</td><td>logistic</td><td>0.5450</td><td>0.5576</td><td><strong>-0.0126</strong></td><td>0.036894</td></tr>
+<tr><td>7</td><td>knn_1</td><td>0.5531</td><td>0.5091</td><td><strong>+0.0440</strong></td><td>0.0</td></tr>
+<tr><td>2024</td><td>logistic</td><td>0.5500</td><td>0.5505</td><td><strong>-0.0005</strong></td><td>0.840133</td></tr>
+<tr><td>2024</td><td>knn_1</td><td>0.5589</td><td>0.5156</td><td><strong>+0.0434</strong></td><td>0.0</td></tr>
+</table>
+<table>
+<tr><th>model</th><th>mean inflation</th><th>sd</th><th>min</th><th>max</th></tr>
+<tr><td>knn_1</td><td>+0.0453</td><td>0.0027</td><td>+0.0434</td><td>+0.0484</td></tr>
+<tr><td>logistic</td><td>-0.0031</td><td>0.0085</td><td>-0.0126</td><td>+0.0038</td></tr>
+</table>
+<p><strong>Multiple comparisons.</strong> The project reports 13 paired tests. At alpha = 0.05 one spurious result in twenty is expected by construction, so Holm-Bonferroni is applied across the whole family. <strong>5 of 13 survive correction:</strong></p>
+<li><code>leakage[knn_1,seed42]</code> - p = 0.0 (threshold 0.003846)</li>
+<li><code>leakage[knn_1,seed7]</code> - p = 0.0 (threshold 0.004167)</li>
+<li><code>leakage[knn_1,seed2024]</code> - p = 0.0 (threshold 0.004545)</li>
+<li><code>E1b[knn_1]</code> - p = 0.0 (threshold 0.005)</li>
+<li><code>E1b[knn_5]</code> - p = 0.000646 (threshold 0.005556)</li>
+<p><em>Holm rather than plain Bonferroni: uniformly more powerful at the same family-wise error rate, which matters when the smallest class has 182 patients.</em></p>
+<h3>8. What is still outstanding</h3>
+<li><strong>Fine-tuned baselines (E2/E3)</strong> need a GPU: <code>colab/train_models.ipynb</code>. Until they run, the protocol-ladder result is a lower bound.</li>
+<li><strong>XAI battery (E12)</strong> depends on a fine-tuned model to attribute over.</li>
+<li><strong>A real-document sanity check.</strong> No suitable public de-identified ophthalmic referral corpus was found; the search is recorded, and the corpus remains synthetic.</li>
+</div>
+<footer><b>Academic screening prototype. Not a medical device and not a diagnosis.</b>
+<p>A qualified clinician reviews every case and makes every decision. Trained on a public
+research dataset with 203 cataract and 182 glaucoma patients. Referral documents used in
+development were synthetic. No prospective clinical validation.</p></footer>
+</body></html>
