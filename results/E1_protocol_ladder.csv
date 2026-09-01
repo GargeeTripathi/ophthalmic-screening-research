@@ -1,0 +1,5 @@
+rung,description,n,accuracy,balanced_accuracy,macro_f1,macro_auroc,ci_low,ci_high
+image_level,"stratified by class, patient identity ignored (as commonly published)",5058,0.5975,0.5394,0.5496,,0.5308,0.5677
+patient_disjoint,grouped by patient,5058,0.5951,0.5343,0.5444,,0.5248,0.5622
+patient_disjoint_dedup,"grouped by patient, near-duplicates removed",5056,0.5949,0.5365,0.5476,,0.5282,0.5675
+provenance_controlled,"as above, restricted to one resolution cluster",1535,0.6098,0.5001,0.5048,,0.4735,0.5383

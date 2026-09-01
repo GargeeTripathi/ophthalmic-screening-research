@@ -1,0 +1,48 @@
+{
+  "dev": {
+    "documents": 180,
+    "layouts": [
+      "A",
+      "B",
+      "C"
+    ],
+    "per_level": {
+      "0": 36,
+      "1": 36,
+      "2": 36,
+      "3": 36,
+      "4": 36
+    },
+    "diagnosis_corrupted": 31,
+    "corruption_rate_actual": 0.1722,
+    "missing_field_counts": {
+      "visual_acuity": 40,
+      "iop": 42,
+      "referral_reason": 36
+    },
+    "ground_truth": "D:\\ophthalmic-screening-research\\data\\documents\\ground_truth_dev.json"
+  },
+  "sealed": {
+    "documents": 180,
+    "layouts": [
+      "D",
+      "E",
+      "F"
+    ],
+    "per_level": {
+      "0": 36,
+      "1": 36,
+      "2": 36,
+      "3": 36,
+      "4": 36
+    },
+    "diagnosis_corrupted": 37,
+    "corruption_rate_actual": 0.2056,
+    "missing_field_counts": {
+      "referral_reason": 57,
+      "iop": 40,
+      "visual_acuity": 36
+    },
+    "ground_truth": "D:\\ophthalmic-screening-research\\data\\documents\\ground_truth_sealed.json"
+  }
+}

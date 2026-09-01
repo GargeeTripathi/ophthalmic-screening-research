@@ -1,0 +1,82 @@
+{
+  "demographics_only": {
+    "baseline_accuracy": 0.5678,
+    "accuracy": 0.556,
+    "lift_over_baseline": -0.0119,
+    "macro_f1": 0.2531,
+    "n": 5056,
+    "note": "age and sex only - no image. Establishes what is obtainable without looking at a retina."
+  },
+  "conditions": [
+    {
+      "condition": "unrestricted",
+      "note": "all held-out predictions",
+      "n": 5056,
+      "patients": 2909,
+      "macro_f1": 0.5476,
+      "ci_low": 0.5283,
+      "ci_high": 0.5668,
+      "cataract_auroc": 0.9462,
+      "class_counts": {
+        "N": 2871,
+        "D": 1608,
+        "C": 293,
+        "G": 284
+      }
+    },
+    {
+      "condition": "age_matched",
+      "note": "classes balanced within 5-year age strata",
+      "n": 964,
+      "patients": 779,
+      "macro_f1": 0.5385,
+      "ci_low": 0.503,
+      "ci_high": 0.5718,
+      "cataract_auroc": 0.9414,
+      "class_counts": {
+        "N": 248,
+        "D": 247,
+        "C": 236,
+        "G": 233
+      }
+    },
+    {
+      "condition": "sex_matched",
+      "note": "classes balanced within each sex",
+      "n": 972,
+      "patients": 792,
+      "macro_f1": 0.5302,
+      "ci_low": 0.4999,
+      "ci_high": 0.5619,
+      "cataract_auroc": 0.9406,
+      "class_counts": {
+        "C": 243,
+        "D": 243,
+        "G": 243,
+        "N": 243
+      }
+    },
+    {
+      "condition": "multi_finding_removed",
+      "note": "rows whose annotation names a second condition dropped",
+      "n": 4679,
+      "patients": 2738,
+      "macro_f1": 0.5478,
+      "ci_low": 0.5255,
+      "ci_high": 0.5682,
+      "cataract_auroc": 0.956,
+      "class_counts": {
+        "N": 2814,
+        "D": 1385,
+        "C": 262,
+        "G": 218
+      }
+    }
+  ],
+  "comparisons": [
+    "  age_matched              macro-F1 -0.0091 vs unrestricted; CIs overlap",
+    "  sex_matched              macro-F1 -0.0174 vs unrestricted; CIs overlap",
+    "  multi_finding_removed    macro-F1 +0.0002 vs unrestricted; CIs overlap"
+  ],
+  "method_note": "matching is by downsampling within strata, so it closes the demographic route without reweighting or modelling"
+}

@@ -1,0 +1,5 @@
+source,n,majority_class_accuracy,accuracy,macro_f1,lift_over_majority
+crop_jpg256,1223,0.5168,0.3295,0.2283,-0.1872
+eyepacs_jpeg,1098,1.0,0.2969,0.1145,-0.7031
+odir_jpg512,69,0.4493,0.5072,0.4122,0.058
+png_highres,201,0.5025,0.1045,0.093,-0.398

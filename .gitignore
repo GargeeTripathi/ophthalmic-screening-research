@@ -1,0 +1,50 @@
+# Environments
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+*.egg-info/
+
+# Source images and derived caches: large, regenerable, and in ODIR's case not ours to
+# redistribute. Rebuild with scripts/run_all.py.
+data/raw/*
+data/processed/*
+data/documents/dev/
+data/documents/sealed/
+!**/.gitkeep
+
+# The 94 MB checkpoint is ~93 MB of ImageNet ResNet50 weights torchvision downloads for
+# free. checkpoints/screening_head.pt holds the 34 KB this project actually trained, and
+# the pipeline reconstructs the full model from it, so the repo stays self-contained.
+checkpoints/screening_model.pt
+data/processed/uploads/
+
+# Raw near-duplicate candidate pair lists: 1.8M and 2.5M rows (860 MB) produced by the
+# generous 0.90 search threshold. They are an intermediate, not a result - the results are
+# duplicate_groups.csv (what was confirmed) and duplicate_detector_calibration.csv (how the
+# threshold was chosen). Regenerate with scripts/find_duplicates.py.
+data/manifests/duplicate_candidates_*.csv
+data/manifests/duplicate_review/
+
+# Committed on purpose — small, and they are the reproducibility record:
+#   data/manifests/  data/splits/  results/  figures/  reports/
+#   data/documents/ground_truth_*.json  (the corpus regenerates from the seed)
+#   checkpoints/screening_head.pt  reliability.joblib  deployment.json
+
+# Large binaries that occasionally appear
+*.zip
+*.tar
+*.tar.gz
+*.keras
+*.onnx
+*.npz
+
+# Notebook noise
+.ipynb_checkpoints/
+
+# Editor / OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
+.DS_Store

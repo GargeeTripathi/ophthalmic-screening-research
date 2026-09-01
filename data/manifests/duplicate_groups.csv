@@ -1,0 +1,5 @@
+group_id,image_id,label,patient_id,keep
+0,odir_2487_right,N,odir_2487,True
+0,odir_3185_right,N,odir_3185,False
+1,odir_2487_left,N,odir_2487,True
+1,odir_3185_left,N,odir_3185,False

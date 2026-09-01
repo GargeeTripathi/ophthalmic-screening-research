@@ -1,0 +1,64 @@
+# Dataset definition and the invariants the manifest builder must assert.
+#
+# The counts below are EXPECTED values carried over from the audit. build_manifest.py
+# asserts them and fails loudly on mismatch, so a silent change in the source data
+# (a re-download, a moved folder) surfaces immediately instead of quietly changing results.
+
+classes: ["N", "D", "G", "C"]
+
+class_names:
+  N: "normal"
+  D: "diabetic_retinopathy"
+  G: "glaucoma"
+  C: "cataract"
+
+# ODIR single-letter codes we drop: A (AMD), H (hypertensive), M (myopia), O (other).
+# They have no counterpart in the four-class task.
+dropped_codes: ["A", "H", "M", "O"]
+
+expected:
+  images: 5058
+  patients: 2910
+  images_per_class:
+    N: 2873
+    D: 1608
+    G: 284
+    C: 293
+  patients_per_class:
+    N: 1852
+    D: 1027
+    G: 182
+    C: 203
+  # Tolerance is zero on purpose. A mismatch means the source data changed.
+  tolerance: 0
+
+manifest_columns:
+  - image_id
+  - image_path
+  - patient_id
+  - eye
+  - label
+  - age
+  - sex
+  - keyword
+  - source
+  - original_filename
+  - width
+  - height
+  - file_extension
+  - multi_finding
+
+# Known confounds measured during the audit. Recorded here so the sensitivity analyses
+# in later phases are driven by config rather than by memory.
+known_confounds:
+  age_gap_note: "cataract mean age ~66.8 vs DR ~55.7 - report age-matched sensitivity"
+  sex_skew_note: "cataract 57.3% female vs glaucoma 41.5% female"
+  multi_finding_note: "23.2% of glaucoma rows name a second condition in the keyword field"
+
+splits:
+  n_folds: 5
+  # One fold is spent on backbone selection and never contributes to a reported number.
+  selection_fold: 0
+  seed: 42
+  group_by: patient_id
+  stratify_by: label

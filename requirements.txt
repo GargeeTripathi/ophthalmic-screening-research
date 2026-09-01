@@ -1,0 +1,35 @@
+# Local environment (no GPU). Colab installs torch itself, so torch is NOT pinned here.
+#
+#   python -m venv .venv
+#   .venv\Scripts\python.exe -m pip install -r requirements.txt
+#   .venv\Scripts\python.exe -m pip install -e .
+#
+# Phase 1-2 only need the core block. Install the rest when the phase that needs it starts;
+# health_check.py reports the later ones as warnings, not failures, until then.
+
+# --- core: configs, manifests, metrics, figures -------------------------------------
+PyYAML>=6.0
+numpy>=1.26
+pandas>=2.1
+pillow>=10.1
+scikit-learn>=1.4
+scipy>=1.11
+matplotlib>=3.8
+pytest>=8.0
+
+# --- phase 2: FOV crop, embeddings, provenance probes -------------------------------
+opencv-python-headless>=4.9
+
+# --- phase 2-3: embeddings and training. CPU wheels locally; Colab brings its own CUDA.
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+torch>=2.2
+torchvision>=0.17
+
+# --- phase 4-5: OCR and extraction --------------------------------------------------
+# RapidOCR replaced Tesseract: pip-installable, CPU, offline, no system binary and no
+# admin rights, which keeps the project reproducible in a clean environment.
+rapidocr-onnxruntime>=1.3
+rapidfuzz>=3.6
+
+# --- phase 7: report export ---------------------------------------------------------
+# reportlab>=4.0

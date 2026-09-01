@@ -1,0 +1,114 @@
+# Experiment registry. Every result written to results/ carries one of these IDs.
+# An experiment that is not listed here does not get run.
+
+E0a:
+  name: "Metadata-only provenance probe"
+  question: "Can class be predicted from provenance metadata alone, without pixels?"
+  phase: 2
+  gpu: false
+
+E0b:
+  name: "Image provenance probe on FOV-normalised pixels"
+  question: "Does provenance survive normalisation, i.e. does it live in the pixels?"
+  phase: 2
+  gpu: true
+  stop_condition: "If accuracy is within the bootstrap CI of the base rate, STOP and report that the provenance framing is unsupported."
+
+E0c:
+  name: "Geometry-only control"
+  question: "Is the provenance probe reading acquisition structure, or leaking pathology?"
+  phase: 2
+  gpu: false
+
+E1:
+  name: "Protocol ladder"
+  question: "How much reported performance is leakage and provenance?"
+  phase: 2
+  gpu: true
+  rungs: ["image_level", "patient_disjoint", "patient_disjoint_dedup", "provenance_controlled"]
+  note: "Headline experiment. Cannot produce a null result."
+
+E1b:
+  name: "Capacity ladder"
+  question: "Does protocol inflation depend on the model's capacity to memorise?"
+  phase: 2
+  gpu: false
+  models_by_capacity: ["logistic", "mlp", "knn_5", "knn_1"]
+  note: "Leakage is exploited by memorisation, so capacity is the variable to sweep, not compute. 1-NN is a pure retriever and is the sharpest available instrument."
+
+E5:
+  name: "Cross-source transfer"
+  question: "How does an ODIR-trained model perform on acquisition sources it never saw?"
+  phase: 3
+  gpu: false
+  note: "Merged images confirmed as ODIR copies are excluded. Each remaining source is class-restricted, so results are reported per source against that source's majority-class accuracy, never pooled."
+
+E2:
+  name: "Backbone selection"
+  question: "Which backbone, on the selection fold only?"
+  phase: 3
+  gpu: true
+
+E3:
+  name: "Baselines under the corrected protocol"
+  question: "How do standard backbones perform once leakage is removed?"
+  phase: 3
+  gpu: true
+
+E7:
+  name: "IDP extraction benchmark"
+  question: "How does extraction degrade with legibility, and does it survive unseen layouts?"
+  phase: 4
+  gpu: false
+
+E8:
+  name: "Reliability calibration"
+  question: "Is raw OCR confidence a good estimate of field correctness? Is a learned estimator better?"
+  phase: 5
+  gpu: false
+
+E9:
+  name: "Deferral: System A vs System B"
+  question: "Does document evidence improve deferral without touching the class prediction?"
+  phase: 6
+  gpu: false
+  note: "Pre-registered comparison 1. Pool out-of-fold predictions before testing."
+
+E10:
+  name: "Robustness matrix"
+  question: "How does document quality and correctness propagate into triage quality?"
+  phase: 6
+  gpu: false
+  cells: 135          # 9 conditions x 5 degradation levels x 3 corruption rates
+  note: "The main multimodal result. Large designed effects, unlike adjacent-ablation deltas."
+
+E11:
+  name: "Confound sensitivity"
+  question: "Does the result survive age/sex matching and removal of multi-finding rows?"
+  phase: 3
+  gpu: true
+
+E13:
+  name: "Statistical validation"
+  question: "Do the findings hold across split seeds, and which survive multiple-comparison correction?"
+  phase: 3
+  gpu: false
+  seeds: [42, 7, 2024]
+  note: "Holm-Bonferroni rather than plain Bonferroni - uniformly more powerful at the same family-wise error rate, which matters when the smallest class has 182 patients."
+
+E12:
+  name: "XAI battery"
+  question: "Are the attribution maps faithful to the model?"
+  phase: 7
+  gpu: true
+  stop_condition: "If the model-randomisation sanity check fails, drop the method from all scientific claims."
+
+# Statistical policy. Only these comparisons carry significance claims; everything else
+# is reported descriptively. Fewer tests, more power, no correction burden.
+statistics:
+  planned_comparisons: ["E9: System B vs System A"]
+  paired_test: mcnemar_exact
+  ci: bootstrap
+  bootstrap_resamples: 2000
+  resample_unit: patient_id
+  pool_out_of_fold_predictions: true

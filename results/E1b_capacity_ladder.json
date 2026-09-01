@@ -1,0 +1,162 @@
+{
+  "rationale": "leakage is exploited by memorisation, so capacity is the right variable to sweep - not compute",
+  "models_by_capacity": [
+    "logistic",
+    "mlp",
+    "knn_5",
+    "knn_1"
+  ],
+  "per_cell": [
+    {
+      "model": "logistic",
+      "rung": "image_level",
+      "n": 5058,
+      "macro_f1": 0.5496,
+      "ci_low": 0.532,
+      "ci_high": 0.5687
+    },
+    {
+      "model": "logistic",
+      "rung": "patient_disjoint",
+      "n": 5058,
+      "macro_f1": 0.5444,
+      "ci_low": 0.5258,
+      "ci_high": 0.564
+    },
+    {
+      "model": "logistic",
+      "rung": "patient_disjoint_dedup",
+      "n": 5056,
+      "macro_f1": 0.5476,
+      "ci_low": 0.5283,
+      "ci_high": 0.5668
+    },
+    {
+      "model": "mlp",
+      "rung": "image_level",
+      "n": 5058,
+      "macro_f1": 0.5843,
+      "ci_low": 0.5663,
+      "ci_high": 0.6019
+    },
+    {
+      "model": "mlp",
+      "rung": "patient_disjoint",
+      "n": 5058,
+      "macro_f1": 0.5569,
+      "ci_low": 0.5388,
+      "ci_high": 0.5734
+    },
+    {
+      "model": "mlp",
+      "rung": "patient_disjoint_dedup",
+      "n": 5056,
+      "macro_f1": 0.5793,
+      "ci_low": 0.5601,
+      "ci_high": 0.5974
+    },
+    {
+      "model": "knn_5",
+      "rung": "image_level",
+      "n": 5058,
+      "macro_f1": 0.525,
+      "ci_low": 0.5084,
+      "ci_high": 0.544
+    },
+    {
+      "model": "knn_5",
+      "rung": "patient_disjoint",
+      "n": 5058,
+      "macro_f1": 0.5044,
+      "ci_low": 0.4886,
+      "ci_high": 0.5217
+    },
+    {
+      "model": "knn_5",
+      "rung": "patient_disjoint_dedup",
+      "n": 5056,
+      "macro_f1": 0.5139,
+      "ci_low": 0.4964,
+      "ci_high": 0.5318
+    },
+    {
+      "model": "knn_1",
+      "rung": "image_level",
+      "n": 5058,
+      "macro_f1": 0.5576,
+      "ci_low": 0.5392,
+      "ci_high": 0.5766
+    },
+    {
+      "model": "knn_1",
+      "rung": "patient_disjoint",
+      "n": 5058,
+      "macro_f1": 0.5124,
+      "ci_low": 0.4947,
+      "ci_high": 0.5289
+    },
+    {
+      "model": "knn_1",
+      "rung": "patient_disjoint_dedup",
+      "n": 5056,
+      "macro_f1": 0.5101,
+      "ci_low": 0.4931,
+      "ci_high": 0.5278
+    }
+  ],
+  "comparisons": [
+    {
+      "model": "logistic",
+      "image_level_macro_f1": 0.5496,
+      "patient_disjoint_macro_f1": 0.5444,
+      "inflation": 0.0052,
+      "paired_n": 5058,
+      "mcnemar": {
+        "a_only": 586,
+        "b_only": 574,
+        "discordant": 1160,
+        "p_value": 0.746733
+      }
+    },
+    {
+      "model": "mlp",
+      "image_level_macro_f1": 0.5843,
+      "patient_disjoint_macro_f1": 0.5569,
+      "inflation": 0.0274,
+      "paired_n": 5058,
+      "mcnemar": {
+        "a_only": 560,
+        "b_only": 517,
+        "discordant": 1077,
+        "p_value": 0.200594
+      }
+    },
+    {
+      "model": "knn_5",
+      "image_level_macro_f1": 0.525,
+      "patient_disjoint_macro_f1": 0.5044,
+      "inflation": 0.0207,
+      "paired_n": 5058,
+      "mcnemar": {
+        "a_only": 428,
+        "b_only": 333,
+        "discordant": 761,
+        "p_value": 0.000646
+      }
+    },
+    {
+      "model": "knn_1",
+      "image_level_macro_f1": 0.5576,
+      "patient_disjoint_macro_f1": 0.5124,
+      "inflation": 0.0453,
+      "paired_n": 5058,
+      "mcnemar": {
+        "a_only": 543,
+        "b_only": 338,
+        "discordant": 881,
+        "p_value": 0.0
+      }
+    }
+  ],
+  "verdict": "inflation grows with memorisation capacity - E1's null was an artefact of using a low-capacity head"
+}

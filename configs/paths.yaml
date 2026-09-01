@@ -1,0 +1,33 @@
+# Filesystem locations. Everything else in the project resolves paths through here.
+#
+# Rule: `source` paths are READ-ONLY. Nothing in this project ever writes to them.
+# All derived artefacts land under the repo's own data/ directory.
+
+source:
+  # The existing datasets on this machine. Not copied, not modified.
+  odir_root: "D:/PBL/Dataset/ODIR-5K"
+  odir_label_csv: "D:/PBL/Dataset/ODIR-5K/full_df.csv"
+  odir_images_train: "D:/PBL/Dataset/ODIR-5K/ODIR-5K/Training Images"
+  odir_images_test: "D:/PBL/Dataset/ODIR-5K/ODIR-5K/Testing Images"
+  # Used ONLY as the audit subject and as cross-source test data. Never primary training.
+  merged_root: "D:/PBL/Dataset/Cataract_dataset/dataset"
+
+# Repo-relative outputs. Resolved against the repo root at load time.
+data:
+  raw: "data/raw"
+  manifests: "data/manifests"
+  processed: "data/processed"
+  documents: "data/documents"
+  splits: "data/splits"
+
+outputs:
+  checkpoints: "checkpoints"
+  results: "results"
+  figures: "figures"
+  reports: "reports"
+
+# Google Drive layout used by the Colab notebooks. The Colab side mirrors the repo's
+# data/ and outputs/ trees under this root so a run can resume from a fresh session.
+colab:
+  drive_root: "/content/drive/MyDrive/ophthalmic-screening-research"
+  repo_mount: "/content/ophthalmic-screening-research"

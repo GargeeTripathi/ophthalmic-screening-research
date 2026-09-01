@@ -1,0 +1,7 @@
+experiment,description,n,classes,baseline_accuracy,accuracy,macro_f1,lift_over_baseline
+E0a,"predict class from file metadata only, no pixels",4217,"['C', 'D', 'G', 'N']",0.2604,0.6673,0.6618,0.4069
+E0b,predict acquisition source from FOV-normalised pixels,4217,"['crop_jpg256', 'eyepacs_jpeg', 'odir_jpg512', 'png_highres']",0.3979,0.7489,0.5769,0.351
+E0c-i,predict source from image geometry alone,4217,"['crop_jpg256', 'eyepacs_jpeg', 'odir_jpg512', 'png_highres']",0.3979,0.7024,0.7647,0.3045
+E0c-ii[odir_jpg512],predict class from pixels within source=odir_jpg512,1678,"['C', 'G', 'N']",0.64,0.6436,0.3018,0.0036
+E0c-ii[crop_jpg256],predict class from pixels within source=crop_jpg256,1240,"['C', 'G']",0.5161,0.7355,0.7312,0.2194
+E0c-ii[png_highres],predict class from pixels within source=png_highres,201,"['C', 'G']",0.4975,0.7811,0.781,0.2836

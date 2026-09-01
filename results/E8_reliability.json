@@ -1,0 +1,92 @@
+{
+  "E1": {
+    "n_train": 1153,
+    "n_test": 481,
+    "test_correct_rate": 0.7256,
+    "raw_ocr_confidence": {
+      "auroc": 0.5214,
+      "brier": 0.2473,
+      "ece": 0.2254
+    },
+    "learned_estimator": {
+      "auroc": 0.9799,
+      "brier": 0.0542,
+      "ece": 0.0294
+    },
+    "learned_calibration_curve": {
+      "mean_predicted": [
+        0.0321,
+        0.3207,
+        0.7987,
+        0.976,
+        0.9898,
+        0.9954,
+        0.9964,
+        0.9969
+      ],
+      "observed_fraction": [
+        0.0,
+        0.1833,
+        0.7258,
+        0.9206,
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "feature_importance": {
+      "ocr_confidence": 0.0802,
+      "fuzzy_score": 0.0144,
+      "format_valid": 0.5548,
+      "distractor_margin": 0.0135,
+      "layout_position": 0.0238,
+      "value_length": 0.3133
+    }
+  },
+  "E2": {
+    "n_train": 1484,
+    "n_test": 1136,
+    "test_correct_rate": 0.5634,
+    "raw_ocr_confidence": {
+      "auroc": 0.6389,
+      "brier": 0.3806,
+      "ece": 0.3854
+    },
+    "learned_estimator": {
+      "auroc": 0.9871,
+      "brier": 0.0427,
+      "ece": 0.0151
+    },
+    "learned_calibration_curve": {
+      "mean_predicted": [
+        0.0044,
+        0.0168,
+        0.0725,
+        0.6317,
+        0.9669,
+        0.9846,
+        0.9911,
+        0.9937
+      ],
+      "observed_fraction": [
+        0.0,
+        0.0072,
+        0.0282,
+        0.5625,
+        0.9462,
+        0.9794,
+        1.0,
+        1.0
+      ]
+    },
+    "feature_importance": {
+      "ocr_confidence": 0.1062,
+      "fuzzy_score": 0.013,
+      "format_valid": 0.4858,
+      "distractor_margin": 0.0411,
+      "layout_position": 0.0122,
+      "value_length": 0.3418
+    }
+  }
+}

@@ -1,0 +1,49 @@
+# Image classifier training. One config, one experiment.
+
+seed: 42
+image_size: 384
+num_workers: 2
+batch_size: 16
+mixed_precision: true
+
+# Backbones considered. Selection runs on the selection fold only; the winner is locked
+# before any test-set number is produced.
+backbones:
+  - name: scratch_cnn      # control: what does pretraining actually buy
+    pretrained: false
+  - name: vgg16
+    pretrained: true
+  - name: resnet50
+    pretrained: true
+  - name: efficientnet_v2_s
+    pretrained: true
+  - name: convnext_tiny
+    pretrained: true
+
+optimizer:
+  name: adamw
+  lr_head: 0.001
+  lr_finetune: 0.00001
+  weight_decay: 0.0001
+
+schedule:
+  phase1_epochs: 15        # backbone frozen, head only
+  phase2_epochs: 25        # top blocks unfrozen
+  early_stopping_patience: 5
+  monitor: val_macro_f1
+
+augmentation:
+  horizontal_flip: true
+  rotation_degrees: 15     # small: retinal landmarks are orientation-dependent
+  zoom: 0.10
+  contrast: 0.10
+
+class_weights: balanced
+
+calibration:
+  method: temperature_scaling
+  fit_on: validation       # never the test split
+
+checkpoint:
+  save_every_epoch: true
+  keep_best_only: false    # a Colab disconnect must cost one epoch, not one run

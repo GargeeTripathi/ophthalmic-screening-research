@@ -1,0 +1,39 @@
+{
+  "total_images": 4217,
+  "sources": {
+    "odir_jpg512": 1678,
+    "crop_jpg256": 1240,
+    "eyepacs_jpeg": 1098,
+    "png_highres": 201
+  },
+  "source_by_class": {
+    "C": {
+      "crop_jpg256": 640,
+      "eyepacs_jpeg": 0,
+      "odir_jpg512": 298,
+      "png_highres": 100
+    },
+    "D": {
+      "crop_jpg256": 0,
+      "eyepacs_jpeg": 1098,
+      "odir_jpg512": 0,
+      "png_highres": 0
+    },
+    "G": {
+      "crop_jpg256": 600,
+      "eyepacs_jpeg": 0,
+      "odir_jpg512": 306,
+      "png_highres": 101
+    },
+    "N": {
+      "crop_jpg256": 0,
+      "eyepacs_jpeg": 0,
+      "odir_jpg512": 1074,
+      "png_highres": 0
+    }
+  },
+  "majority_class_baseline": 0.2603746739388191,
+  "source_majority_accuracy": 0.6907754327721128,
+  "unassigned": 0,
+  "unreadable": 0
+}

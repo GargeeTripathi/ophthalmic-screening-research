@@ -1,0 +1,5187 @@
+[
+  {
+    "document_id": "dev_A_0000_L0",
+    "layout": "A",
+    "degradation_level": 0,
+    "patient_id": "odir_2369",
+    "true_label": "N",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_2369",
+      "age": "55",
+      "sex": "M",
+      "eye": "Right",
+      "exam_date": "08/03/2026",
+      "visual_acuity": null,
+      "iop": "13",
+      "stated_diagnosis": "Nuclear sclerotic cataract",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "16-4811"
+      ],
+      [
+        "Appointment Ref",
+        "6/93"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0000_L0.jpg"
+  },
+  {
+    "document_id": "dev_A_0001_L1",
+    "layout": "A",
+    "degradation_level": 1,
+    "patient_id": "odir_358",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_358",
+      "age": "47",
+      "sex": "Male",
+      "eye": "OD",
+      "exam_date": "04/02/2026",
+      "visual_acuity": "6/18",
+      "iop": "13",
+      "stated_diagnosis": "Non-proliferative diabetic retinopathy",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "22-2291"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0001_L1.jpg"
+  },
+  {
+    "document_id": "dev_A_0002_L2",
+    "layout": "A",
+    "degradation_level": 2,
+    "patient_id": "odir_611",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_611",
+      "age": "73",
+      "sex": "M",
+      "eye": "L",
+      "exam_date": "27/06/2026",
+      "visual_acuity": "6/9",
+      "iop": "21",
+      "stated_diagnosis": "Immature senile cataract",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "15-9751"
+      ],
+      [
+        "Appointment Ref",
+        "20/44"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0002_L2.jpg"
+  },
+  {
+    "document_id": "dev_A_0003_L3",
+    "layout": "A",
+    "degradation_level": 3,
+    "patient_id": "odir_1247",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1247",
+      "age": "65",
+      "sex": "M",
+      "eye": "Left",
+      "exam_date": "21/08/2026",
+      "visual_acuity": "6/18",
+      "iop": null,
+      "stated_diagnosis": "Glaucoma",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "75 Station Road, est. 13/06/1998"
+      ],
+      [
+        "Appointment Ref",
+        "6/75"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0003_L3.jpg"
+  },
+  {
+    "document_id": "dev_A_0004_L4",
+    "layout": "A",
+    "degradation_level": 4,
+    "patient_id": "odir_1431",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1431",
+      "age": "73",
+      "sex": "Male",
+      "eye": "L",
+      "exam_date": "24/02/2026",
+      "visual_acuity": "6/36",
+      "iop": null,
+      "stated_diagnosis": "Glaucoma suspect",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Appointment Ref",
+        "6/74"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0004_L4.jpg"
+  },
+  {
+    "document_id": "dev_A_0005_L0",
+    "layout": "A",
+    "degradation_level": 0,
+    "patient_id": "odir_1241",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1241",
+      "age": "64",
+      "sex": "F",
+      "eye": "OD",
+      "exam_date": "01/02/2026",
+      "visual_acuity": "6/12",
+      "iop": null,
+      "stated_diagnosis": "Glaucoma",
+      "referral_reason": null
+    },
+    "distractors": [],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0005_L0.jpg"
+  },
+  {
+    "document_id": "dev_A_0006_L1",
+    "layout": "A",
+    "degradation_level": 1,
+    "patient_id": "odir_4140",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4140",
+      "age": "29",
+      "sex": "Male",
+      "eye": "L",
+      "exam_date": "10/07/2026",
+      "visual_acuity": null,
+      "iop": "21",
+      "stated_diagnosis": "Non-proliferative diabetic retinopathy",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "17-4608"
+      ],
+      [
+        "Clinic Address",
+        "91 Station Road, est. 21/01/1998"
+      ],
+      [
+        "Appointment Ref",
+        "6/52"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0006_L1.jpg"
+  },
+  {
+    "document_id": "dev_A_0007_L2",
+    "layout": "A",
+    "degradation_level": 2,
+    "patient_id": "odir_1291",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1291",
+      "age": "63",
+      "sex": "Male",
+      "eye": "OD",
+      "exam_date": "26/07/2026",
+      "visual_acuity": "6/9",
+      "iop": "13",
+      "stated_diagnosis": "Glaucoma",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0007_L2.jpg"
+  },
+  {
+    "document_id": "dev_A_0008_L3",
+    "layout": "A",
+    "degradation_level": 3,
+    "patient_id": "odir_4587",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4587",
+      "age": "67",
+      "sex": "Male",
+      "eye": "OD",
+      "exam_date": "26/09/2026",
+      "visual_acuity": "6/6",
+      "iop": "11",
+      "stated_diagnosis": "NPDR, moderate",
+      "referral_reason": "Annual review"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "63 Station Road, est. 16/04/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0008_L3.jpg"
+  },
+  {
+    "document_id": "dev_A_0009_L4",
+    "layout": "A",
+    "degradation_level": 4,
+    "patient_id": "odir_4677",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4677",
+      "age": "38",
+      "sex": "Male",
+      "eye": "R",
+      "exam_date": "11/01/2026",
+      "visual_acuity": "6/6",
+      "iop": null,
+      "stated_diagnosis": "NPDR, moderate",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "12-4853"
+      ],
+      [
+        "Clinic Address",
+        "73 Station Road, est. 08/10/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0009_L4.jpg"
+  },
+  {
+    "document_id": "dev_A_0010_L0",
+    "layout": "A",
+    "degradation_level": 0,
+    "patient_id": "odir_846",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_846",
+      "age": "54",
+      "sex": "M",
+      "eye": "Right",
+      "exam_date": "01/08/2026",
+      "visual_acuity": "6/24",
+      "iop": null,
+      "stated_diagnosis": "No abnormality detected",
+      "referral_reason": "Annual review"
+    },
+    "distractors": [
+      [
+        "Appointment Ref",
+        "6/66"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0010_L0.jpg"
+  },
+  {
+    "document_id": "dev_A_0011_L1",
+    "layout": "A",
+    "degradation_level": 1,
+    "patient_id": "odir_4148",
+    "true_label": "D",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_4148",
+      "age": "48",
+      "sex": "Female",
+      "eye": "OD",
+      "exam_date": "10/10/2026",
+      "visual_acuity": "6/9",
+      "iop": "20",
+      "stated_diagnosis": "No abnormality detected",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [
+      [
+        "Appointment Ref",
+        "20/45"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0011_L1.jpg"
+  },
+  {
+    "document_id": "dev_A_0012_L2",
+    "layout": "A",
+    "degradation_level": 2,
+    "patient_id": "odir_2247",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2247",
+      "age": "73",
+      "sex": "Male",
+      "eye": "L",
+      "exam_date": "02/06/2026",
+      "visual_acuity": "6/24",
+      "iop": null,
+      "stated_diagnosis": "Immature senile cataract",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "46 Station Road, est. 07/11/1998"
+      ],
+      [
+        "Appointment Ref",
+        "6/55"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0012_L2.jpg"
+  },
+  {
+    "document_id": "dev_A_0013_L3",
+    "layout": "A",
+    "degradation_level": 3,
+    "patient_id": "odir_1289",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1289",
+      "age": "71",
+      "sex": "Female",
+      "eye": "OD",
+      "exam_date": "06/12/2026",
+      "visual_acuity": "6/6",
+      "iop": null,
+      "stated_diagnosis": "Glaucoma",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "17-4652"
+      ],
+      [
+        "Clinic Address",
+        "25 Station Road, est. 13/06/1998"
+      ],
+      [
+        "Appointment Ref",
+        "6/45"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0013_L3.jpg"
+  },
+  {
+    "document_id": "dev_A_0014_L4",
+    "layout": "A",
+    "degradation_level": 4,
+    "patient_id": "odir_2142",
+    "true_label": "C",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_2142",
+      "age": "75",
+      "sex": "F",
+      "eye": "R",
+      "exam_date": "26/06/2026",
+      "visual_acuity": null,
+      "iop": "26",
+      "stated_diagnosis": "Diabetic retinopathy",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "26-9821"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0014_L4.jpg"
+  },
+  {
+    "document_id": "dev_A_0015_L0",
+    "layout": "A",
+    "degradation_level": 0,
+    "patient_id": "odir_2367",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2367",
+      "age": "75",
+      "sex": "F",
+      "eye": "R",
+      "exam_date": "14/06/2026",
+      "visual_acuity": "6/18",
+      "iop": null,
+      "stated_diagnosis": "Within normal limits",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "73 Station Road, est. 10/07/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0015_L0.jpg"
+  },
+  {
+    "document_id": "dev_A_0016_L1",
+    "layout": "A",
+    "degradation_level": 1,
+    "patient_id": "odir_3311",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_3311",
+      "age": "49",
+      "sex": "M",
+      "eye": "R",
+      "exam_date": "06/11/2026",
+      "visual_acuity": "6/6",
+      "iop": "19",
+      "stated_diagnosis": "Within normal limits",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [
+      [
+        "Appointment Ref",
+        "6/28"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0016_L1.jpg"
+  },
+  {
+    "document_id": "dev_A_0017_L2",
+    "layout": "A",
+    "degradation_level": 2,
+    "patient_id": "odir_1488",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1488",
+      "age": "51",
+      "sex": "Female",
+      "eye": "R",
+      "exam_date": "23/01/2026",
+      "visual_acuity": "6/60",
+      "iop": null,
+      "stated_diagnosis": "Primary open angle glaucoma",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "17-2988"
+      ],
+      [
+        "Clinic Address",
+        "60 Station Road, est. 22/09/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0017_L2.jpg"
+  },
+  {
+    "document_id": "dev_A_0018_L3",
+    "layout": "A",
+    "degradation_level": 3,
+    "patient_id": "odir_4377",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4377",
+      "age": "54",
+      "sex": "F",
+      "eye": "L",
+      "exam_date": "08/05/2026",
+      "visual_acuity": "6/18",
+      "iop": null,
+      "stated_diagnosis": "Within normal limits",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "14-4788"
+      ],
+      [
+        "Clinic Address",
+        "20 Station Road, est. 23/04/1998"
+      ],
+      [
+        "Appointment Ref",
+        "20/52"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0018_L3.jpg"
+  },
+  {
+    "document_id": "dev_A_0019_L4",
+    "layout": "A",
+    "degradation_level": 4,
+    "patient_id": "odir_1318",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1318",
+      "age": "61",
+      "sex": "Female",
+      "eye": "OD",
+      "exam_date": "10/07/2026",
+      "visual_acuity": "6/60",
+      "iop": "23",
+      "stated_diagnosis": "Glaucoma suspect",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "18-8140"
+      ],
+      [
+        "Clinic Address",
+        "50 Station Road, est. 11/11/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0019_L4.jpg"
+  },
+  {
+    "document_id": "dev_A_0020_L0",
+    "layout": "A",
+    "degradation_level": 0,
+    "patient_id": "odir_2247",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2247",
+      "age": "73",
+      "sex": "Male",
+      "eye": "Right",
+      "exam_date": "09/07/2026",
+      "visual_acuity": "6/12",
+      "iop": "16",
+      "stated_diagnosis": "Immature senile cataract",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "11 Station Road, est. 16/01/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0020_L0.jpg"
+  },
+  {
+    "document_id": "dev_A_0021_L1",
+    "layout": "A",
+    "degradation_level": 1,
+    "patient_id": "odir_3046",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_3046",
+      "age": "63",
+      "sex": "Female",
+      "eye": "OD",
+      "exam_date": "22/02/2026",
+      "visual_acuity": "6/24",
+      "iop": "16",
+      "stated_diagnosis": "Normal fundus",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0021_L1.jpg"
+  },
+  {
+    "document_id": "dev_A_0022_L2",
+    "layout": "A",
+    "degradation_level": 2,
+    "patient_id": "odir_2247",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2247",
+      "age": "73",
+      "sex": "Male",
+      "eye": "Left",
+      "exam_date": "23/05/2026",
+      "visual_acuity": "6/60",
+      "iop": "13",
+      "stated_diagnosis": "Nuclear sclerotic cataract",
+      "referral_reason": "Routine diabetic screening"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "20-1207"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0022_L2.jpg"
+  },
+  {
+    "document_id": "dev_A_0023_L3",
+    "layout": "A",
+    "degradation_level": 3,
+    "patient_id": "odir_1263",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1263",
+      "age": "62",
+      "sex": "M",
+      "eye": "OD",
+      "exam_date": "27/12/2026",
+      "visual_acuity": null,
+      "iop": "18",
+      "stated_diagnosis": "Primary open angle glaucoma",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "24-7209"
+      ],
+      [
+        "Clinic Address",
+        "64 Station Road, est. 28/06/1998"
+      ],
+      [
+        "Appointment Ref",
+        "6/55"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0023_L3.jpg"
+  },
+  {
+    "document_id": "dev_A_0024_L4",
+    "layout": "A",
+    "degradation_level": 4,
+    "patient_id": "odir_1419",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1419",
+      "age": "67",
+      "sex": "Female",
+      "eye": "L",
+      "exam_date": "16/11/2026",
+      "visual_acuity": null,
+      "iop": null,
+      "stated_diagnosis": "Primary open angle glaucoma",
+      "referral_reason": "Routine diabetic screening"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "21-8753"
+      ],
+      [
+        "Appointment Ref",
+        "20/55"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0024_L4.jpg"
+  },
+  {
+    "document_id": "dev_A_0025_L0",
+    "layout": "A",
+    "degradation_level": 0,
+    "patient_id": "odir_1413",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1413",
+      "age": "68",
+      "sex": "Female",
+      "eye": "Right",
+      "exam_date": "07/12/2026",
+      "visual_acuity": "6/18",
+      "iop": "18",
+      "stated_diagnosis": "Glaucoma suspect",
+      "referral_reason": "Annual review"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "16-5853"
+      ],
+      [
+        "Clinic Address",
+        "23 Station Road, est. 10/01/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0025_L0.jpg"
+  },
+  {
+    "document_id": "dev_A_0026_L1",
+    "layout": "A",
+    "degradation_level": 1,
+    "patient_id": "odir_2113",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2113",
+      "age": "52",
+      "sex": "F",
+      "eye": "OS",
+      "exam_date": "16/08/2026",
+      "visual_acuity": "6/12",
+      "iop": "15",
+      "stated_diagnosis": "Cataract",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "12-1878"
+      ],
+      [
+        "Clinic Address",
+        "73 Station Road, est. 10/02/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0026_L1.jpg"
+  },
+  {
+    "document_id": "dev_A_0027_L2",
+    "layout": "A",
+    "degradation_level": 2,
+    "patient_id": "odir_1284",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1284",
+      "age": "42",
+      "sex": "Male",
+      "eye": "L",
+      "exam_date": "24/02/2026",
+      "visual_acuity": null,
+      "iop": "16",
+      "stated_diagnosis": "Glaucoma suspect",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "15-1043"
+      ],
+      [
+        "Clinic Address",
+        "89 Station Road, est. 20/08/1998"
+      ],
+      [
+        "Appointment Ref",
+        "6/46"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0027_L2.jpg"
+  },
+  {
+    "document_id": "dev_A_0028_L3",
+    "layout": "A",
+    "degradation_level": 3,
+    "patient_id": "odir_923",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_923",
+      "age": "49",
+      "sex": "M",
+      "eye": "Left",
+      "exam_date": "03/01/2026",
+      "visual_acuity": "6/9",
+      "iop": "19",
+      "stated_diagnosis": "NPDR, moderate",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "19-7594"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0028_L3.jpg"
+  },
+  {
+    "document_id": "dev_A_0029_L4",
+    "layout": "A",
+    "degradation_level": 4,
+    "patient_id": "odir_3239",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_3239",
+      "age": "56",
+      "sex": "Male",
+      "eye": "R",
+      "exam_date": "27/05/2026",
+      "visual_acuity": "6/24",
+      "iop": "11",
+      "stated_diagnosis": "No abnormality detected",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "63 Station Road, est. 03/08/1998"
+      ],
+      [
+        "Appointment Ref",
+        "20/51"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0029_L4.jpg"
+  },
+  {
+    "document_id": "dev_A_0030_L0",
+    "layout": "A",
+    "degradation_level": 0,
+    "patient_id": "odir_4516",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4516",
+      "age": "73",
+      "sex": "F",
+      "eye": "R",
+      "exam_date": "27/01/2026",
+      "visual_acuity": "6/36",
+      "iop": null,
+      "stated_diagnosis": "Non-proliferative diabetic retinopathy",
+      "referral_reason": "Routine diabetic screening"
+    },
+    "distractors": [
+      [
+        "Appointment Ref",
+        "6/46"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0030_L0.jpg"
+  },
+  {
+    "document_id": "dev_A_0031_L1",
+    "layout": "A",
+    "degradation_level": 1,
+    "patient_id": "odir_1420",
+    "true_label": "G",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_1420",
+      "age": "76",
+      "sex": "Female",
+      "eye": "Right",
+      "exam_date": "27/02/2026",
+      "visual_acuity": "6/18",
+      "iop": "13",
+      "stated_diagnosis": "NPDR, moderate",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "25-8736"
+      ],
+      [
+        "Clinic Address",
+        "71 Station Road, est. 05/07/1998"
+      ],
+      [
+        "Appointment Ref",
+        "6/18"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0031_L1.jpg"
+  },
+  {
+    "document_id": "dev_A_0032_L2",
+    "layout": "A",
+    "degradation_level": 2,
+    "patient_id": "odir_1263",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1263",
+      "age": "62",
+      "sex": "M",
+      "eye": "R",
+      "exam_date": "25/09/2026",
+      "visual_acuity": null,
+      "iop": "24",
+      "stated_diagnosis": "Primary open angle glaucoma",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "41 Station Road, est. 24/08/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0032_L2.jpg"
+  },
+  {
+    "document_id": "dev_A_0033_L3",
+    "layout": "A",
+    "degradation_level": 3,
+    "patient_id": "odir_1491",
+    "true_label": "G",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_1491",
+      "age": "60",
+      "sex": "Female",
+      "eye": "L",
+      "exam_date": "05/07/2026",
+      "visual_acuity": "6/60",
+      "iop": "14",
+      "stated_diagnosis": "Diabetic retinopathy",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "12-6383"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0033_L3.jpg"
+  },
+  {
+    "document_id": "dev_A_0034_L4",
+    "layout": "A",
+    "degradation_level": 4,
+    "patient_id": "odir_2190",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2190",
+      "age": "84",
+      "sex": "Female",
+      "eye": "R",
+      "exam_date": "23/02/2026",
+      "visual_acuity": null,
+      "iop": "15",
+      "stated_diagnosis": "Nuclear sclerotic cataract",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "21-8056"
+      ],
+      [
+        "Clinic Address",
+        "68 Station Road, est. 14/10/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0034_L4.jpg"
+  },
+  {
+    "document_id": "dev_A_0035_L0",
+    "layout": "A",
+    "degradation_level": 0,
+    "patient_id": "odir_2116",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2116",
+      "age": "81",
+      "sex": "F",
+      "eye": "OS",
+      "exam_date": "09/11/2026",
+      "visual_acuity": null,
+      "iop": "24",
+      "stated_diagnosis": "Immature senile cataract",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "55 Station Road, est. 23/05/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0035_L0.jpg"
+  },
+  {
+    "document_id": "dev_A_0036_L1",
+    "layout": "A",
+    "degradation_level": 1,
+    "patient_id": "odir_1436",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1436",
+      "age": "65",
+      "sex": "F",
+      "eye": "Left",
+      "exam_date": "27/11/2026",
+      "visual_acuity": "6/18",
+      "iop": "18",
+      "stated_diagnosis": "Glaucoma",
+      "referral_reason": "Annual review"
+    },
+    "distractors": [],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0036_L1.jpg"
+  },
+  {
+    "document_id": "dev_A_0037_L2",
+    "layout": "A",
+    "degradation_level": 2,
+    "patient_id": "odir_3013",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_3013",
+      "age": "44",
+      "sex": "M",
+      "eye": "OS",
+      "exam_date": "02/10/2026",
+      "visual_acuity": "6/12",
+      "iop": "14",
+      "stated_diagnosis": "No abnormality detected",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Appointment Ref",
+        "20/31"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0037_L2.jpg"
+  },
+  {
+    "document_id": "dev_A_0038_L3",
+    "layout": "A",
+    "degradation_level": 3,
+    "patient_id": "odir_396",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_396",
+      "age": "55",
+      "sex": "M",
+      "eye": "L",
+      "exam_date": "12/02/2026",
+      "visual_acuity": "6/60",
+      "iop": "22",
+      "stated_diagnosis": "No abnormality detected",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0038_L3.jpg"
+  },
+  {
+    "document_id": "dev_A_0039_L4",
+    "layout": "A",
+    "degradation_level": 4,
+    "patient_id": "odir_2451",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2451",
+      "age": "67",
+      "sex": "M",
+      "eye": "Right",
+      "exam_date": "05/01/2026",
+      "visual_acuity": "6/6",
+      "iop": null,
+      "stated_diagnosis": "Normal fundus",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "23-3531"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0039_L4.jpg"
+  },
+  {
+    "document_id": "dev_A_0040_L0",
+    "layout": "A",
+    "degradation_level": 0,
+    "patient_id": "odir_4195",
+    "true_label": "D",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_4195",
+      "age": "56",
+      "sex": "M",
+      "eye": "R",
+      "exam_date": "21/06/2026",
+      "visual_acuity": "6/6",
+      "iop": "22",
+      "stated_diagnosis": "Immature senile cataract",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "16-1349"
+      ],
+      [
+        "Clinic Address",
+        "43 Station Road, est. 08/03/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0040_L0.jpg"
+  },
+  {
+    "document_id": "dev_A_0041_L1",
+    "layout": "A",
+    "degradation_level": 1,
+    "patient_id": "odir_687",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_687",
+      "age": "52",
+      "sex": "Male",
+      "eye": "Right",
+      "exam_date": "18/05/2026",
+      "visual_acuity": null,
+      "iop": "15",
+      "stated_diagnosis": "Diabetic retinopathy",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [
+      [
+        "Appointment Ref",
+        "20/16"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0041_L1.jpg"
+  },
+  {
+    "document_id": "dev_A_0042_L2",
+    "layout": "A",
+    "degradation_level": 2,
+    "patient_id": "odir_3371",
+    "true_label": "N",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_3371",
+      "age": "36",
+      "sex": "Male",
+      "eye": "R",
+      "exam_date": "02/12/2026",
+      "visual_acuity": null,
+      "iop": "26",
+      "stated_diagnosis": "Immature senile cataract",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "14 Station Road, est. 16/12/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0042_L2.jpg"
+  },
+  {
+    "document_id": "dev_A_0043_L3",
+    "layout": "A",
+    "degradation_level": 3,
+    "patient_id": "odir_1241",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1241",
+      "age": "64",
+      "sex": "F",
+      "eye": "Right",
+      "exam_date": "26/12/2026",
+      "visual_acuity": "6/6",
+      "iop": "16",
+      "stated_diagnosis": "Primary open angle glaucoma",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "13-6120"
+      ],
+      [
+        "Clinic Address",
+        "86 Station Road, est. 09/06/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0043_L3.jpg"
+  },
+  {
+    "document_id": "dev_A_0044_L4",
+    "layout": "A",
+    "degradation_level": 4,
+    "patient_id": "odir_2153",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2153",
+      "age": "54",
+      "sex": "M",
+      "eye": "L",
+      "exam_date": "04/07/2026",
+      "visual_acuity": "6/12",
+      "iop": "23",
+      "stated_diagnosis": "Nuclear sclerotic cataract",
+      "referral_reason": "Routine diabetic screening"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "16-3535"
+      ],
+      [
+        "Appointment Ref",
+        "6/54"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0044_L4.jpg"
+  },
+  {
+    "document_id": "dev_A_0045_L0",
+    "layout": "A",
+    "degradation_level": 0,
+    "patient_id": "odir_3203",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_3203",
+      "age": "74",
+      "sex": "Female",
+      "eye": "OD",
+      "exam_date": "23/05/2026",
+      "visual_acuity": "6/12",
+      "iop": "21",
+      "stated_diagnosis": "No abnormality detected",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "10-2503"
+      ],
+      [
+        "Appointment Ref",
+        "20/68"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0045_L0.jpg"
+  },
+  {
+    "document_id": "dev_A_0046_L1",
+    "layout": "A",
+    "degradation_level": 1,
+    "patient_id": "odir_2192",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2192",
+      "age": "50",
+      "sex": "Female",
+      "eye": "L",
+      "exam_date": "03/05/2026",
+      "visual_acuity": "6/18",
+      "iop": "23",
+      "stated_diagnosis": "Immature senile cataract",
+      "referral_reason": "Annual review"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "23-2816"
+      ],
+      [
+        "Clinic Address",
+        "87 Station Road, est. 19/08/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0046_L1.jpg"
+  },
+  {
+    "document_id": "dev_A_0047_L2",
+    "layout": "A",
+    "degradation_level": 2,
+    "patient_id": "odir_4222",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4222",
+      "age": "38",
+      "sex": "Male",
+      "eye": "Left",
+      "exam_date": "16/12/2026",
+      "visual_acuity": null,
+      "iop": "15",
+      "stated_diagnosis": "Diabetic retinopathy",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "51 Station Road, est. 28/12/1998"
+      ],
+      [
+        "Appointment Ref",
+        "6/68"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0047_L2.jpg"
+  },
+  {
+    "document_id": "dev_A_0048_L3",
+    "layout": "A",
+    "degradation_level": 3,
+    "patient_id": "odir_4368",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4368",
+      "age": "38",
+      "sex": "M",
+      "eye": "R",
+      "exam_date": "12/02/2026",
+      "visual_acuity": "6/18",
+      "iop": "13",
+      "stated_diagnosis": "Diabetic retinopathy",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "20-4630"
+      ],
+      [
+        "Clinic Address",
+        "22 Station Road, est. 03/09/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0048_L3.jpg"
+  },
+  {
+    "document_id": "dev_A_0049_L4",
+    "layout": "A",
+    "degradation_level": 4,
+    "patient_id": "odir_2109",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2109",
+      "age": "82",
+      "sex": "Male",
+      "eye": "Left",
+      "exam_date": "25/11/2026",
+      "visual_acuity": "6/18",
+      "iop": "24",
+      "stated_diagnosis": "Nuclear sclerotic cataract",
+      "referral_reason": "Annual review"
+    },
+    "distractors": [],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0049_L4.jpg"
+  },
+  {
+    "document_id": "dev_A_0050_L0",
+    "layout": "A",
+    "degradation_level": 0,
+    "patient_id": "odir_4538",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4538",
+      "age": "44",
+      "sex": "Male",
+      "eye": "Left",
+      "exam_date": "12/05/2026",
+      "visual_acuity": "6/6",
+      "iop": "12",
+      "stated_diagnosis": "NPDR, moderate",
+      "referral_reason": "Annual review"
+    },
+    "distractors": [],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0050_L0.jpg"
+  },
+  {
+    "document_id": "dev_A_0051_L1",
+    "layout": "A",
+    "degradation_level": 1,
+    "patient_id": "odir_1503",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1503",
+      "age": "49",
+      "sex": "Male",
+      "eye": "Right",
+      "exam_date": "23/08/2026",
+      "visual_acuity": "6/18",
+      "iop": null,
+      "stated_diagnosis": "Glaucoma suspect",
+      "referral_reason": "Annual review"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "20-1857"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0051_L1.jpg"
+  },
+  {
+    "document_id": "dev_A_0052_L2",
+    "layout": "A",
+    "degradation_level": 2,
+    "patient_id": "odir_2816",
+    "true_label": "N",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_2816",
+      "age": "55",
+      "sex": "M",
+      "eye": "L",
+      "exam_date": "23/11/2026",
+      "visual_acuity": "6/18",
+      "iop": "14",
+      "stated_diagnosis": "Glaucoma suspect",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0052_L2.jpg"
+  },
+  {
+    "document_id": "dev_A_0053_L3",
+    "layout": "A",
+    "degradation_level": 3,
+    "patient_id": "odir_1220",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1220",
+      "age": "58",
+      "sex": "Female",
+      "eye": "Left",
+      "exam_date": "03/05/2026",
+      "visual_acuity": "6/60",
+      "iop": "13",
+      "stated_diagnosis": "Glaucoma suspect",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "14-7172"
+      ],
+      [
+        "Clinic Address",
+        "24 Station Road, est. 27/12/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0053_L3.jpg"
+  },
+  {
+    "document_id": "dev_A_0054_L4",
+    "layout": "A",
+    "degradation_level": 4,
+    "patient_id": "odir_4190",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4190",
+      "age": "48",
+      "sex": "M",
+      "eye": "Left",
+      "exam_date": "18/04/2026",
+      "visual_acuity": "6/12",
+      "iop": "25",
+      "stated_diagnosis": "Diabetic retinopathy",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0054_L4.jpg"
+  },
+  {
+    "document_id": "dev_A_0055_L0",
+    "layout": "A",
+    "degradation_level": 0,
+    "patient_id": "odir_2519",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2519",
+      "age": "61",
+      "sex": "Female",
+      "eye": "OS",
+      "exam_date": "03/03/2026",
+      "visual_acuity": null,
+      "iop": "24",
+      "stated_diagnosis": "Within normal limits",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0055_L0.jpg"
+  },
+  {
+    "document_id": "dev_A_0056_L1",
+    "layout": "A",
+    "degradation_level": 1,
+    "patient_id": "odir_1152",
+    "true_label": "D",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_1152",
+      "age": "54",
+      "sex": "F",
+      "eye": "Right",
+      "exam_date": "05/01/2026",
+      "visual_acuity": "6/12",
+      "iop": "25",
+      "stated_diagnosis": "Within normal limits",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "28 Station Road, est. 27/03/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0056_L1.jpg"
+  },
+  {
+    "document_id": "dev_A_0057_L2",
+    "layout": "A",
+    "degradation_level": 2,
+    "patient_id": "odir_1967",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1967",
+      "age": "54",
+      "sex": "Male",
+      "eye": "R",
+      "exam_date": "17/10/2026",
+      "visual_acuity": "6/9",
+      "iop": null,
+      "stated_diagnosis": "Primary open angle glaucoma",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "12-9576"
+      ],
+      [
+        "Appointment Ref",
+        "6/59"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0057_L2.jpg"
+  },
+  {
+    "document_id": "dev_A_0058_L3",
+    "layout": "A",
+    "degradation_level": 3,
+    "patient_id": "odir_1006",
+    "true_label": "N",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_1006",
+      "age": "64",
+      "sex": "M",
+      "eye": "Left",
+      "exam_date": "02/06/2026",
+      "visual_acuity": "6/24",
+      "iop": "20",
+      "stated_diagnosis": "Nuclear sclerotic cataract",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "15-3209"
+      ],
+      [
+        "Clinic Address",
+        "59 Station Road, est. 02/05/1998"
+      ],
+      [
+        "Appointment Ref",
+        "6/15"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0058_L3.jpg"
+  },
+  {
+    "document_id": "dev_A_0059_L4",
+    "layout": "A",
+    "degradation_level": 4,
+    "patient_id": "odir_2227",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2227",
+      "age": "62",
+      "sex": "F",
+      "eye": "OS",
+      "exam_date": "04/06/2026",
+      "visual_acuity": "6/18",
+      "iop": "22",
+      "stated_diagnosis": "Nuclear sclerotic cataract",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "25-7018"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_A_0059_L4.jpg"
+  },
+  {
+    "document_id": "dev_B_0060_L0",
+    "layout": "B",
+    "degradation_level": 0,
+    "patient_id": "odir_4272",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4272",
+      "age": "40",
+      "sex": "F",
+      "eye": "Left",
+      "exam_date": "23/08/2026",
+      "visual_acuity": "6/12",
+      "iop": "24",
+      "stated_diagnosis": "Diabetic retinopathy",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "11-2229"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0060_L0.jpg"
+  },
+  {
+    "document_id": "dev_B_0061_L1",
+    "layout": "B",
+    "degradation_level": 1,
+    "patient_id": "odir_2336",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2336",
+      "age": "44",
+      "sex": "F",
+      "eye": "OS",
+      "exam_date": "19/01/2026",
+      "visual_acuity": "6/24",
+      "iop": "14",
+      "stated_diagnosis": "Within normal limits",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "26-7012"
+      ],
+      [
+        "Clinic Address",
+        "84 Station Road, est. 09/04/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0061_L1.jpg"
+  },
+  {
+    "document_id": "dev_B_0062_L2",
+    "layout": "B",
+    "degradation_level": 2,
+    "patient_id": "odir_2459",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2459",
+      "age": "39",
+      "sex": "F",
+      "eye": "Right",
+      "exam_date": "04/03/2026",
+      "visual_acuity": "6/60",
+      "iop": "12",
+      "stated_diagnosis": "Normal fundus",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Appointment Ref",
+        "20/18"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0062_L2.jpg"
+  },
+  {
+    "document_id": "dev_B_0063_L3",
+    "layout": "B",
+    "degradation_level": 3,
+    "patient_id": "odir_2121",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2121",
+      "age": "56",
+      "sex": "M",
+      "eye": "Left",
+      "exam_date": "12/09/2026",
+      "visual_acuity": "6/24",
+      "iop": null,
+      "stated_diagnosis": "Immature senile cataract",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "25-9612"
+      ],
+      [
+        "Clinic Address",
+        "53 Station Road, est. 27/10/1998"
+      ],
+      [
+        "Appointment Ref",
+        "20/92"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0063_L3.jpg"
+  },
+  {
+    "document_id": "dev_B_0064_L4",
+    "layout": "B",
+    "degradation_level": 4,
+    "patient_id": "odir_583",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_583",
+      "age": "54",
+      "sex": "Male",
+      "eye": "Left",
+      "exam_date": "17/03/2026",
+      "visual_acuity": null,
+      "iop": "15",
+      "stated_diagnosis": "Glaucoma",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "19-2292"
+      ],
+      [
+        "Clinic Address",
+        "82 Station Road, est. 18/05/1998"
+      ],
+      [
+        "Appointment Ref",
+        "20/88"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0064_L4.jpg"
+  },
+  {
+    "document_id": "dev_B_0065_L0",
+    "layout": "B",
+    "degradation_level": 0,
+    "patient_id": "odir_2216",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2216",
+      "age": "38",
+      "sex": "Male",
+      "eye": "Left",
+      "exam_date": "02/11/2026",
+      "visual_acuity": "6/60",
+      "iop": "18",
+      "stated_diagnosis": "Nuclear sclerotic cataract",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "19-5949"
+      ],
+      [
+        "Clinic Address",
+        "88 Station Road, est. 13/05/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0065_L0.jpg"
+  },
+  {
+    "document_id": "dev_B_0066_L1",
+    "layout": "B",
+    "degradation_level": 1,
+    "patient_id": "odir_4037",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4037",
+      "age": "58",
+      "sex": "M",
+      "eye": "L",
+      "exam_date": "28/06/2026",
+      "visual_acuity": "6/18",
+      "iop": "14",
+      "stated_diagnosis": "Non-proliferative diabetic retinopathy",
+      "referral_reason": "Annual review"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "17-3308"
+      ],
+      [
+        "Clinic Address",
+        "38 Station Road, est. 13/10/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0066_L1.jpg"
+  },
+  {
+    "document_id": "dev_B_0067_L2",
+    "layout": "B",
+    "degradation_level": 2,
+    "patient_id": "odir_1234",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1234",
+      "age": "66",
+      "sex": "Female",
+      "eye": "Left",
+      "exam_date": "19/06/2026",
+      "visual_acuity": "6/6",
+      "iop": "11",
+      "stated_diagnosis": "Primary open angle glaucoma",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "10-2761"
+      ],
+      [
+        "Clinic Address",
+        "34 Station Road, est. 24/06/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0067_L2.jpg"
+  },
+  {
+    "document_id": "dev_B_0068_L3",
+    "layout": "B",
+    "degradation_level": 3,
+    "patient_id": "odir_3309",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_3309",
+      "age": "56",
+      "sex": "Male",
+      "eye": "Right",
+      "exam_date": "04/07/2026",
+      "visual_acuity": null,
+      "iop": "20",
+      "stated_diagnosis": "Within normal limits",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "11-1637"
+      ],
+      [
+        "Clinic Address",
+        "43 Station Road, est. 26/08/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0068_L3.jpg"
+  },
+  {
+    "document_id": "dev_B_0069_L4",
+    "layout": "B",
+    "degradation_level": 4,
+    "patient_id": "odir_1297",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1297",
+      "age": "70",
+      "sex": "M",
+      "eye": "OS",
+      "exam_date": "27/01/2026",
+      "visual_acuity": "6/12",
+      "iop": "20",
+      "stated_diagnosis": "Glaucoma suspect",
+      "referral_reason": "Routine diabetic screening"
+    },
+    "distractors": [
+      [
+        "Appointment Ref",
+        "20/43"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0069_L4.jpg"
+  },
+  {
+    "document_id": "dev_B_0070_L0",
+    "layout": "B",
+    "degradation_level": 0,
+    "patient_id": "odir_972",
+    "true_label": "D",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_972",
+      "age": "53",
+      "sex": "Male",
+      "eye": "Left",
+      "exam_date": "01/08/2026",
+      "visual_acuity": "6/12",
+      "iop": "23",
+      "stated_diagnosis": "Cataract",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0070_L0.jpg"
+  },
+  {
+    "document_id": "dev_B_0071_L1",
+    "layout": "B",
+    "degradation_level": 1,
+    "patient_id": "odir_784",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_784",
+      "age": "67",
+      "sex": "M",
+      "eye": "L",
+      "exam_date": "11/09/2026",
+      "visual_acuity": null,
+      "iop": null,
+      "stated_diagnosis": "NPDR, moderate",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "19-5735"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0071_L1.jpg"
+  },
+  {
+    "document_id": "dev_B_0072_L2",
+    "layout": "B",
+    "degradation_level": 2,
+    "patient_id": "odir_1977",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1977",
+      "age": "70",
+      "sex": "M",
+      "eye": "OS",
+      "exam_date": "25/03/2026",
+      "visual_acuity": "6/12",
+      "iop": null,
+      "stated_diagnosis": "Primary open angle glaucoma",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "69 Station Road, est. 09/09/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0072_L2.jpg"
+  },
+  {
+    "document_id": "dev_B_0073_L3",
+    "layout": "B",
+    "degradation_level": 3,
+    "patient_id": "odir_701",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_701",
+      "age": "60",
+      "sex": "Male",
+      "eye": "Left",
+      "exam_date": "18/03/2026",
+      "visual_acuity": "6/18",
+      "iop": null,
+      "stated_diagnosis": "Normal fundus",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [
+      [
+        "Appointment Ref",
+        "6/78"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0073_L3.jpg"
+  },
+  {
+    "document_id": "dev_B_0074_L4",
+    "layout": "B",
+    "degradation_level": 4,
+    "patient_id": "odir_4372",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4372",
+      "age": "65",
+      "sex": "Male",
+      "eye": "OS",
+      "exam_date": "10/08/2026",
+      "visual_acuity": "6/36",
+      "iop": "26",
+      "stated_diagnosis": "Non-proliferative diabetic retinopathy",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "15-8518"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0074_L4.jpg"
+  },
+  {
+    "document_id": "dev_B_0075_L0",
+    "layout": "B",
+    "degradation_level": 0,
+    "patient_id": "odir_4197",
+    "true_label": "D",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_4197",
+      "age": "41",
+      "sex": "Female",
+      "eye": "Right",
+      "exam_date": "05/08/2026",
+      "visual_acuity": "6/12",
+      "iop": "17",
+      "stated_diagnosis": "Cataract",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "10-5285"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0075_L0.jpg"
+  },
+  {
+    "document_id": "dev_B_0076_L1",
+    "layout": "B",
+    "degradation_level": 1,
+    "patient_id": "odir_275",
+    "true_label": "N",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_275",
+      "age": "61",
+      "sex": "F",
+      "eye": "L",
+      "exam_date": "08/04/2026",
+      "visual_acuity": "6/9",
+      "iop": "25",
+      "stated_diagnosis": "Glaucoma",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "25-9806"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0076_L1.jpg"
+  },
+  {
+    "document_id": "dev_B_0077_L2",
+    "layout": "B",
+    "degradation_level": 2,
+    "patient_id": "odir_1231",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1231",
+      "age": "59",
+      "sex": "Female",
+      "eye": "Left",
+      "exam_date": "11/09/2026",
+      "visual_acuity": "6/18",
+      "iop": "13",
+      "stated_diagnosis": "Glaucoma suspect",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "11-8429"
+      ],
+      [
+        "Clinic Address",
+        "54 Station Road, est. 15/10/1998"
+      ],
+      [
+        "Appointment Ref",
+        "20/96"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0077_L2.jpg"
+  },
+  {
+    "document_id": "dev_B_0078_L3",
+    "layout": "B",
+    "degradation_level": 3,
+    "patient_id": "odir_2451",
+    "true_label": "N",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_2451",
+      "age": "67",
+      "sex": "Male",
+      "eye": "OD",
+      "exam_date": "02/05/2026",
+      "visual_acuity": "6/18",
+      "iop": "15",
+      "stated_diagnosis": "Diabetic retinopathy",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "49 Station Road, est. 13/02/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0078_L3.jpg"
+  },
+  {
+    "document_id": "dev_B_0079_L4",
+    "layout": "B",
+    "degradation_level": 4,
+    "patient_id": "odir_2194",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2194",
+      "age": "50",
+      "sex": "M",
+      "eye": "R",
+      "exam_date": "24/09/2026",
+      "visual_acuity": null,
+      "iop": "22",
+      "stated_diagnosis": "Cataract",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Appointment Ref",
+        "20/88"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0079_L4.jpg"
+  },
+  {
+    "document_id": "dev_B_0080_L0",
+    "layout": "B",
+    "degradation_level": 0,
+    "patient_id": "odir_2218",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2218",
+      "age": "48",
+      "sex": "Male",
+      "eye": "OD",
+      "exam_date": "15/04/2026",
+      "visual_acuity": "6/24",
+      "iop": "16",
+      "stated_diagnosis": "Cataract",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "77 Station Road, est. 25/11/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0080_L0.jpg"
+  },
+  {
+    "document_id": "dev_B_0081_L1",
+    "layout": "B",
+    "degradation_level": 1,
+    "patient_id": "odir_1365",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1365",
+      "age": "67",
+      "sex": "Female",
+      "eye": "L",
+      "exam_date": "22/07/2026",
+      "visual_acuity": "6/24",
+      "iop": "25",
+      "stated_diagnosis": "Glaucoma",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "23-7688"
+      ],
+      [
+        "Clinic Address",
+        "49 Station Road, est. 06/09/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0081_L1.jpg"
+  },
+  {
+    "document_id": "dev_B_0082_L2",
+    "layout": "B",
+    "degradation_level": 2,
+    "patient_id": "odir_139",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_139",
+      "age": "41",
+      "sex": "Male",
+      "eye": "OS",
+      "exam_date": "28/06/2026",
+      "visual_acuity": "6/6",
+      "iop": "16",
+      "stated_diagnosis": "Diabetic retinopathy",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "16-8854"
+      ],
+      [
+        "Clinic Address",
+        "43 Station Road, est. 10/01/1998"
+      ],
+      [
+        "Appointment Ref",
+        "6/25"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0082_L2.jpg"
+  },
+  {
+    "document_id": "dev_B_0083_L3",
+    "layout": "B",
+    "degradation_level": 3,
+    "patient_id": "odir_4497",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4497",
+      "age": "52",
+      "sex": "M",
+      "eye": "OD",
+      "exam_date": "04/12/2026",
+      "visual_acuity": null,
+      "iop": "20",
+      "stated_diagnosis": "Diabetic retinopathy",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "71 Station Road, est. 19/10/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0083_L3.jpg"
+  },
+  {
+    "document_id": "dev_B_0084_L4",
+    "layout": "B",
+    "degradation_level": 4,
+    "patient_id": "odir_3145",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_3145",
+      "age": "57",
+      "sex": "F",
+      "eye": "L",
+      "exam_date": "21/12/2026",
+      "visual_acuity": null,
+      "iop": "24",
+      "stated_diagnosis": "No abnormality detected",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "11-9584"
+      ],
+      [
+        "Clinic Address",
+        "10 Station Road, est. 27/11/1998"
+      ],
+      [
+        "Appointment Ref",
+        "6/62"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0084_L4.jpg"
+  },
+  {
+    "document_id": "dev_B_0085_L0",
+    "layout": "B",
+    "degradation_level": 0,
+    "patient_id": "odir_2729",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2729",
+      "age": "62",
+      "sex": "F",
+      "eye": "L",
+      "exam_date": "16/01/2026",
+      "visual_acuity": "6/6",
+      "iop": "23",
+      "stated_diagnosis": "No abnormality detected",
+      "referral_reason": "Routine diabetic screening"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "23-3937"
+      ],
+      [
+        "Clinic Address",
+        "13 Station Road, est. 17/03/1998"
+      ],
+      [
+        "Appointment Ref",
+        "20/55"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0085_L0.jpg"
+  },
+  {
+    "document_id": "dev_B_0086_L1",
+    "layout": "B",
+    "degradation_level": 1,
+    "patient_id": "odir_4153",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4153",
+      "age": "64",
+      "sex": "Female",
+      "eye": "R",
+      "exam_date": "28/11/2026",
+      "visual_acuity": "6/60",
+      "iop": "11",
+      "stated_diagnosis": "Diabetic retinopathy",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "15-2354"
+      ],
+      [
+        "Clinic Address",
+        "56 Station Road, est. 21/06/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0086_L1.jpg"
+  },
+  {
+    "document_id": "dev_B_0087_L2",
+    "layout": "B",
+    "degradation_level": 2,
+    "patient_id": "odir_1977",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1977",
+      "age": "70",
+      "sex": "Male",
+      "eye": "Left",
+      "exam_date": "28/06/2026",
+      "visual_acuity": "6/6",
+      "iop": "16",
+      "stated_diagnosis": "Glaucoma suspect",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "15-4939"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0087_L2.jpg"
+  },
+  {
+    "document_id": "dev_B_0088_L3",
+    "layout": "B",
+    "degradation_level": 3,
+    "patient_id": "odir_2247",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2247",
+      "age": "73",
+      "sex": "M",
+      "eye": "OS",
+      "exam_date": "01/11/2026",
+      "visual_acuity": "6/12",
+      "iop": "24",
+      "stated_diagnosis": "Immature senile cataract",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Appointment Ref",
+        "20/41"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0088_L3.jpg"
+  },
+  {
+    "document_id": "dev_B_0089_L4",
+    "layout": "B",
+    "degradation_level": 4,
+    "patient_id": "odir_4497",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4497",
+      "age": "52",
+      "sex": "M",
+      "eye": "Right",
+      "exam_date": "05/02/2026",
+      "visual_acuity": "6/9",
+      "iop": "23",
+      "stated_diagnosis": "Non-proliferative diabetic retinopathy",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "12-6315"
+      ],
+      [
+        "Appointment Ref",
+        "20/59"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0089_L4.jpg"
+  },
+  {
+    "document_id": "dev_B_0090_L0",
+    "layout": "B",
+    "degradation_level": 0,
+    "patient_id": "odir_4217",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4217",
+      "age": "39",
+      "sex": "Male",
+      "eye": "Right",
+      "exam_date": "14/05/2026",
+      "visual_acuity": "6/18",
+      "iop": "19",
+      "stated_diagnosis": "Non-proliferative diabetic retinopathy",
+      "referral_reason": "Routine diabetic screening"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "16-8501"
+      ],
+      [
+        "Clinic Address",
+        "39 Station Road, est. 01/07/1998"
+      ],
+      [
+        "Appointment Ref",
+        "20/52"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0090_L0.jpg"
+  },
+  {
+    "document_id": "dev_B_0091_L1",
+    "layout": "B",
+    "degradation_level": 1,
+    "patient_id": "odir_1260",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1260",
+      "age": "66",
+      "sex": "F",
+      "eye": "OD",
+      "exam_date": "10/12/2026",
+      "visual_acuity": "6/36",
+      "iop": "25",
+      "stated_diagnosis": "Glaucoma suspect",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "16-9939"
+      ],
+      [
+        "Clinic Address",
+        "99 Station Road, est. 18/01/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0091_L1.jpg"
+  },
+  {
+    "document_id": "dev_B_0092_L2",
+    "layout": "B",
+    "degradation_level": 2,
+    "patient_id": "odir_4516",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4516",
+      "age": "73",
+      "sex": "F",
+      "eye": "OD",
+      "exam_date": "03/08/2026",
+      "visual_acuity": "6/24",
+      "iop": "25",
+      "stated_diagnosis": "NPDR, moderate",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "11-6890"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0092_L2.jpg"
+  },
+  {
+    "document_id": "dev_B_0093_L3",
+    "layout": "B",
+    "degradation_level": 3,
+    "patient_id": "odir_2790",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2790",
+      "age": "61",
+      "sex": "M",
+      "eye": "OS",
+      "exam_date": "04/01/2026",
+      "visual_acuity": "6/6",
+      "iop": "18",
+      "stated_diagnosis": "No abnormality detected",
+      "referral_reason": "Annual review"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "21-7408"
+      ],
+      [
+        "Clinic Address",
+        "87 Station Road, est. 19/12/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0093_L3.jpg"
+  },
+  {
+    "document_id": "dev_B_0094_L4",
+    "layout": "B",
+    "degradation_level": 4,
+    "patient_id": "odir_1221",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1221",
+      "age": "70",
+      "sex": "M",
+      "eye": "OD",
+      "exam_date": "16/02/2026",
+      "visual_acuity": "6/18",
+      "iop": "24",
+      "stated_diagnosis": "Primary open angle glaucoma",
+      "referral_reason": null
+    },
+    "distractors": [],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0094_L4.jpg"
+  },
+  {
+    "document_id": "dev_B_0095_L0",
+    "layout": "B",
+    "degradation_level": 0,
+    "patient_id": "odir_1210",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1210",
+      "age": "62",
+      "sex": "Male",
+      "eye": "R",
+      "exam_date": "22/07/2026",
+      "visual_acuity": "6/18",
+      "iop": "10",
+      "stated_diagnosis": "Glaucoma suspect",
+      "referral_reason": "Annual review"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "16-4371"
+      ],
+      [
+        "Clinic Address",
+        "91 Station Road, est. 26/02/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0095_L0.jpg"
+  },
+  {
+    "document_id": "dev_B_0096_L1",
+    "layout": "B",
+    "degradation_level": 1,
+    "patient_id": "odir_2872",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2872",
+      "age": "72",
+      "sex": "M",
+      "eye": "R",
+      "exam_date": "04/06/2026",
+      "visual_acuity": "6/12",
+      "iop": "24",
+      "stated_diagnosis": "Within normal limits",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "18 Station Road, est. 11/02/1998"
+      ],
+      [
+        "Appointment Ref",
+        "6/33"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0096_L1.jpg"
+  },
+  {
+    "document_id": "dev_B_0097_L2",
+    "layout": "B",
+    "degradation_level": 2,
+    "patient_id": "odir_3026",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_3026",
+      "age": "66",
+      "sex": "Female",
+      "eye": "R",
+      "exam_date": "06/08/2026",
+      "visual_acuity": "6/12",
+      "iop": "14",
+      "stated_diagnosis": "No abnormality detected",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "25 Station Road, est. 27/07/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0097_L2.jpg"
+  },
+  {
+    "document_id": "dev_B_0098_L3",
+    "layout": "B",
+    "degradation_level": 3,
+    "patient_id": "odir_4195",
+    "true_label": "D",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_4195",
+      "age": "56",
+      "sex": "M",
+      "eye": "Left",
+      "exam_date": "25/08/2026",
+      "visual_acuity": null,
+      "iop": null,
+      "stated_diagnosis": "Within normal limits",
+      "referral_reason": "Annual review"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "97 Station Road, est. 02/12/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0098_L3.jpg"
+  },
+  {
+    "document_id": "dev_B_0099_L4",
+    "layout": "B",
+    "degradation_level": 4,
+    "patient_id": "odir_2176",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2176",
+      "age": "82",
+      "sex": "Female",
+      "eye": "Right",
+      "exam_date": "07/12/2026",
+      "visual_acuity": null,
+      "iop": "21",
+      "stated_diagnosis": "Nuclear sclerotic cataract",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "16-1972"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0099_L4.jpg"
+  },
+  {
+    "document_id": "dev_B_0100_L0",
+    "layout": "B",
+    "degradation_level": 0,
+    "patient_id": "odir_1289",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1289",
+      "age": "71",
+      "sex": "F",
+      "eye": "R",
+      "exam_date": "05/12/2026",
+      "visual_acuity": "6/60",
+      "iop": "14",
+      "stated_diagnosis": "Glaucoma",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "74 Station Road, est. 21/05/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0100_L0.jpg"
+  },
+  {
+    "document_id": "dev_B_0101_L1",
+    "layout": "B",
+    "degradation_level": 1,
+    "patient_id": "odir_1212",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1212",
+      "age": "73",
+      "sex": "F",
+      "eye": "L",
+      "exam_date": "01/12/2026",
+      "visual_acuity": "6/6",
+      "iop": "24",
+      "stated_diagnosis": "Glaucoma suspect",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "23-4470"
+      ],
+      [
+        "Clinic Address",
+        "42 Station Road, est. 27/05/1998"
+      ],
+      [
+        "Appointment Ref",
+        "6/82"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0101_L1.jpg"
+  },
+  {
+    "document_id": "dev_B_0102_L2",
+    "layout": "B",
+    "degradation_level": 2,
+    "patient_id": "odir_469",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_469",
+      "age": "69",
+      "sex": "Female",
+      "eye": "L",
+      "exam_date": "10/03/2026",
+      "visual_acuity": null,
+      "iop": "18",
+      "stated_diagnosis": "Diabetic retinopathy",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "81 Station Road, est. 10/12/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0102_L2.jpg"
+  },
+  {
+    "document_id": "dev_B_0103_L3",
+    "layout": "B",
+    "degradation_level": 3,
+    "patient_id": "odir_1465",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1465",
+      "age": "54",
+      "sex": "Male",
+      "eye": "Right",
+      "exam_date": "23/06/2026",
+      "visual_acuity": null,
+      "iop": null,
+      "stated_diagnosis": "Primary open angle glaucoma",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "41 Station Road, est. 12/05/1998"
+      ],
+      [
+        "Appointment Ref",
+        "6/92"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0103_L3.jpg"
+  },
+  {
+    "document_id": "dev_B_0104_L4",
+    "layout": "B",
+    "degradation_level": 4,
+    "patient_id": "odir_2797",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2797",
+      "age": "59",
+      "sex": "M",
+      "eye": "L",
+      "exam_date": "22/08/2026",
+      "visual_acuity": null,
+      "iop": null,
+      "stated_diagnosis": "No abnormality detected",
+      "referral_reason": "Routine diabetic screening"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "23-6152"
+      ],
+      [
+        "Appointment Ref",
+        "6/41"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0104_L4.jpg"
+  },
+  {
+    "document_id": "dev_B_0105_L0",
+    "layout": "B",
+    "degradation_level": 0,
+    "patient_id": "odir_3276",
+    "true_label": "N",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_3276",
+      "age": "50",
+      "sex": "M",
+      "eye": "OS",
+      "exam_date": "04/04/2026",
+      "visual_acuity": "6/18",
+      "iop": "12",
+      "stated_diagnosis": "NPDR, moderate",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Appointment Ref",
+        "6/70"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0105_L0.jpg"
+  },
+  {
+    "document_id": "dev_B_0106_L1",
+    "layout": "B",
+    "degradation_level": 1,
+    "patient_id": "odir_1239",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1239",
+      "age": "62",
+      "sex": "M",
+      "eye": "OS",
+      "exam_date": "23/07/2026",
+      "visual_acuity": "6/6",
+      "iop": "14",
+      "stated_diagnosis": "Primary open angle glaucoma",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Appointment Ref",
+        "6/49"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0106_L1.jpg"
+  },
+  {
+    "document_id": "dev_B_0107_L2",
+    "layout": "B",
+    "degradation_level": 2,
+    "patient_id": "odir_4610",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4610",
+      "age": "43",
+      "sex": "Female",
+      "eye": "Right",
+      "exam_date": "01/12/2026",
+      "visual_acuity": "6/9",
+      "iop": "10",
+      "stated_diagnosis": "Diabetic retinopathy",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "17 Station Road, est. 24/05/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0107_L2.jpg"
+  },
+  {
+    "document_id": "dev_B_0108_L3",
+    "layout": "B",
+    "degradation_level": 3,
+    "patient_id": "odir_4016",
+    "true_label": "D",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_4016",
+      "age": "35",
+      "sex": "Female",
+      "eye": "OS",
+      "exam_date": "06/05/2026",
+      "visual_acuity": null,
+      "iop": "13",
+      "stated_diagnosis": "Nuclear sclerotic cataract",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "10-5006"
+      ],
+      [
+        "Clinic Address",
+        "47 Station Road, est. 13/03/1998"
+      ],
+      [
+        "Appointment Ref",
+        "6/80"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0108_L3.jpg"
+  },
+  {
+    "document_id": "dev_B_0109_L4",
+    "layout": "B",
+    "degradation_level": 4,
+    "patient_id": "odir_1344",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1344",
+      "age": "52",
+      "sex": "Female",
+      "eye": "Right",
+      "exam_date": "08/09/2026",
+      "visual_acuity": "6/6",
+      "iop": "22",
+      "stated_diagnosis": "Glaucoma",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "24-1130"
+      ],
+      [
+        "Clinic Address",
+        "38 Station Road, est. 19/05/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0109_L4.jpg"
+  },
+  {
+    "document_id": "dev_B_0110_L0",
+    "layout": "B",
+    "degradation_level": 0,
+    "patient_id": "odir_2161",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2161",
+      "age": "59",
+      "sex": "M",
+      "eye": "R",
+      "exam_date": "27/12/2026",
+      "visual_acuity": "6/6",
+      "iop": "20",
+      "stated_diagnosis": "Cataract",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "17-7878"
+      ],
+      [
+        "Clinic Address",
+        "8 Station Road, est. 05/12/1998"
+      ],
+      [
+        "Appointment Ref",
+        "6/39"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0110_L0.jpg"
+  },
+  {
+    "document_id": "dev_B_0111_L1",
+    "layout": "B",
+    "degradation_level": 1,
+    "patient_id": "odir_4377",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4377",
+      "age": "54",
+      "sex": "Female",
+      "eye": "L",
+      "exam_date": "19/01/2026",
+      "visual_acuity": "6/18",
+      "iop": "14",
+      "stated_diagnosis": "No abnormality detected",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Appointment Ref",
+        "20/39"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0111_L1.jpg"
+  },
+  {
+    "document_id": "dev_B_0112_L2",
+    "layout": "B",
+    "degradation_level": 2,
+    "patient_id": "odir_1413",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1413",
+      "age": "68",
+      "sex": "Female",
+      "eye": "OD",
+      "exam_date": "10/08/2026",
+      "visual_acuity": "6/12",
+      "iop": "13",
+      "stated_diagnosis": "Glaucoma",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "42 Station Road, est. 05/02/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0112_L2.jpg"
+  },
+  {
+    "document_id": "dev_B_0113_L3",
+    "layout": "B",
+    "degradation_level": 3,
+    "patient_id": "odir_250",
+    "true_label": "D",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_250",
+      "age": "60",
+      "sex": "Male",
+      "eye": "Left",
+      "exam_date": "01/01/2026",
+      "visual_acuity": "6/60",
+      "iop": "17",
+      "stated_diagnosis": "No abnormality detected",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Appointment Ref",
+        "6/12"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0113_L3.jpg"
+  },
+  {
+    "document_id": "dev_B_0114_L4",
+    "layout": "B",
+    "degradation_level": 4,
+    "patient_id": "odir_583",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_583",
+      "age": "54",
+      "sex": "M",
+      "eye": "OS",
+      "exam_date": "01/07/2026",
+      "visual_acuity": null,
+      "iop": null,
+      "stated_diagnosis": "Glaucoma",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "80 Station Road, est. 20/04/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0114_L4.jpg"
+  },
+  {
+    "document_id": "dev_B_0115_L0",
+    "layout": "B",
+    "degradation_level": 0,
+    "patient_id": "odir_1418",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1418",
+      "age": "68",
+      "sex": "Male",
+      "eye": "OS",
+      "exam_date": "26/12/2026",
+      "visual_acuity": "6/12",
+      "iop": "25",
+      "stated_diagnosis": "Glaucoma suspect",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "10-6224"
+      ],
+      [
+        "Appointment Ref",
+        "20/17"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0115_L0.jpg"
+  },
+  {
+    "document_id": "dev_B_0116_L1",
+    "layout": "B",
+    "degradation_level": 1,
+    "patient_id": "odir_498",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_498",
+      "age": "43",
+      "sex": "Male",
+      "eye": "Left",
+      "exam_date": "19/07/2026",
+      "visual_acuity": "6/12",
+      "iop": "15",
+      "stated_diagnosis": "Diabetic retinopathy",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "90 Station Road, est. 12/10/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0116_L1.jpg"
+  },
+  {
+    "document_id": "dev_B_0117_L2",
+    "layout": "B",
+    "degradation_level": 2,
+    "patient_id": "odir_2173",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2173",
+      "age": "81",
+      "sex": "Female",
+      "eye": "Right",
+      "exam_date": "11/12/2026",
+      "visual_acuity": "6/9",
+      "iop": null,
+      "stated_diagnosis": "Cataract",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "26-6978"
+      ],
+      [
+        "Appointment Ref",
+        "20/85"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0117_L2.jpg"
+  },
+  {
+    "document_id": "dev_B_0118_L3",
+    "layout": "B",
+    "degradation_level": 3,
+    "patient_id": "odir_3423",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_3423",
+      "age": "50",
+      "sex": "M",
+      "eye": "Right",
+      "exam_date": "22/10/2026",
+      "visual_acuity": "6/60",
+      "iop": "15",
+      "stated_diagnosis": "Normal fundus",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "22-1530"
+      ],
+      [
+        "Clinic Address",
+        "41 Station Road, est. 26/10/1998"
+      ],
+      [
+        "Appointment Ref",
+        "6/73"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0118_L3.jpg"
+  },
+  {
+    "document_id": "dev_B_0119_L4",
+    "layout": "B",
+    "degradation_level": 4,
+    "patient_id": "odir_2369",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2369",
+      "age": "55",
+      "sex": "M",
+      "eye": "OD",
+      "exam_date": "01/05/2026",
+      "visual_acuity": "6/9",
+      "iop": "17",
+      "stated_diagnosis": "Within normal limits",
+      "referral_reason": "Routine diabetic screening"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "24-7875"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_B_0119_L4.jpg"
+  },
+  {
+    "document_id": "dev_C_0120_L0",
+    "layout": "C",
+    "degradation_level": 0,
+    "patient_id": "odir_2138",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2138",
+      "age": "79",
+      "sex": "F",
+      "eye": "OD",
+      "exam_date": "04/02/2026",
+      "visual_acuity": "6/12",
+      "iop": "15",
+      "stated_diagnosis": "Immature senile cataract",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "25-1507"
+      ],
+      [
+        "Clinic Address",
+        "84 Station Road, est. 06/10/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0120_L0.jpg"
+  },
+  {
+    "document_id": "dev_C_0121_L1",
+    "layout": "C",
+    "degradation_level": 1,
+    "patient_id": "odir_4246",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4246",
+      "age": "56",
+      "sex": "Female",
+      "eye": "OS",
+      "exam_date": "19/09/2026",
+      "visual_acuity": "6/60",
+      "iop": "25",
+      "stated_diagnosis": "Diabetic retinopathy",
+      "referral_reason": "Routine diabetic screening"
+    },
+    "distractors": [
+      [
+        "Appointment Ref",
+        "6/36"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0121_L1.jpg"
+  },
+  {
+    "document_id": "dev_C_0122_L2",
+    "layout": "C",
+    "degradation_level": 2,
+    "patient_id": "odir_4087",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4087",
+      "age": "57",
+      "sex": "M",
+      "eye": "OD",
+      "exam_date": "06/08/2026",
+      "visual_acuity": "6/6",
+      "iop": "18",
+      "stated_diagnosis": "Non-proliferative diabetic retinopathy",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "13-2404"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0122_L2.jpg"
+  },
+  {
+    "document_id": "dev_C_0123_L3",
+    "layout": "C",
+    "degradation_level": 3,
+    "patient_id": "odir_4679",
+    "true_label": "D",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_4679",
+      "age": "69",
+      "sex": "Male",
+      "eye": "L",
+      "exam_date": "19/09/2026",
+      "visual_acuity": "6/60",
+      "iop": null,
+      "stated_diagnosis": "Cataract",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "55 Station Road, est. 03/11/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0123_L3.jpg"
+  },
+  {
+    "document_id": "dev_C_0124_L4",
+    "layout": "C",
+    "degradation_level": 4,
+    "patient_id": "odir_1265",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1265",
+      "age": "75",
+      "sex": "Male",
+      "eye": "L",
+      "exam_date": "20/10/2026",
+      "visual_acuity": "6/24",
+      "iop": null,
+      "stated_diagnosis": "Glaucoma",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "14 Station Road, est. 19/02/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0124_L4.jpg"
+  },
+  {
+    "document_id": "dev_C_0125_L0",
+    "layout": "C",
+    "degradation_level": 0,
+    "patient_id": "odir_955",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_955",
+      "age": "75",
+      "sex": "M",
+      "eye": "Right",
+      "exam_date": "13/06/2026",
+      "visual_acuity": "6/36",
+      "iop": "17",
+      "stated_diagnosis": "Cataract",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "19-6094"
+      ],
+      [
+        "Clinic Address",
+        "63 Station Road, est. 28/12/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0125_L0.jpg"
+  },
+  {
+    "document_id": "dev_C_0126_L1",
+    "layout": "C",
+    "degradation_level": 1,
+    "patient_id": "odir_1408",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1408",
+      "age": "69",
+      "sex": "M",
+      "eye": "R",
+      "exam_date": "16/09/2026",
+      "visual_acuity": null,
+      "iop": "21",
+      "stated_diagnosis": "Glaucoma",
+      "referral_reason": "Annual review"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "26-1474"
+      ],
+      [
+        "Clinic Address",
+        "26 Station Road, est. 27/01/1998"
+      ],
+      [
+        "Appointment Ref",
+        "20/16"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0126_L1.jpg"
+  },
+  {
+    "document_id": "dev_C_0127_L2",
+    "layout": "C",
+    "degradation_level": 2,
+    "patient_id": "odir_3201",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_3201",
+      "age": "46",
+      "sex": "M",
+      "eye": "R",
+      "exam_date": "18/06/2026",
+      "visual_acuity": null,
+      "iop": "15",
+      "stated_diagnosis": "Normal fundus",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "16-4626"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0127_L2.jpg"
+  },
+  {
+    "document_id": "dev_C_0128_L3",
+    "layout": "C",
+    "degradation_level": 3,
+    "patient_id": "odir_726",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_726",
+      "age": "60",
+      "sex": "F",
+      "eye": "R",
+      "exam_date": "23/11/2026",
+      "visual_acuity": null,
+      "iop": "23",
+      "stated_diagnosis": "Immature senile cataract",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "22-2676"
+      ],
+      [
+        "Clinic Address",
+        "85 Station Road, est. 27/06/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0128_L3.jpg"
+  },
+  {
+    "document_id": "dev_C_0129_L4",
+    "layout": "C",
+    "degradation_level": 4,
+    "patient_id": "odir_2638",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2638",
+      "age": "48",
+      "sex": "Male",
+      "eye": "L",
+      "exam_date": "25/04/2026",
+      "visual_acuity": "6/6",
+      "iop": "22",
+      "stated_diagnosis": "Within normal limits",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "54 Station Road, est. 13/07/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0129_L4.jpg"
+  },
+  {
+    "document_id": "dev_C_0130_L0",
+    "layout": "C",
+    "degradation_level": 0,
+    "patient_id": "odir_1216",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1216",
+      "age": "45",
+      "sex": "Male",
+      "eye": "OD",
+      "exam_date": "05/12/2026",
+      "visual_acuity": null,
+      "iop": "15",
+      "stated_diagnosis": "Glaucoma suspect",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "43 Station Road, est. 12/05/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0130_L0.jpg"
+  },
+  {
+    "document_id": "dev_C_0131_L1",
+    "layout": "C",
+    "degradation_level": 1,
+    "patient_id": "odir_2143",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2143",
+      "age": "83",
+      "sex": "F",
+      "eye": "R",
+      "exam_date": "10/07/2026",
+      "visual_acuity": "6/6",
+      "iop": "14",
+      "stated_diagnosis": "Cataract",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "92 Station Road, est. 06/02/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0131_L1.jpg"
+  },
+  {
+    "document_id": "dev_C_0132_L2",
+    "layout": "C",
+    "degradation_level": 2,
+    "patient_id": "odir_2157",
+    "true_label": "C",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_2157",
+      "age": "80",
+      "sex": "F",
+      "eye": "OS",
+      "exam_date": "14/08/2026",
+      "visual_acuity": "6/18",
+      "iop": null,
+      "stated_diagnosis": "Diabetic retinopathy",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "26-4122"
+      ],
+      [
+        "Clinic Address",
+        "1 Station Road, est. 21/12/1998"
+      ],
+      [
+        "Appointment Ref",
+        "20/49"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0132_L2.jpg"
+  },
+  {
+    "document_id": "dev_C_0133_L3",
+    "layout": "C",
+    "degradation_level": 3,
+    "patient_id": "odir_1221",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1221",
+      "age": "70",
+      "sex": "M",
+      "eye": "OD",
+      "exam_date": "22/03/2026",
+      "visual_acuity": "6/12",
+      "iop": null,
+      "stated_diagnosis": "Primary open angle glaucoma",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "17-3149"
+      ],
+      [
+        "Clinic Address",
+        "3 Station Road, est. 19/09/1998"
+      ],
+      [
+        "Appointment Ref",
+        "20/93"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0133_L3.jpg"
+  },
+  {
+    "document_id": "dev_C_0134_L4",
+    "layout": "C",
+    "degradation_level": 4,
+    "patient_id": "odir_1345",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1345",
+      "age": "49",
+      "sex": "Female",
+      "eye": "R",
+      "exam_date": "09/08/2026",
+      "visual_acuity": null,
+      "iop": "14",
+      "stated_diagnosis": "Glaucoma",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "26-5423"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0134_L4.jpg"
+  },
+  {
+    "document_id": "dev_C_0135_L0",
+    "layout": "C",
+    "degradation_level": 0,
+    "patient_id": "odir_4133",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4133",
+      "age": "60",
+      "sex": "M",
+      "eye": "Left",
+      "exam_date": "02/09/2026",
+      "visual_acuity": null,
+      "iop": "16",
+      "stated_diagnosis": "NPDR, moderate",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0135_L0.jpg"
+  },
+  {
+    "document_id": "dev_C_0136_L1",
+    "layout": "C",
+    "degradation_level": 1,
+    "patient_id": "odir_4035",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4035",
+      "age": "58",
+      "sex": "Male",
+      "eye": "Right",
+      "exam_date": "27/03/2026",
+      "visual_acuity": "6/60",
+      "iop": "11",
+      "stated_diagnosis": "Non-proliferative diabetic retinopathy",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "11-1158"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0136_L1.jpg"
+  },
+  {
+    "document_id": "dev_C_0137_L2",
+    "layout": "C",
+    "degradation_level": 2,
+    "patient_id": "odir_1215",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1215",
+      "age": "68",
+      "sex": "M",
+      "eye": "R",
+      "exam_date": "28/08/2026",
+      "visual_acuity": "6/60",
+      "iop": null,
+      "stated_diagnosis": "Glaucoma suspect",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "54 Station Road, est. 19/08/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0137_L2.jpg"
+  },
+  {
+    "document_id": "dev_C_0138_L3",
+    "layout": "C",
+    "degradation_level": 3,
+    "patient_id": "odir_1289",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1289",
+      "age": "71",
+      "sex": "Female",
+      "eye": "OD",
+      "exam_date": "21/06/2026",
+      "visual_acuity": null,
+      "iop": "26",
+      "stated_diagnosis": "Glaucoma suspect",
+      "referral_reason": "Annual review"
+    },
+    "distractors": [],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0138_L3.jpg"
+  },
+  {
+    "document_id": "dev_C_0139_L4",
+    "layout": "C",
+    "degradation_level": 4,
+    "patient_id": "odir_2599",
+    "true_label": "N",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_2599",
+      "age": "61",
+      "sex": "Male",
+      "eye": "R",
+      "exam_date": "28/08/2026",
+      "visual_acuity": "6/60",
+      "iop": "25",
+      "stated_diagnosis": "Cataract",
+      "referral_reason": "Routine diabetic screening"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "26-4648"
+      ],
+      [
+        "Appointment Ref",
+        "6/20"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0139_L4.jpg"
+  },
+  {
+    "document_id": "dev_C_0140_L0",
+    "layout": "C",
+    "degradation_level": 0,
+    "patient_id": "odir_1365",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1365",
+      "age": "67",
+      "sex": "Female",
+      "eye": "L",
+      "exam_date": "20/11/2026",
+      "visual_acuity": "6/12",
+      "iop": "26",
+      "stated_diagnosis": "Glaucoma suspect",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0140_L0.jpg"
+  },
+  {
+    "document_id": "dev_C_0141_L1",
+    "layout": "C",
+    "degradation_level": 1,
+    "patient_id": "odir_2116",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2116",
+      "age": "81",
+      "sex": "F",
+      "eye": "R",
+      "exam_date": "17/06/2026",
+      "visual_acuity": "6/36",
+      "iop": "13",
+      "stated_diagnosis": "Cataract",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "18-4209"
+      ],
+      [
+        "Clinic Address",
+        "51 Station Road, est. 07/08/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0141_L1.jpg"
+  },
+  {
+    "document_id": "dev_C_0142_L2",
+    "layout": "C",
+    "degradation_level": 2,
+    "patient_id": "odir_1503",
+    "true_label": "G",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_1503",
+      "age": "49",
+      "sex": "Male",
+      "eye": "R",
+      "exam_date": "24/01/2026",
+      "visual_acuity": "6/24",
+      "iop": "23",
+      "stated_diagnosis": "NPDR, moderate",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "17 Station Road, est. 04/07/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0142_L2.jpg"
+  },
+  {
+    "document_id": "dev_C_0143_L3",
+    "layout": "C",
+    "degradation_level": 3,
+    "patient_id": "odir_1307",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1307",
+      "age": "64",
+      "sex": "F",
+      "eye": "R",
+      "exam_date": "18/06/2026",
+      "visual_acuity": "6/36",
+      "iop": "16",
+      "stated_diagnosis": "Glaucoma",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0143_L3.jpg"
+  },
+  {
+    "document_id": "dev_C_0144_L4",
+    "layout": "C",
+    "degradation_level": 4,
+    "patient_id": "odir_1256",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1256",
+      "age": "84",
+      "sex": "Male",
+      "eye": "Left",
+      "exam_date": "13/03/2026",
+      "visual_acuity": null,
+      "iop": "11",
+      "stated_diagnosis": "Glaucoma",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "11-5835"
+      ],
+      [
+        "Clinic Address",
+        "70 Station Road, est. 02/06/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0144_L4.jpg"
+  },
+  {
+    "document_id": "dev_C_0145_L0",
+    "layout": "C",
+    "degradation_level": 0,
+    "patient_id": "odir_1345",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1345",
+      "age": "49",
+      "sex": "F",
+      "eye": "R",
+      "exam_date": "02/01/2026",
+      "visual_acuity": "6/36",
+      "iop": "18",
+      "stated_diagnosis": "Glaucoma",
+      "referral_reason": "Annual review"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "21-9955"
+      ],
+      [
+        "Appointment Ref",
+        "6/47"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0145_L0.jpg"
+  },
+  {
+    "document_id": "dev_C_0146_L1",
+    "layout": "C",
+    "degradation_level": 1,
+    "patient_id": "odir_4148",
+    "true_label": "D",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_4148",
+      "age": "48",
+      "sex": "F",
+      "eye": "Right",
+      "exam_date": "11/08/2026",
+      "visual_acuity": "6/36",
+      "iop": "14",
+      "stated_diagnosis": "Cataract",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Appointment Ref",
+        "20/19"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0146_L1.jpg"
+  },
+  {
+    "document_id": "dev_C_0147_L2",
+    "layout": "C",
+    "degradation_level": 2,
+    "patient_id": "odir_4673",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4673",
+      "age": "85",
+      "sex": "M",
+      "eye": "OS",
+      "exam_date": "10/04/2026",
+      "visual_acuity": "6/60",
+      "iop": "26",
+      "stated_diagnosis": "Non-proliferative diabetic retinopathy",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "83 Station Road, est. 20/10/1998"
+      ],
+      [
+        "Appointment Ref",
+        "6/97"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0147_L2.jpg"
+  },
+  {
+    "document_id": "dev_C_0148_L3",
+    "layout": "C",
+    "degradation_level": 3,
+    "patient_id": "odir_1248",
+    "true_label": "G",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_1248",
+      "age": "74",
+      "sex": "Female",
+      "eye": "OD",
+      "exam_date": "17/02/2026",
+      "visual_acuity": null,
+      "iop": null,
+      "stated_diagnosis": "Nuclear sclerotic cataract",
+      "referral_reason": "Annual review"
+    },
+    "distractors": [],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0148_L3.jpg"
+  },
+  {
+    "document_id": "dev_C_0149_L4",
+    "layout": "C",
+    "degradation_level": 4,
+    "patient_id": "odir_750",
+    "true_label": "C",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_750",
+      "age": "56",
+      "sex": "Male",
+      "eye": "OS",
+      "exam_date": "18/02/2026",
+      "visual_acuity": "6/24",
+      "iop": "17",
+      "stated_diagnosis": "Normal fundus",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "13-9762"
+      ],
+      [
+        "Clinic Address",
+        "93 Station Road, est. 20/02/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0149_L4.jpg"
+  },
+  {
+    "document_id": "dev_C_0150_L0",
+    "layout": "C",
+    "degradation_level": 0,
+    "patient_id": "odir_703",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_703",
+      "age": "63",
+      "sex": "Female",
+      "eye": "OD",
+      "exam_date": "06/09/2026",
+      "visual_acuity": "6/9",
+      "iop": "14",
+      "stated_diagnosis": "NPDR, moderate",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "94 Station Road, est. 21/06/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0150_L0.jpg"
+  },
+  {
+    "document_id": "dev_C_0151_L1",
+    "layout": "C",
+    "degradation_level": 1,
+    "patient_id": "odir_338",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_338",
+      "age": "61",
+      "sex": "F",
+      "eye": "Left",
+      "exam_date": "14/11/2026",
+      "visual_acuity": "6/60",
+      "iop": null,
+      "stated_diagnosis": "Diabetic retinopathy",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "11-9992"
+      ],
+      [
+        "Clinic Address",
+        "71 Station Road, est. 03/05/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0151_L1.jpg"
+  },
+  {
+    "document_id": "dev_C_0152_L2",
+    "layout": "C",
+    "degradation_level": 2,
+    "patient_id": "odir_769",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_769",
+      "age": "58",
+      "sex": "F",
+      "eye": "OD",
+      "exam_date": "15/06/2026",
+      "visual_acuity": "6/24",
+      "iop": null,
+      "stated_diagnosis": "Nuclear sclerotic cataract",
+      "referral_reason": "Annual review"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "41 Station Road, est. 08/04/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0152_L2.jpg"
+  },
+  {
+    "document_id": "dev_C_0153_L3",
+    "layout": "C",
+    "degradation_level": 3,
+    "patient_id": "odir_1420",
+    "true_label": "G",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_1420",
+      "age": "76",
+      "sex": "Female",
+      "eye": "OD",
+      "exam_date": "28/03/2026",
+      "visual_acuity": null,
+      "iop": "16",
+      "stated_diagnosis": "Immature senile cataract",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "26-1511"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0153_L3.jpg"
+  },
+  {
+    "document_id": "dev_C_0154_L4",
+    "layout": "C",
+    "degradation_level": 4,
+    "patient_id": "odir_2978",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2978",
+      "age": "70",
+      "sex": "M",
+      "eye": "Left",
+      "exam_date": "15/09/2026",
+      "visual_acuity": "6/24",
+      "iop": "12",
+      "stated_diagnosis": "Normal fundus",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Appointment Ref",
+        "6/67"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0154_L4.jpg"
+  },
+  {
+    "document_id": "dev_C_0155_L0",
+    "layout": "C",
+    "degradation_level": 0,
+    "patient_id": "odir_4383",
+    "true_label": "D",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_4383",
+      "age": "56",
+      "sex": "F",
+      "eye": "OS",
+      "exam_date": "16/08/2026",
+      "visual_acuity": "6/6",
+      "iop": null,
+      "stated_diagnosis": "Within normal limits",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "18-9918"
+      ],
+      [
+        "Appointment Ref",
+        "20/56"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0155_L0.jpg"
+  },
+  {
+    "document_id": "dev_C_0156_L1",
+    "layout": "C",
+    "degradation_level": 1,
+    "patient_id": "odir_3141",
+    "true_label": "N",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_3141",
+      "age": "47",
+      "sex": "M",
+      "eye": "Right",
+      "exam_date": "08/02/2026",
+      "visual_acuity": "6/24",
+      "iop": null,
+      "stated_diagnosis": "Diabetic retinopathy",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "17-7793"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0156_L1.jpg"
+  },
+  {
+    "document_id": "dev_C_0157_L2",
+    "layout": "C",
+    "degradation_level": 2,
+    "patient_id": "odir_2375",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2375",
+      "age": "73",
+      "sex": "Male",
+      "eye": "L",
+      "exam_date": "05/01/2026",
+      "visual_acuity": "6/9",
+      "iop": "18",
+      "stated_diagnosis": "No abnormality detected",
+      "referral_reason": "Annual review"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "19-2404"
+      ],
+      [
+        "Clinic Address",
+        "78 Station Road, est. 16/08/1998"
+      ],
+      [
+        "Appointment Ref",
+        "20/86"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0157_L2.jpg"
+  },
+  {
+    "document_id": "dev_C_0158_L3",
+    "layout": "C",
+    "degradation_level": 3,
+    "patient_id": "odir_735",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_735",
+      "age": "77",
+      "sex": "Male",
+      "eye": "Left",
+      "exam_date": "01/04/2026",
+      "visual_acuity": "6/24",
+      "iop": "26",
+      "stated_diagnosis": "NPDR, moderate",
+      "referral_reason": null
+    },
+    "distractors": [],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0158_L3.jpg"
+  },
+  {
+    "document_id": "dev_C_0159_L4",
+    "layout": "C",
+    "degradation_level": 4,
+    "patient_id": "odir_1968",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1968",
+      "age": "52",
+      "sex": "M",
+      "eye": "Left",
+      "exam_date": "26/08/2026",
+      "visual_acuity": "6/60",
+      "iop": "22",
+      "stated_diagnosis": "Immature senile cataract",
+      "referral_reason": "Annual review"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "23-3193"
+      ],
+      [
+        "Clinic Address",
+        "99 Station Road, est. 08/02/1998"
+      ],
+      [
+        "Appointment Ref",
+        "20/42"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0159_L4.jpg"
+  },
+  {
+    "document_id": "dev_C_0160_L0",
+    "layout": "C",
+    "degradation_level": 0,
+    "patient_id": "odir_2112",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2112",
+      "age": "62",
+      "sex": "F",
+      "eye": "OD",
+      "exam_date": "28/09/2026",
+      "visual_acuity": "6/18",
+      "iop": "21",
+      "stated_diagnosis": "Nuclear sclerotic cataract",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "25-3928"
+      ],
+      [
+        "Clinic Address",
+        "72 Station Road, est. 16/05/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0160_L0.jpg"
+  },
+  {
+    "document_id": "dev_C_0161_L1",
+    "layout": "C",
+    "degradation_level": 1,
+    "patient_id": "odir_2213",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2213",
+      "age": "83",
+      "sex": "F",
+      "eye": "OD",
+      "exam_date": "26/09/2026",
+      "visual_acuity": null,
+      "iop": "11",
+      "stated_diagnosis": "Cataract",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "23-2444"
+      ],
+      [
+        "Clinic Address",
+        "29 Station Road, est. 12/02/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0161_L1.jpg"
+  },
+  {
+    "document_id": "dev_C_0162_L2",
+    "layout": "C",
+    "degradation_level": 2,
+    "patient_id": "odir_83",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_83",
+      "age": "61",
+      "sex": "F",
+      "eye": "Left",
+      "exam_date": "02/10/2026",
+      "visual_acuity": "6/24",
+      "iop": "26",
+      "stated_diagnosis": "Within normal limits",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Appointment Ref",
+        "20/61"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0162_L2.jpg"
+  },
+  {
+    "document_id": "dev_C_0163_L3",
+    "layout": "C",
+    "degradation_level": 3,
+    "patient_id": "odir_2030",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2030",
+      "age": "66",
+      "sex": "M",
+      "eye": "OS",
+      "exam_date": "27/05/2026",
+      "visual_acuity": "6/9",
+      "iop": "16",
+      "stated_diagnosis": "Primary open angle glaucoma",
+      "referral_reason": "Raised intraocular pressure"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "12-9243"
+      ],
+      [
+        "Clinic Address",
+        "15 Station Road, est. 26/09/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0163_L3.jpg"
+  },
+  {
+    "document_id": "dev_C_0164_L4",
+    "layout": "C",
+    "degradation_level": 4,
+    "patient_id": "odir_1484",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1484",
+      "age": "65",
+      "sex": "F",
+      "eye": "L",
+      "exam_date": "26/04/2026",
+      "visual_acuity": "6/36",
+      "iop": "17",
+      "stated_diagnosis": "Immature senile cataract",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "12 Station Road, est. 13/11/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0164_L4.jpg"
+  },
+  {
+    "document_id": "dev_C_0165_L0",
+    "layout": "C",
+    "degradation_level": 0,
+    "patient_id": "odir_2231",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2231",
+      "age": "66",
+      "sex": "Female",
+      "eye": "Right",
+      "exam_date": "24/04/2026",
+      "visual_acuity": null,
+      "iop": null,
+      "stated_diagnosis": "Cataract",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "13-2964"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0165_L0.jpg"
+  },
+  {
+    "document_id": "dev_C_0166_L1",
+    "layout": "C",
+    "degradation_level": 1,
+    "patient_id": "odir_1436",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1436",
+      "age": "65",
+      "sex": "F",
+      "eye": "Left",
+      "exam_date": "25/09/2026",
+      "visual_acuity": "6/12",
+      "iop": null,
+      "stated_diagnosis": "Glaucoma",
+      "referral_reason": "Annual review"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "45 Station Road, est. 13/11/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0166_L1.jpg"
+  },
+  {
+    "document_id": "dev_C_0167_L2",
+    "layout": "C",
+    "degradation_level": 2,
+    "patient_id": "odir_4422",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4422",
+      "age": "68",
+      "sex": "F",
+      "eye": "Right",
+      "exam_date": "18/05/2026",
+      "visual_acuity": null,
+      "iop": "18",
+      "stated_diagnosis": "Non-proliferative diabetic retinopathy",
+      "referral_reason": "Annual review"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "21-6981"
+      ],
+      [
+        "Appointment Ref",
+        "6/83"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0167_L2.jpg"
+  },
+  {
+    "document_id": "dev_C_0168_L3",
+    "layout": "C",
+    "degradation_level": 3,
+    "patient_id": "odir_205",
+    "true_label": "N",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_205",
+      "age": "58",
+      "sex": "Male",
+      "eye": "OD",
+      "exam_date": "16/03/2026",
+      "visual_acuity": "6/60",
+      "iop": "26",
+      "stated_diagnosis": "NPDR, moderate",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "13 Station Road, est. 23/03/1998"
+      ],
+      [
+        "Appointment Ref",
+        "20/70"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0168_L3.jpg"
+  },
+  {
+    "document_id": "dev_C_0169_L4",
+    "layout": "C",
+    "degradation_level": 4,
+    "patient_id": "odir_2787",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2787",
+      "age": "41",
+      "sex": "Female",
+      "eye": "L",
+      "exam_date": "19/11/2026",
+      "visual_acuity": "6/36",
+      "iop": "15",
+      "stated_diagnosis": "Normal fundus",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "12-7243"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0169_L4.jpg"
+  },
+  {
+    "document_id": "dev_C_0170_L0",
+    "layout": "C",
+    "degradation_level": 0,
+    "patient_id": "odir_257",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_257",
+      "age": "57",
+      "sex": "M",
+      "eye": "OD",
+      "exam_date": "15/06/2026",
+      "visual_acuity": "6/36",
+      "iop": null,
+      "stated_diagnosis": "Non-proliferative diabetic retinopathy",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "18-2311"
+      ],
+      [
+        "Clinic Address",
+        "51 Station Road, est. 04/02/1998"
+      ],
+      [
+        "Appointment Ref",
+        "20/80"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0170_L0.jpg"
+  },
+  {
+    "document_id": "dev_C_0171_L1",
+    "layout": "C",
+    "degradation_level": 1,
+    "patient_id": "odir_2872",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2872",
+      "age": "72",
+      "sex": "M",
+      "eye": "OS",
+      "exam_date": "08/04/2026",
+      "visual_acuity": "6/36",
+      "iop": null,
+      "stated_diagnosis": "Normal fundus",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "21-6328"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0171_L1.jpg"
+  },
+  {
+    "document_id": "dev_C_0172_L2",
+    "layout": "C",
+    "degradation_level": 2,
+    "patient_id": "odir_2369",
+    "true_label": "N",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2369",
+      "age": "55",
+      "sex": "M",
+      "eye": "OD",
+      "exam_date": "18/04/2026",
+      "visual_acuity": "6/60",
+      "iop": "12",
+      "stated_diagnosis": "Normal fundus",
+      "referral_reason": "Reduced acuity"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "14-6634"
+      ],
+      [
+        "Clinic Address",
+        "69 Station Road, est. 01/12/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0172_L2.jpg"
+  },
+  {
+    "document_id": "dev_C_0173_L3",
+    "layout": "C",
+    "degradation_level": 3,
+    "patient_id": "odir_1334",
+    "true_label": "G",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_1334",
+      "age": "69",
+      "sex": "M",
+      "eye": "OD",
+      "exam_date": "08/05/2026",
+      "visual_acuity": "6/6",
+      "iop": "23",
+      "stated_diagnosis": "Glaucoma suspect",
+      "referral_reason": "Blurred vision"
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "84 Station Road, est. 24/09/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0173_L3.jpg"
+  },
+  {
+    "document_id": "dev_C_0174_L4",
+    "layout": "C",
+    "degradation_level": 4,
+    "patient_id": "odir_2141",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2141",
+      "age": "51",
+      "sex": "Male",
+      "eye": "Right",
+      "exam_date": "18/01/2026",
+      "visual_acuity": "6/9",
+      "iop": null,
+      "stated_diagnosis": "Immature senile cataract",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "10-9086"
+      ],
+      [
+        "Clinic Address",
+        "54 Station Road, est. 10/08/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0174_L4.jpg"
+  },
+  {
+    "document_id": "dev_C_0175_L0",
+    "layout": "C",
+    "degradation_level": 0,
+    "patient_id": "odir_2221",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2221",
+      "age": "71",
+      "sex": "M",
+      "eye": "OD",
+      "exam_date": "27/01/2026",
+      "visual_acuity": "6/6",
+      "iop": null,
+      "stated_diagnosis": "Immature senile cataract",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "86 Station Road, est. 07/08/1998"
+      ],
+      [
+        "Appointment Ref",
+        "20/51"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0175_L0.jpg"
+  },
+  {
+    "document_id": "dev_C_0176_L1",
+    "layout": "C",
+    "degradation_level": 1,
+    "patient_id": "odir_4381",
+    "true_label": "D",
+    "stated_diagnosis_label": "D",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_4381",
+      "age": "56",
+      "sex": "Male",
+      "eye": "L",
+      "exam_date": "07/02/2026",
+      "visual_acuity": "6/9",
+      "iop": null,
+      "stated_diagnosis": "Non-proliferative diabetic retinopathy",
+      "referral_reason": null
+    },
+    "distractors": [
+      [
+        "Clinic Address",
+        "6 Station Road, est. 19/12/1998"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0176_L1.jpg"
+  },
+  {
+    "document_id": "dev_C_0177_L2",
+    "layout": "C",
+    "degradation_level": 2,
+    "patient_id": "odir_2125",
+    "true_label": "C",
+    "stated_diagnosis_label": "C",
+    "diagnosis_corrupted": false,
+    "fields": {
+      "patient_id": "odir_2125",
+      "age": "83",
+      "sex": "Female",
+      "eye": "Left",
+      "exam_date": "16/04/2026",
+      "visual_acuity": "6/12",
+      "iop": null,
+      "stated_diagnosis": "Immature senile cataract",
+      "referral_reason": "Glare and haloes"
+    },
+    "distractors": [
+      [
+        "Insurance ID",
+        "11-8951"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0177_L2.jpg"
+  },
+  {
+    "document_id": "dev_C_0178_L3",
+    "layout": "C",
+    "degradation_level": 3,
+    "patient_id": "odir_2251",
+    "true_label": "C",
+    "stated_diagnosis_label": "N",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_2251",
+      "age": "70",
+      "sex": "M",
+      "eye": "OD",
+      "exam_date": "27/05/2026",
+      "visual_acuity": "6/24",
+      "iop": "21",
+      "stated_diagnosis": "Normal fundus",
+      "referral_reason": "Routine diabetic screening"
+    },
+    "distractors": [
+      [
+        "Appointment Ref",
+        "6/51"
+      ]
+    ],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0178_L3.jpg"
+  },
+  {
+    "document_id": "dev_C_0179_L4",
+    "layout": "C",
+    "degradation_level": 4,
+    "patient_id": "odir_2211",
+    "true_label": "C",
+    "stated_diagnosis_label": "G",
+    "diagnosis_corrupted": true,
+    "fields": {
+      "patient_id": "odir_2211",
+      "age": "80",
+      "sex": "Male",
+      "eye": "Left",
+      "exam_date": "27/03/2026",
+      "visual_acuity": null,
+      "iop": "11",
+      "stated_diagnosis": "Glaucoma",
+      "referral_reason": "Routine diabetic screening"
+    },
+    "distractors": [],
+    "image_path": "D:\\ophthalmic-screening-research\\data\\documents\\dev\\dev_C_0179_L4.jpg"
+  }
+]

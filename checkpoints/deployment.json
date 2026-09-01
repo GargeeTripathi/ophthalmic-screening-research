@@ -1,0 +1,51 @@
+{
+  "labels": [
+    "N",
+    "D",
+    "G",
+    "C"
+  ],
+  "class_names": {
+    "N": "normal",
+    "D": "diabetic_retinopathy",
+    "G": "glaucoma",
+    "C": "cataract"
+  },
+  "image_model": {
+    "path": "screening_model.pt",
+    "portable_path": "screening_head.pt",
+    "architecture": "ImageNet ResNet50 (frozen) -> L2 normalise -> linear head",
+    "preprocessing": "resize 224x224 bilinear, ImageNet mean/std, then L2-normalise the 2048-d pooled feature. Must match src/data/embeddings.py exactly or confidences are meaningless.",
+    "fitted_on_images": 4044,
+    "fitted_on_patients": 2327,
+    "evaluated_macro_f1": 0.5476,
+    "cataract_vs_rest_auroc": 0.9462,
+    "calibrated": true,
+    "temperature": 0.8313,
+    "calibration_note": "temperature scaling, T=0.831, fitted on held-out fold 0, patient-disjoint from training. Confidence is comparable across cases but is not a probability of the patient having the disease."
+  },
+  "reliability_model": {
+    "trained_on": "development layouts A-C only",
+    "n_train": 1484,
+    "sealed_auroc": 0.9871
+  },
+  "deferral": {
+    "system": "A - rules",
+    "confidence_threshold": 0.6,
+    "agreement_threshold": 0.25,
+    "aurc": 0.1973,
+    "error_detection_auroc": 0.8817,
+    "why_not_learned": "System B (learned gate) scored AURC 0.211 vs 0.197 for the rules, and removing the reliability input improved it to 0.203. A pre-registered kill rule said ship the rules."
+  },
+  "extraction": {
+    "extractor": "E2 layout-aware",
+    "engine": "RapidOCR (ONNX, CPU)"
+  },
+  "limitations": [
+    "not a medical device; not a diagnostic tool; no regulatory clearance",
+    "203 cataract and 182 glaucoma patients in training",
+    "confidence is temperature-scaled but the underlying model is a frozen-feature linear head, not a fine-tuned backbone",
+    "referral documents used in development were synthetic",
+    "no prospective clinical validation"
+  ]
+}

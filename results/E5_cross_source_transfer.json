@@ -1,0 +1,209 @@
+{
+  "train_images": 5056,
+  "train_patients": 2909,
+  "excluded_as_odir_copies": 1626,
+  "per_source": [
+    {
+      "source": "crop_jpg256",
+      "n": 1223,
+      "classes_present": [
+        "C",
+        "G"
+      ],
+      "majority_class_accuracy": 0.5168,
+      "accuracy": 0.3295,
+      "macro_f1": 0.2283,
+      "lift_over_majority": -0.1872,
+      "predicted_distribution": {
+        "N": 616,
+        "C": 305,
+        "G": 176,
+        "D": 126
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          372,
+          93,
+          112,
+          14
+        ],
+        [
+          244,
+          33,
+          64,
+          291
+        ]
+      ],
+      "labels": [
+        "N",
+        "D",
+        "G",
+        "C"
+      ]
+    },
+    {
+      "source": "eyepacs_jpeg",
+      "n": 1098,
+      "classes_present": [
+        "D"
+      ],
+      "majority_class_accuracy": 1.0,
+      "accuracy": 0.2969,
+      "macro_f1": 0.1145,
+      "lift_over_majority": -0.7031,
+      "predicted_distribution": {
+        "N": 737,
+        "D": 326,
+        "G": 30,
+        "C": 5
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          737,
+          326,
+          30,
+          5
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ]
+      ],
+      "labels": [
+        "N",
+        "D",
+        "G",
+        "C"
+      ]
+    },
+    {
+      "source": "odir_jpg512",
+      "n": 69,
+      "classes_present": [
+        "C",
+        "G",
+        "N"
+      ],
+      "majority_class_accuracy": 0.4493,
+      "accuracy": 0.5072,
+      "macro_f1": 0.4122,
+      "lift_over_majority": 0.058,
+      "predicted_distribution": {
+        "N": 41,
+        "D": 11,
+        "G": 11,
+        "C": 6
+      },
+      "confusion_matrix": [
+        [
+          21,
+          2,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          15,
+          8,
+          8,
+          0
+        ],
+        [
+          5,
+          1,
+          1,
+          6
+        ]
+      ],
+      "labels": [
+        "N",
+        "D",
+        "G",
+        "C"
+      ]
+    },
+    {
+      "source": "png_highres",
+      "n": 201,
+      "classes_present": [
+        "C",
+        "G"
+      ],
+      "majority_class_accuracy": 0.5025,
+      "accuracy": 0.1045,
+      "macro_f1": 0.093,
+      "lift_over_majority": -0.398,
+      "predicted_distribution": {
+        "N": 169,
+        "G": 14,
+        "C": 11,
+        "D": 7
+      },
+      "confusion_matrix": [
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          86,
+          5,
+          10,
+          0
+        ],
+        [
+          83,
+          2,
+          4,
+          11
+        ]
+      ],
+      "labels": [
+        "N",
+        "D",
+        "G",
+        "C"
+      ]
+    }
+  ],
+  "mean_accuracy_across_sources": 0.3095,
+  "interpretation": "transfer under a documented change of acquisition source; not generalisation in the unqualified sense"
+}

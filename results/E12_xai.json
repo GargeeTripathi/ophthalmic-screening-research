@@ -1,0 +1,31 @@
+{
+  "model": "frozen ImageNet ResNet50 + linear head on cached embeddings",
+  "head_fitted_on": 4044,
+  "attributed_over": "held-out fold 0 - the head never saw these images",
+  "model_caveat": "not a fine-tuned diagnostic model; re-run after the Colab baselines",
+  "n_images": 40,
+  "fov_mass_ratio_mean": 0.8364,
+  "uniform_attribution_baseline": 0.5348,
+  "concentration_ratio": 1.5641,
+  "fov_mass_by_class": {
+    "C": 0.8678,
+    "D": 0.8154,
+    "G": 0.8359,
+    "N": 0.8265
+  },
+  "deletion_auc_mean": 0.4687,
+  "deletion_auc_correct": 0.4846,
+  "deletion_auc_incorrect": 0.4493,
+  "randomisation_correlation": -0.0943,
+  "randomisation_passes": true,
+  "permitted_claims": [
+    "attribution falls inside or outside the retinal field of view",
+    "removing highlighted regions does or does not change the prediction",
+    "the method does or does not pass a randomisation sanity check"
+  ],
+  "forbidden_claims": [
+    "the model is looking at a lesion",
+    "attribution demonstrates clinical validity"
+  ],
+  "deletion_caveat": "masking creates out-of-distribution inputs, so deletion AUC conflates attribution quality with behaviour on corrupted images"
+}

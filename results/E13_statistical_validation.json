@@ -1,0 +1,153 @@
+{
+  "seeds": [
+    42,
+    7,
+    2024
+  ],
+  "per_run": [
+    {
+      "seed": 42,
+      "model": "logistic",
+      "image_level_macro_f1": 0.5514,
+      "patient_disjoint_macro_f1": 0.5476,
+      "inflation": 0.0038,
+      "p_raw": 0.619208,
+      "discordant": 1170
+    },
+    {
+      "seed": 42,
+      "model": "knn_1",
+      "image_level_macro_f1": 0.5585,
+      "patient_disjoint_macro_f1": 0.5101,
+      "inflation": 0.0484,
+      "p_raw": 0.0,
+      "discordant": 827
+    },
+    {
+      "seed": 7,
+      "model": "logistic",
+      "image_level_macro_f1": 0.545,
+      "patient_disjoint_macro_f1": 0.5576,
+      "inflation": -0.0126,
+      "p_raw": 0.036894,
+      "discordant": 1158
+    },
+    {
+      "seed": 7,
+      "model": "knn_1",
+      "image_level_macro_f1": 0.5531,
+      "patient_disjoint_macro_f1": 0.5091,
+      "inflation": 0.044,
+      "p_raw": 0.0,
+      "discordant": 856
+    },
+    {
+      "seed": 2024,
+      "model": "logistic",
+      "image_level_macro_f1": 0.55,
+      "patient_disjoint_macro_f1": 0.5505,
+      "inflation": -0.0005,
+      "p_raw": 0.840133,
+      "discordant": 1204
+    },
+    {
+      "seed": 2024,
+      "model": "knn_1",
+      "image_level_macro_f1": 0.5589,
+      "patient_disjoint_macro_f1": 0.5156,
+      "inflation": 0.0434,
+      "p_raw": 0.0,
+      "discordant": 847
+    }
+  ],
+  "stability": {
+    "knn_1": {
+      "mean": 0.0453,
+      "std": 0.0027,
+      "min": 0.0434,
+      "max": 0.0484
+    },
+    "logistic": {
+      "mean": -0.0031,
+      "std": 0.0085,
+      "min": -0.0126,
+      "max": 0.0038
+    }
+  },
+  "family_size": 13,
+  "holm_bonferroni": {
+    "leakage[knn_1,seed42]": {
+      "p_raw": 0.0,
+      "holm_threshold": 0.003846,
+      "significant_after_correction": true
+    },
+    "leakage[knn_1,seed7]": {
+      "p_raw": 0.0,
+      "holm_threshold": 0.004167,
+      "significant_after_correction": true
+    },
+    "leakage[knn_1,seed2024]": {
+      "p_raw": 0.0,
+      "holm_threshold": 0.004545,
+      "significant_after_correction": true
+    },
+    "E1b[knn_1]": {
+      "p_raw": 0.0,
+      "holm_threshold": 0.005,
+      "significant_after_correction": true
+    },
+    "E1b[knn_5]": {
+      "p_raw": 0.000646,
+      "holm_threshold": 0.005556,
+      "significant_after_correction": true
+    },
+    "leakage[logistic,seed7]": {
+      "p_raw": 0.036894,
+      "holm_threshold": 0.00625,
+      "significant_after_correction": false
+    },
+    "E1[provenance_controlled]": {
+      "p_raw": 0.143081,
+      "holm_threshold": 0.007143,
+      "significant_after_correction": false
+    },
+    "E1b[mlp]": {
+      "p_raw": 0.200594,
+      "holm_threshold": 0.008333,
+      "significant_after_correction": false
+    },
+    "leakage[logistic,seed42]": {
+      "p_raw": 0.619208,
+      "holm_threshold": 0.01,
+      "significant_after_correction": false
+    },
+    "E1[patient_disjoint]": {
+      "p_raw": 0.746733,
+      "holm_threshold": 0.0125,
+      "significant_after_correction": false
+    },
+    "E1b[logistic]": {
+      "p_raw": 0.746733,
+      "holm_threshold": 0.016667,
+      "significant_after_correction": false
+    },
+    "E1[patient_disjoint_dedup]": {
+      "p_raw": 0.750243,
+      "holm_threshold": 0.025,
+      "significant_after_correction": false
+    },
+    "leakage[logistic,seed2024]": {
+      "p_raw": 0.840133,
+      "holm_threshold": 0.05,
+      "significant_after_correction": false
+    }
+  },
+  "survivors": [
+    "leakage[knn_1,seed42]",
+    "leakage[knn_1,seed7]",
+    "leakage[knn_1,seed2024]",
+    "E1b[knn_1]",
+    "E1b[knn_5]"
+  ],
+  "note": "Holm rather than plain Bonferroni: uniformly more powerful at the same family-wise error rate, which matters when the smallest class has 182 patients"
+}

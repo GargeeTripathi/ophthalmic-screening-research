@@ -1,0 +1,52 @@
+{
+  "total_images": 5058,
+  "total_patients": 2910,
+  "eye_counts": {
+    "left": 2562,
+    "right": 2496
+  },
+  "patients_with_both_eyes": 2148,
+  "patients_with_one_eye": 762,
+  "patients_spanning_two_classes": 354,
+  "missing_age": 0,
+  "missing_sex": 0,
+  "unreadable_images": 0,
+  "distinct_resolutions": 91,
+  "by_class": {
+    "C": {
+      "images": 293,
+      "patients": 203,
+      "multi_finding": 31,
+      "mean_age": 66.8,
+      "multi_finding_pct": 10.6
+    },
+    "D": {
+      "images": 1608,
+      "patients": 1027,
+      "multi_finding": 223,
+      "mean_age": 55.7,
+      "multi_finding_pct": 13.9
+    },
+    "G": {
+      "images": 284,
+      "patients": 182,
+      "multi_finding": 66,
+      "mean_age": 63.0,
+      "multi_finding_pct": 23.2
+    },
+    "N": {
+      "images": 2873,
+      "patients": 1852,
+      "multi_finding": 57,
+      "mean_age": 57.2,
+      "multi_finding_pct": 2.0
+    }
+  },
+  "skipped": {
+    "multi_label": 0,
+    "dropped_code": 1334,
+    "bad_filename": 0,
+    "missing_image": 0
+  },
+  "mismatches": []
+}

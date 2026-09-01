@@ -1,0 +1,202 @@
+[
+  {
+    "experiment": "E0a",
+    "description": "predict class from file metadata only, no pixels",
+    "n": 4217,
+    "classes": [
+      "C",
+      "D",
+      "G",
+      "N"
+    ],
+    "baseline_accuracy": 0.2604,
+    "accuracy": 0.6673,
+    "macro_f1": 0.6618,
+    "lift_over_baseline": 0.4069,
+    "confusion_matrix": [
+      [
+        527,
+        0,
+        357,
+        154
+      ],
+      [
+        0,
+        1098,
+        0,
+        0
+      ],
+      [
+        353,
+        0,
+        479,
+        175
+      ],
+      [
+        163,
+        0,
+        201,
+        710
+      ]
+    ]
+  },
+  {
+    "experiment": "E0b",
+    "description": "predict acquisition source from FOV-normalised pixels",
+    "n": 4217,
+    "classes": [
+      "crop_jpg256",
+      "eyepacs_jpeg",
+      "odir_jpg512",
+      "png_highres"
+    ],
+    "baseline_accuracy": 0.3979,
+    "accuracy": 0.7489,
+    "macro_f1": 0.5769,
+    "lift_over_baseline": 0.351,
+    "confusion_matrix": [
+      [
+        721,
+        15,
+        504,
+        0
+      ],
+      [
+        29,
+        894,
+        175,
+        0
+      ],
+      [
+        121,
+        14,
+        1543,
+        0
+      ],
+      [
+        81,
+        11,
+        109,
+        0
+      ]
+    ]
+  },
+  {
+    "experiment": "E0c-i",
+    "description": "predict source from image geometry alone",
+    "n": 4217,
+    "classes": [
+      "crop_jpg256",
+      "eyepacs_jpeg",
+      "odir_jpg512",
+      "png_highres"
+    ],
+    "baseline_accuracy": 0.3979,
+    "accuracy": 0.7024,
+    "macro_f1": 0.7647,
+    "lift_over_baseline": 0.3045,
+    "confusion_matrix": [
+      [
+        1240,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        485,
+        613,
+        0
+      ],
+      [
+        0,
+        642,
+        1036,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        201
+      ]
+    ]
+  },
+  {
+    "experiment": "E0c-ii[odir_jpg512]",
+    "description": "predict class from pixels within source=odir_jpg512",
+    "n": 1678,
+    "classes": [
+      "C",
+      "G",
+      "N"
+    ],
+    "baseline_accuracy": 0.64,
+    "accuracy": 0.6436,
+    "macro_f1": 0.3018,
+    "lift_over_baseline": 0.0036,
+    "confusion_matrix": [
+      [
+        21,
+        1,
+        276
+      ],
+      [
+        16,
+        0,
+        290
+      ],
+      [
+        13,
+        2,
+        1059
+      ]
+    ]
+  },
+  {
+    "experiment": "E0c-ii[crop_jpg256]",
+    "description": "predict class from pixels within source=crop_jpg256",
+    "n": 1240,
+    "classes": [
+      "C",
+      "G"
+    ],
+    "baseline_accuracy": 0.5161,
+    "accuracy": 0.7355,
+    "macro_f1": 0.7312,
+    "lift_over_baseline": 0.2194,
+    "confusion_matrix": [
+      [
+        534,
+        106
+      ],
+      [
+        222,
+        378
+      ]
+    ]
+  },
+  {
+    "experiment": "E0c-ii[png_highres]",
+    "description": "predict class from pixels within source=png_highres",
+    "n": 201,
+    "classes": [
+      "C",
+      "G"
+    ],
+    "baseline_accuracy": 0.4975,
+    "accuracy": 0.7811,
+    "macro_f1": 0.781,
+    "lift_over_baseline": 0.2836,
+    "confusion_matrix": [
+      [
+        80,
+        20
+      ],
+      [
+        24,
+        77
+      ]
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+{
+  "method": "FOV-normalised 64x64 fingerprint, cosine similarity",
+  "rejected_method": "ImageNet ResNet50 embedding cosine - see calibration table",
+  "ground_truth_assumption": "shared original filename between ODIR and the merged benchmark means the same eye; spot-check images provided",
+  "ground_truth_positives": 1654,
+  "ground_truth_negatives": 1654,
+  "candidate_threshold": 0.9,
+  "operating_threshold": 0.999,
+  "detector_at_operating_point": {
+    "method": "fingerprint",
+    "threshold": 0.999,
+    "true_positive": 1609,
+    "false_positive": 17,
+    "false_negative": 45,
+    "precision": 0.9895,
+    "recall": 0.9728,
+    "f1": 0.9811
+  },
+  "recall_caveat": "recall is measured over ODIR<->merged ground-truth pairs; recall for within-ODIR duplicates is not directly measurable",
+  "within_odir_duplicate_groups": 2,
+  "within_odir_images_dropped": 2,
+  "clean_images": 5056,
+  "clean_patients": 2909,
+  "merged_images_contaminated_by_odir": 1626,
+  "status": "CALIBRATED"
+}

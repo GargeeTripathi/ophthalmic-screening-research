@@ -1,0 +1,338 @@
+{
+  "rungs": [
+    {
+      "rung": "image_level",
+      "description": "stratified by class, patient identity ignored (as commonly published)",
+      "n": 5058,
+      "accuracy": 0.5975,
+      "balanced_accuracy": 0.5394,
+      "macro_f1": 0.5496,
+      "per_class": {
+        "N": {
+          "precision": 0.6708,
+          "recall": 0.6596,
+          "f1": 0.6651,
+          "support": 2873
+        },
+        "D": {
+          "precision": 0.4865,
+          "recall": 0.5249,
+          "f1": 0.5049,
+          "support": 1608
+        },
+        "G": {
+          "precision": 0.2952,
+          "recall": 0.2359,
+          "f1": 0.2622,
+          "support": 284
+        },
+        "C": {
+          "precision": 0.797,
+          "recall": 0.7372,
+          "f1": 0.766,
+          "support": 293
+        }
+      },
+      "confusion_matrix": [
+        [
+          1895,
+          815,
+          125,
+          38
+        ],
+        [
+          724,
+          844,
+          29,
+          11
+        ],
+        [
+          151,
+          60,
+          67,
+          6
+        ],
+        [
+          55,
+          16,
+          6,
+          216
+        ]
+      ],
+      "labels": [
+        "N",
+        "D",
+        "G",
+        "C"
+      ],
+      "macro_auroc": null,
+      "macro_f1_ci": {
+        "point": 0.5496,
+        "ci_low": 0.5308,
+        "ci_high": 0.5677,
+        "n_resamples": 2000,
+        "resample_unit": "patient_id"
+      }
+    },
+    {
+      "rung": "patient_disjoint",
+      "description": "grouped by patient",
+      "n": 5058,
+      "accuracy": 0.5951,
+      "balanced_accuracy": 0.5343,
+      "macro_f1": 0.5444,
+      "per_class": {
+        "N": {
+          "precision": 0.6675,
+          "recall": 0.6575,
+          "f1": 0.6625,
+          "support": 2873
+        },
+        "D": {
+          "precision": 0.485,
+          "recall": 0.5243,
+          "f1": 0.5039,
+          "support": 1608
+        },
+        "G": {
+          "precision": 0.2798,
+          "recall": 0.2148,
+          "f1": 0.243,
+          "support": 284
+        },
+        "C": {
+          "precision": 0.7978,
+          "recall": 0.7406,
+          "f1": 0.7681,
+          "support": 293
+        }
+      },
+      "confusion_matrix": [
+        [
+          1889,
+          827,
+          119,
+          38
+        ],
+        [
+          725,
+          843,
+          29,
+          11
+        ],
+        [
+          162,
+          55,
+          61,
+          6
+        ],
+        [
+          54,
+          13,
+          9,
+          217
+        ]
+      ],
+      "labels": [
+        "N",
+        "D",
+        "G",
+        "C"
+      ],
+      "macro_auroc": null,
+      "macro_f1_ci": {
+        "point": 0.5444,
+        "ci_low": 0.5248,
+        "ci_high": 0.5622,
+        "n_resamples": 2000,
+        "resample_unit": "patient_id"
+      }
+    },
+    {
+      "rung": "patient_disjoint_dedup",
+      "description": "grouped by patient, near-duplicates removed",
+      "n": 5056,
+      "accuracy": 0.5949,
+      "balanced_accuracy": 0.5365,
+      "macro_f1": 0.5476,
+      "per_class": {
+        "N": {
+          "precision": 0.6656,
+          "recall": 0.6642,
+          "f1": 0.6649,
+          "support": 2871
+        },
+        "D": {
+          "precision": 0.4815,
+          "recall": 0.5087,
+          "f1": 0.4947,
+          "support": 1608
+        },
+        "G": {
+          "precision": 0.3091,
+          "recall": 0.2394,
+          "f1": 0.2698,
+          "support": 284
+        },
+        "C": {
+          "precision": 0.7904,
+          "recall": 0.7338,
+          "f1": 0.7611,
+          "support": 293
+        }
+      },
+      "confusion_matrix": [
+        [
+          1907,
+          810,
+          114,
+          40
+        ],
+        [
+          746,
+          818,
+          34,
+          10
+        ],
+        [
+          151,
+          58,
+          68,
+          7
+        ],
+        [
+          61,
+          13,
+          4,
+          215
+        ]
+      ],
+      "labels": [
+        "N",
+        "D",
+        "G",
+        "C"
+      ],
+      "macro_auroc": null,
+      "macro_f1_ci": {
+        "point": 0.5476,
+        "ci_low": 0.5282,
+        "ci_high": 0.5675,
+        "n_resamples": 2000,
+        "resample_unit": "patient_id"
+      }
+    },
+    {
+      "rung": "provenance_controlled",
+      "description": "as above, restricted to one resolution cluster",
+      "n": 1535,
+      "accuracy": 0.6098,
+      "balanced_accuracy": 0.5001,
+      "macro_f1": 0.5048,
+      "per_class": {
+        "N": {
+          "precision": 0.6132,
+          "recall": 0.609,
+          "f1": 0.6111,
+          "support": 734
+        },
+        "D": {
+          "precision": 0.6016,
+          "recall": 0.6266,
+          "f1": 0.6139,
+          "support": 699
+        },
+        "G": {
+          "precision": 0.0769,
+          "recall": 0.0294,
+          "f1": 0.0426,
+          "support": 34
+        },
+        "C": {
+          "precision": 0.7692,
+          "recall": 0.7353,
+          "f1": 0.7519,
+          "support": 68
+        }
+      },
+      "confusion_matrix": [
+        [
+          447,
+          270,
+          8,
+          9
+        ],
+        [
+          252,
+          438,
+          4,
+          5
+        ],
+        [
+          17,
+          15,
+          1,
+          1
+        ],
+        [
+          13,
+          5,
+          0,
+          50
+        ]
+      ],
+      "labels": [
+        "N",
+        "D",
+        "G",
+        "C"
+      ],
+      "macro_auroc": null,
+      "macro_f1_ci": {
+        "point": 0.5048,
+        "ci_low": 0.4735,
+        "ci_high": 0.5383,
+        "n_resamples": 2000,
+        "resample_unit": "patient_id"
+      }
+    }
+  ],
+  "comparisons": [
+    {
+      "from": "image_level",
+      "to": "patient_disjoint",
+      "macro_f1_drop": 0.0052,
+      "paired_n": 5058,
+      "mcnemar": {
+        "a_only": 586,
+        "b_only": 574,
+        "discordant": 1160,
+        "p_value": 0.746733
+      }
+    },
+    {
+      "from": "image_level",
+      "to": "patient_disjoint_dedup",
+      "macro_f1_drop": 0.0019,
+      "paired_n": 5056,
+      "mcnemar": {
+        "a_only": 603,
+        "b_only": 591,
+        "discordant": 1194,
+        "p_value": 0.750243
+      }
+    },
+    {
+      "from": "image_level",
+      "to": "provenance_controlled",
+      "macro_f1_drop": 0.0447,
+      "paired_n": 1535,
+      "mcnemar": {
+        "a_only": 237,
+        "b_only": 271,
+        "discordant": 508,
+        "p_value": 0.143081
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+condition,note,n,patients,macro_f1,ci_low,ci_high,cataract_auroc
+unrestricted,all held-out predictions,5056,2909,0.5476,0.5283,0.5668,0.9462
+age_matched,classes balanced within 5-year age strata,964,779,0.5385,0.503,0.5718,0.9414
+sex_matched,classes balanced within each sex,972,792,0.5302,0.4999,0.5619,0.9406
+multi_finding_removed,rows whose annotation names a second condition dropped,4679,2738,0.5478,0.5255,0.5682,0.956
