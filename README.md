@@ -1,5 +1,7 @@
 # Provenance-aware, patient-disjoint evaluation of ophthalmic screening with controlled document reliability
 
+**Live site → [ophthalmic-screening.vercel.app](https://ophthalmic-screening.vercel.app)**
+
 B.Tech CSE (Data Science), Semester V project.
 Academic prototype. **Not a medical device, not a diagnostic tool, not clinically validated.**
 
@@ -44,17 +46,25 @@ not the mechanisms.**
 
 ## Live site
 
-`docs/` is a browsable static site — findings, both app screens, all 14 figures and the full
-results. Rebuild it with `python scripts/build_site.py`.
+**[ophthalmic-screening.vercel.app](https://ophthalmic-screening.vercel.app)** — findings,
+both app screens, all 14 figures and the full results.
 
-GitHub Pages is **not** enabled: Pages on a private repository requires a paid plan, and this
-repository is private. Two ways to view the site anyway:
+The site is public; this repository is private. It carries the results and the disclaimers,
+not the code. It is served with `X-Robots-Tag: noindex` so an unlisted prototype does not
+end up in search results.
 
-- open `docs/index.html` in a browser, or
-- `docs/standalone.html` — the whole site as one 1.3 MB self-contained file, publishable
-  anywhere without a host.
+```bash
+python scripts/build_site.py                  # rebuild docs/ from results/
+npx vercel deploy docs --prod --yes           # redeploy
+```
 
-Making the repository public would enable Pages at `/docs` with one API call.
+`docs/standalone.html` is the same site as one 1.3 MB self-contained file, for anywhere that
+cannot host a directory. GitHub Pages is not used: Pages on a private repository needs a
+paid plan.
+
+The **upload form only works locally** (`python scripts/serve.py`) — screening runs a
+PyTorch model that a static host cannot execute. The deployed pages say so rather than
+offering a form that would fail silently.
 
 ## Results
 
