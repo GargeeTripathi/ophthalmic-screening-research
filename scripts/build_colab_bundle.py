@@ -45,7 +45,12 @@ def main() -> int:
     args = parser.parse_args()
 
     splits_dir, manifests = output_dir("splits"), output_dir("manifests")
-    manifest = pd.read_csv(manifests / "odir_manifest_clean.csv", encoding="utf-8")
+    # The RAW manifest, not the deduplicated one. The image_level rung is defined by
+    # containing the duplicates - that is the leakage it exists to measure - so bundling only
+    # the clean set would leave two of its rows pointing at images that are not there, and
+    # trimming those rows instead would silently apply deduplication to the one rung whose
+    # whole purpose is to lack it.
+    manifest = pd.read_csv(manifests / "odir_manifest.csv", encoding="utf-8")
     out_path = Path(args.out)
 
     print("=" * 72)
@@ -90,6 +95,26 @@ def main() -> int:
                     "the public repository",
         }, indent=2))
 
+    # --- verify before anyone uploads it -------------------------------------------------
+    # A split row pointing at an image the bundle does not contain fails in Colab, mid-fold,
+    # after the upload. Cheaper to catch here.
+    problems = []
+    with zipfile.ZipFile(out_path) as check:
+        bundled = {n.split("/", 1)[1] for n in check.namelist() if n.startswith("images/")}
+        for name in SPLITS:
+            if f"splits/{name}" not in check.namelist():
+                continue
+            frame = pd.read_csv(BytesIO(check.read(f"splits/{name}")))
+            missing = set(frame["original_filename"]) - bundled
+            if missing:
+                problems.append(f"{name}: {len(missing)} row(s) reference missing images, "
+                                f"e.g. {sorted(missing)[:3]}")
+            if "image_level" not in name:
+                spanning = (frame.groupby("patient_id")["fold"].nunique() > 1).sum()
+                if spanning:
+                    problems.append(f"{name}: {spanning} patient(s) span folds in a split "
+                                    "that must be patient-disjoint")
+
     elapsed = time.time() - started
     size_mb = out_path.stat().st_size / 1e6
     print(f"\nwritten {out_path}  {size_mb:.0f} MB  in {elapsed / 60:.1f} min")
@@ -97,7 +122,15 @@ def main() -> int:
         print(f"  skipped {len(skipped)} unreadable image(s): {skipped[:3]}")
     print(f"\n  original ODIR folder is ~7 GB; this bundle is {size_mb:.0f} MB "
           f"({7000 / size_mb:.0f}x smaller)")
-    print("\nUpload this single file to Drive, then run colab/train_models.ipynb.")
+    if problems:
+        print("\nBUNDLE IS NOT USABLE:")
+        for problem in problems:
+            print(f"  - {problem}")
+        return 2
+
+    print("\nverified: every split row resolves to a bundled image, and every "
+          "patient-disjoint split is disjoint")
+    print("Upload this single file to Drive, then run colab/train_models.ipynb.")
     return 0
 
 
