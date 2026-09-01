@@ -51,3 +51,8 @@ data/manifests/duplicate_review/
 Thumbs.db
 desktop.ini
 .DS_Store
+.vercel
+
+# Vercel CLI writes a project link and an OIDC token into the deployed directory.
+.vercel/
+.env.local
