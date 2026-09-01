@@ -36,7 +36,10 @@ data/manifests/duplicate_review/
 *.tar
 *.tar.gz
 *.keras
+# ONNX writes weights >2 GB to a sibling .onnx.data file, so match both. A bare *.onnx
+# pattern lets an 89 MB sidecar through, which is exactly what happened once.
 *.onnx
+*.onnx.data
 *.npz
 
 # Notebook noise

@@ -1,0 +1,6 @@
+# Deploy ONLY the static site. Without this Vercel uploads the whole repository,
+# including manifests and results it has no use for.
+*
+!docs/
+!docs/**
+!vercel.json
