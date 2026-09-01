@@ -266,3 +266,97 @@ starts in upload-only mode.</p>
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+
+def build_standalone() -> Path:
+    """Emit docs/standalone.html - the whole site as one portable file.
+
+    GitHub Pages refuses private repositories on a free plan, so the site also has to be
+    publishable somewhere that does not need a host. Everything is inlined: images as data
+    URIs, both app screens, and the results table.
+    """
+    import base64
+
+    docs = REPO_ROOT / "docs"
+    figures = sorted((docs / "figures").glob("*.png"))
+
+    cards = []
+    for figure in figures:
+        key = figure.name.split("_")[0]
+        encoded = base64.b64encode(figure.read_bytes()).decode()
+        cards.append(
+            f'<figure><img src="data:image/png;base64,{encoded}" '
+            f'alt="{html.escape(figure.stem)}">'
+            f'<figcaption><strong>{key}</strong> — '
+            f'{html.escape(FIGURE_CAPTIONS.get(key, figure.stem))}</figcaption></figure>')
+
+    def inner(name: str) -> str:
+        path = docs / name
+        if not path.is_file():
+            return "<p>not generated</p>"
+        page = path.read_text(encoding="utf-8")
+        match = re.search(r"<div class=wrap>(.*?)</div>\s*<footer", page, re.S)
+        return match.group(1) if match else ""
+
+    results = ""
+    results_md = REPO_ROOT / "reports" / "RESULTS.md"
+    if results_md.is_file():
+        results = markdown_to_html(results_md.read_text(encoding="utf-8"))
+
+    index = (docs / "index.html").read_text(encoding="utf-8")
+    overview = re.search(r"<nav>.*?</nav>(.*?)</div>\s*<footer", index, re.S)
+    overview_html = overview.group(1) if overview else ""
+    overview_html = re.sub(r'<a href="(worklist|case_review|figures|results)\.html">',
+                           lambda m: f'<a href="#{m.group(1)}">', overview_html)
+
+    sections = [("overview", "Overview", overview_html),
+                ("worklist", "Worklist", inner("worklist.html")),
+                ("case_review", "Case review", inner("case_review.html")),
+                ("figures", "Figures", "".join(cards)),
+                ("results", "Full results", results)]
+
+    tabs = "".join(f'<button data-tab="{i}" class="{"on" if n == 0 else ""}">'
+                   f'{html.escape(label)}</button>'
+                   for n, (i, label, _) in enumerate(sections))
+    panels = "".join(f'<section id="{i}" class=panel {"" if n == 0 else "hidden"}>{content}</section>'
+                     for n, (i, label, content) in enumerate(sections))
+
+    body = f"""<div class=tabs>{tabs}</div>{panels}
+<script>
+document.querySelectorAll('.tabs button').forEach(function (button) {{
+  button.addEventListener('click', function () {{
+    document.querySelectorAll('.tabs button').forEach(b => b.classList.remove('on'));
+    document.querySelectorAll('.panel').forEach(p => p.hidden = true);
+    button.classList.add('on');
+    document.getElementById(button.dataset.tab).hidden = false;
+    window.scrollTo(0, 0);
+  }});
+}});
+document.querySelectorAll('a[href^="#"]').forEach(function (link) {{
+  link.addEventListener('click', function (event) {{
+    event.preventDefault();
+    var target = link.getAttribute('href').slice(1);
+    var button = document.querySelector('.tabs button[data-tab="' + target + '"]');
+    if (button) button.click();
+  }});
+}});
+</script>"""
+
+    extra = """
+.tabs{display:flex;gap:6px;flex-wrap:wrap;padding:14px 0;border-bottom:1px solid var(--rule)}
+.tabs button{background:transparent;color:var(--ink-2);border:1px solid var(--rule);
+  border-radius:99px;padding:7px 15px;font-size:12.5px;font-weight:500;cursor:pointer}
+.tabs button.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.tabs button:hover:not(.on){background:var(--surface-2)}
+.panel{padding-top:18px}
+.panel[hidden]{display:none}
+"""
+    page = shell("Provenance-aware ophthalmic screening",
+                 "An empirical audit of a widely used fundus benchmark, and a "
+                 "human-in-the-loop screening prototype built around what it found.",
+                 body, extra_css=extra)
+    page = page.replace("<nav>", "<nav hidden>")
+
+    out = docs / "standalone.html"
+    out.write_text(page, encoding="utf-8")
+    return out

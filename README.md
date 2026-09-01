@@ -42,6 +42,20 @@ not the mechanisms.**
 
 ---
 
+## Live site
+
+`docs/` is a browsable static site — findings, both app screens, all 14 figures and the full
+results. Rebuild it with `python scripts/build_site.py`.
+
+GitHub Pages is **not** enabled: Pages on a private repository requires a paid plan, and this
+repository is private. Two ways to view the site anyway:
+
+- open `docs/index.html` in a browser, or
+- `docs/standalone.html` — the whole site as one 1.3 MB self-contained file, publishable
+  anywhere without a host.
+
+Making the repository public would enable Pages at `/docs` with one API call.
+
 ## Results
 
 See **[`reports/RESULTS.md`](reports/RESULTS.md)** — generated from `results/` by
