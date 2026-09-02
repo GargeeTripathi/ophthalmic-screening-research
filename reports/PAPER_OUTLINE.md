@@ -128,7 +128,7 @@ One paragraph. No new claims. Do not use the words *novel*, *first*, *state-of-t
 | 7 | `fig07_risk_coverage.png` | 6 |
 | 8 | `fig08_robustness_matrix.png` | 6 |
 | 9 | `fig09_dataset_composition.png` | 3 |
-| 10 | `fig10_capacity_ladder.png` | 4 — the correction to E1 |
+| 10 | `fig10_capacity_ladder.png` | 4 — the correction to E1, confirmed by E3 |
 | 11 | `fig11_cross_source_transfer.png` | 4 |
 | 12 | `fig12_xai.png` | 6 |
 | 13 | `fig13_confound_sensitivity.png` | 4 |
