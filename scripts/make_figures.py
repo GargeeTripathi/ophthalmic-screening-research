@@ -232,6 +232,21 @@ def fig_capacity_ladder(results: Path) -> None:
     frame = pd.DataFrame(payload["per_cell"])
     comparisons = pd.DataFrame(payload["comparisons"])
 
+    # E3 (Colab, fine-tuned end-to-end) sits between the frozen-feature models and the 1-NN
+    # retriever on the capacity axis - a real deployable model, not a proxy for one.
+    finetuned_path = results / "E3_finetuned_ladder.json"
+    if finetuned_path.is_file():
+        e3 = json.loads(finetuned_path.read_text(encoding="utf-8"))
+        model_list = list(comparisons["model"])
+        insert_at = model_list.index("knn_5") + 1 if "knn_5" in model_list else len(model_list)
+        backbone = e3["config"]["backbone"]
+        finetuned_row = pd.DataFrame([{
+            "model": "finetuned\n" + backbone,
+            "inflation": e3["comparison"]["inflation"],
+        }])
+        comparisons = pd.concat([comparisons.iloc[:insert_at], finetuned_row,
+                                 comparisons.iloc[insert_at:]], ignore_index=True)
+
     figure, axes = plt.subplots(1, 2, figsize=(8.4, 3.1))
 
     for rung, colour, marker in (("image_level", WARN, "o"),
@@ -254,13 +269,15 @@ def fig_capacity_ladder(results: Path) -> None:
 
     if not comparisons.empty:
         x = np.arange(len(comparisons))
-        colours = [WARN if v > 0.02 else "#9AA9A6" for v in comparisons["inflation"]]
+        colours = [ACCENT if str(m).startswith("finetuned")
+                   else (WARN if v > 0.02 else "#9AA9A6")
+                   for m, v in zip(comparisons["model"], comparisons["inflation"])]
         axes[1].bar(x, comparisons["inflation"], color=colours)
         axes[1].axhline(0, color=INK, linewidth=1)
-        axes[1].set_xticks(x, comparisons["model"], fontsize=8)
+        axes[1].set_xticks(x, comparisons["model"], fontsize=7.5)
         axes[1].set_ylabel("macro-F1 gained by ignoring patient identity")
         axes[1].set_xlabel("model capacity to memorise  →")
-        axes[1].set_title("Inflation from patient leakage", fontsize=9.5)
+        axes[1].set_title("Inflation from patient leakage\n(teal = fine-tuned, the deployable model)", fontsize=9)
         for i, value in enumerate(comparisons["inflation"]):
             axes[1].text(i, value, f"{value:+.3f}", ha="center", fontsize=7.5,
                          va="bottom" if value >= 0 else "top")

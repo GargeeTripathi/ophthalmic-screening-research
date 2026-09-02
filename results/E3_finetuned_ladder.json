@@ -1,0 +1,30 @@
+{
+  "image_level": {
+    "n": 5058,
+    "macro_f1": 0.6797,
+    "ci_low": 0.6611,
+    "ci_high": 0.6967
+  },
+  "patient_disjoint_dedup": {
+    "n": 5056,
+    "macro_f1": 0.6579,
+    "ci_low": 0.6393,
+    "ci_high": 0.6768
+  },
+  "comparison": {
+    "inflation": 0.0218,
+    "p_value": 0.0006824546539515509,
+    "discordant": 886,
+    "paired_n": 5056
+  },
+  "config": {
+    "backbone": "resnet50",
+    "image_size": 384,
+    "epochs": 8,
+    "seed": 42,
+    "rungs": [
+      "splits_image_level.csv",
+      "splits_patient_disjoint_dedup.csv"
+    ]
+  }
+}

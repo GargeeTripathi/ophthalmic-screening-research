@@ -75,9 +75,30 @@ Model held fixed, only the split varies. Frozen ResNet50 features with a logisti
 | image_level -> patient_disjoint_dedup | +0.0019 | 0.750243 |
 | image_level -> provenance_controlled | +0.0447 | 0.143081 |
 
-**Result: H2 is falsified as run.** No rung differs significantly from any other; all confidence intervals overlap.
+**Result on frozen features: H2 is falsified as run.** No rung differs significantly from any other; all confidence intervals overlap.
 
-**The limitation that must accompany it.** A frozen linear head has almost no capacity to memorise, and leakage inflates a score by letting a model recall a near-copy it has already seen. This therefore measures a *lower bound* on protocol inflation, not the inflation a fine-tuned backbone would show. Settling that requires the GPU baselines in `colab/train_models.ipynb`.
+**This was a lower bound, and E3 (below) closes it.** A frozen linear head has almost no capacity to memorise, and leakage inflates a score by letting a model recall a near-copy it has already seen. A fine-tuned backbone can memorise - and does.
+
+## 4a. Fine-tuned confirmation (E3)
+
+E1 (frozen features) found no significant leakage inflation, with the caveat that a linear head cannot memorise. E1b showed inflation rises with the capacity to memorise, using frozen-feature models up to a 1-NN retriever. This closes the loop with the model people actually deploy: a **resnet50, fine-tuned end-to-end** (`colab/train_models.ipynb`, 8 epochs, seed 42, 384px).
+
+| rung | n | macro-F1 | 95% CI |
+|---|---:|---:|---|
+| image-level (leaky) | 5058 | 0.6797 | [0.6611, 0.6967] |
+| patient-disjoint + dedup | 5056 | 0.6579 | [0.6393, 0.6768] |
+
+**Inflation: +0.0218 macro-F1** (McNemar p = 0.0006825, 886 discordant pairs out of 5056 paired predictions).
+
+| model | capacity to memorise | inflation | McNemar p |
+|---|---|---:|---:|
+| logistic head (E1) | none | +0.0052 | 0.75 |
+| **fine-tuned resnet50 (E3)** | **realistic** | **+0.0218** | **0.0006825** |
+| 1-NN retriever (E1b) | pure | +0.0453 | ~0 |
+
+**Monotonic in capacity, and significant for the model people would actually deploy.** This confirms E1b rather than merely being consistent with it: E1's null was a genuine artefact of using a low-capacity head, not a property of the dataset. The finding is no longer "a 1-NN toy model shows leakage" - it is "a deployable fine-tuned CNN shows leakage, at p < 0.001."
+
+*Caveat carried forward:* one seed, one backbone, 8 epochs. E13's seed-stability and Holm-Bonferroni correction were run on the frozen-feature models only; the fine-tuned result should be read as confirmatory rather than as independently seed-tested.
 
 ## 4b. Does inflation depend on memorisation? (E1b)
 

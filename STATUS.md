@@ -26,9 +26,9 @@ Everything below is already done. `run_all.py` rebuilds anything missing and ski
 | Data | `odir_manifest.csv` (5,058 images / 2,910 patients, counts asserted), `merged_manifest.csv` (4,217, every image source-labelled), `odir_manifest_clean.csv` |
 | Splits | 4 protocol rungs, patient-disjointness asserted |
 | Dedup | calibrated detector, `duplicate_groups.csv`, comparison against the rejected embedding method |
-| Experiments | E0a/b/c, E1, E1b, E5, E7, E8, E9, E10, **E11**, E12, **E13** — all in `results/` |
+| Experiments | E0a/b/c, E1, E1b, **E3**, E5, E7, E8, E9, E10, E11, E12, E13 — all in `results/` |
 | IDP | 360 synthetic referrals, layouts D–F sealed and opened once, OCR cached |
-| Figures | 14, in `figures/` |
+| Figures | 14, in `figures/` (fig10 now includes the fine-tuned point) |
 | Report | `reports/RESULTS.md`, `reports/PAPER_OUTLINE.md` |
 | Demo | `reports/worklist.html` — self-contained, opens in any browser |
 | Reproducibility | `scripts/run_all.py` (one command, cached stages), `requirements.lock.txt` (45 pinned versions) |
@@ -65,6 +65,24 @@ E1b swept capacity instead of compute, holding features and splits fixed:
 gains +0.045 macro-F1 from ignoring patient identity, at p ≈ 0. E1's null was an artefact of
 model choice, and the caveat written before the run turned out to be the finding. The
 practical message: patient-disjoint splitting matters *more* as capacity rises.
+
+### E3 — fine-tuned GPU confirmation: **done**
+
+`colab/train_models.ipynb` ran on a T4. Two real problems surfaced and were fixed before it
+could complete:
+- **7 GB upload avoided.** `scripts/build_colab_bundle.py` resizes to 384px first, cutting
+  the upload to 77 MB (91x smaller) - almost all the discarded resolution was thrown away
+  by training anyway.
+- **A silent bundling bug.** The bundle initially packed images from the *deduplicated*
+  manifest while two of three splits reference the *raw* one, so two rows pointed at images
+  the bundle did not contain - a `FileNotFoundError` that would only have surfaced mid-fold,
+  after upload. Fixed by bundling the raw manifest (the `image_level` rung is *defined* by
+  containing the duplicates) and the builder now verifies itself before reporting success.
+- **Runtime-reset friction**, twice: `DRIVE_ROOT` undefined after a Drive remount, and
+  Drive not actually mounted despite `drive.mount()` appearing to succeed. Both diagnosed
+  live and fixed with a find-and-remount cell rather than blind retries.
+
+Result: see RQ2 above. Confirms E1b on a real deployable model.
 
 ### E5 — cross-source transfer: **the model does not transfer**
 

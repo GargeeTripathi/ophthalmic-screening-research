@@ -188,10 +188,10 @@ def main() -> int:
          "Majority baseline 26.0%. A four-row source lookup table reaches 69.1%. A "
          "metadata-only classifier reaches 66.7% without seeing a single pixel. Within one "
          "source the signal vanishes (+0.004)."),
-        ("Patient leakage is real, and only memorisers exploit it",
-         "A linear head gains +0.005 (p=0.75) from ignoring patient identity. A 1-NN "
-         "retriever gains +0.045 at p ≈ 0, stable across three seeds. Splitting by patient "
-         "matters more as model capacity rises."),
+        ("Patient leakage is real, confirmed on a deployable model",
+         "A linear head gains +0.005 (p=0.75) — it cannot memorise. A fine-tuned ResNet50 "
+         "on a GPU gains +0.022 at p<0.001; a 1-NN retriever gains +0.045 at p≈0. Splitting "
+         "by patient matters more as model capacity rises."),
         ("The model does not transfer across acquisition sources",
          "Trained on ODIR, it scores below majority-class guessing on three of four unseen "
          "sources."),

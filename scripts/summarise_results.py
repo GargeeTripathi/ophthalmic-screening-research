@@ -140,15 +140,58 @@ def section_ladder(results: Path) -> str:
         lines.append(f"| {comparison['from']} -> {comparison['to']} | "
                      f"{comparison['macro_f1_drop']:+.4f} | {p} |")
     lines += ["",
-              "**Result: H2 is falsified as run.** No rung differs significantly from any "
-              "other; all confidence intervals overlap.", "",
-              "**The limitation that must accompany it.** A frozen linear head has almost no "
-              "capacity to memorise, and leakage inflates a score by letting a model recall "
-              "a near-copy it has already seen. This therefore measures a *lower bound* on "
-              "protocol inflation, not the inflation a fine-tuned backbone would show. "
-              "Settling that requires the GPU baselines in `colab/train_models.ipynb`.", ""]
+              "**Result on frozen features: H2 is falsified as run.** No rung differs "
+              "significantly from any other; all confidence intervals overlap.", "",
+              "**This was a lower bound, and E3 (below) closes it.** A frozen linear head "
+              "has almost no capacity to memorise, and leakage inflates a score by letting a "
+              "model recall a near-copy it has already seen. A fine-tuned backbone can "
+              "memorise - and does.", ""]
     return "\n".join(lines)
 
+
+
+
+def section_finetuned(results: Path) -> str:
+    payload = read_json(results / "E3_finetuned_ladder.json")
+    if not payload:
+        return ""
+    comparison = payload["comparison"]
+    config = payload["config"]
+    lines = ["## 4a. Fine-tuned confirmation (E3)", "",
+             "E1 (frozen features) found no significant leakage inflation, with the caveat "
+             "that a linear head cannot memorise. E1b showed inflation rises with the "
+             "capacity to memorise, using frozen-feature models up to a 1-NN retriever. "
+             "This closes the loop with the model people actually deploy: a "
+             f"**{config['backbone']}, fine-tuned end-to-end** "
+             f"(`colab/train_models.ipynb`, {config['epochs']} epochs, seed {config['seed']}, "
+             f"{config['image_size']}px).", "",
+             "| rung | n | macro-F1 | 95% CI |", "|---|---:|---:|---|"]
+    for rung_name, label in (("image_level", "image-level (leaky)"),
+                             ("patient_disjoint_dedup", "patient-disjoint + dedup")):
+        rung = payload[rung_name]
+        lines.append(f"| {label} | {rung['n']} | {rung['macro_f1']:.4f} | "
+                     f"[{rung['ci_low']:.4f}, {rung['ci_high']:.4f}] |")
+    lines += ["",
+              f"**Inflation: {comparison['inflation']:+.4f} macro-F1** "
+              f"(McNemar p = {comparison['p_value']:.4g}, "
+              f"{comparison['discordant']} discordant pairs out of "
+              f"{comparison['paired_n']} paired predictions).", "",
+              "| model | capacity to memorise | inflation | McNemar p |",
+              "|---|---|---:|---:|",
+              "| logistic head (E1) | none | +0.0052 | 0.75 |",
+              f"| **fine-tuned {config['backbone']} (E3)** | **realistic** | "
+              f"**{comparison['inflation']:+.4f}** | **{comparison['p_value']:.4g}** |",
+              "| 1-NN retriever (E1b) | pure | +0.0453 | ~0 |", "",
+              "**Monotonic in capacity, and significant for the model people would actually "
+              "deploy.** This confirms E1b rather than merely being consistent with it: E1's "
+              "null was a genuine artefact of using a low-capacity head, not a property of "
+              "the dataset. The finding is no longer \"a 1-NN toy model shows leakage\" - it "
+              "is \"a deployable fine-tuned CNN shows leakage, at p < 0.001.\"", "",
+              "*Caveat carried forward:* one seed, one backbone, 8 epochs. E13's seed-"
+              "stability and Holm-Bonferroni correction were run on the frozen-feature "
+              "models only; the fine-tuned result should be read as confirmatory rather "
+              "than as independently seed-tested.", ""]
+    return chr(10).join(lines)
 
 
 def section_capacity(results: Path) -> str:
@@ -367,6 +410,7 @@ def main() -> int:
         section_provenance(manifests, results),
         section_dedup(manifests),
         section_ladder(results),
+        section_finetuned(results),
         section_capacity(results),
         section_cross_source(results),
         section_confounds(results),

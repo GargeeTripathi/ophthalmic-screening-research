@@ -82,11 +82,12 @@ source-bound**:
   class contains one. Within a single source that signal disappears (`odir_jpg512`: 0.640 →
   0.644), so provenance explains the DR and normal classes almost entirely and contributes
   little to separating cataract from glaucoma.
-- **Patient leakage is real, and only memorisers exploit it.** The protocol ladder found
-  nothing with a linear head (+0.005, p = 0.75) — but a linear head cannot memorise, and
-  leakage is exploited *by* memorisation. Sweeping capacity instead of compute: 1-NN gains
-  **+0.045 macro-F1** from ignoring patient identity, at p ≈ 0. Patient-disjoint splitting
-  matters *more* as capacity rises.
+- **Patient leakage is real, and confirmed on a deployable model.** A linear head shows
+  nothing (+0.005, p = 0.75) because it cannot memorise. A CPU capacity sweep (E1b) showed
+  inflation rising with memorisation, up to +0.045 for a 1-NN retriever. A **fine-tuned
+  ResNet50 on a GPU (E3) then confirmed it directly: +0.022 macro-F1, p < 0.001** — not a
+  proxy model, the one people would actually deploy. Patient-disjoint splitting matters
+  *more* as capacity rises.
 - **The model does not transfer across sources.** Trained on ODIR, it scores *below*
   majority-class guessing on three of four unseen acquisition sources.
 - **It is not a demographics detector.** Cataract-vs-rest AUROC holds at ~0.94 under age
@@ -109,7 +110,7 @@ Two methods notes worth publishing on their own:
 | RQ | Question | Experiment | Status |
 |---|---|---|---|
 | RQ1 | How much performance is acquisition provenance? | E0a / E0b / E0c, **E11** | done |
-| RQ2 | How much is patient leakage and duplication? | E1, **E1b** | done |
+| RQ2 | How much is patient leakage and duplication? | E1, E1b, **E3** | done |
 | RQ3 | Is raw OCR confidence a useful reliability signal? | E8 | done |
 | RQ4 | How does document quality propagate into triage? | E10 | done |
 | RQ5 | Can document evidence improve deferral without changing the diagnosis? | E9 | done |
@@ -208,8 +209,10 @@ worklist      build_worklist.py            reports/worklist.html
 </details>
 
 The GPU half — E2/E3 fine-tuned baselines — is deliberately **not** in the orchestrator. It
-runs in `colab/train_models.ipynb` and needs a one-time Drive upload. Nothing else depends
-on it.
+runs in `colab/train_models.ipynb` and needs a one-time Drive upload (a resized ~77 MB
+bundle from `scripts/build_colab_bundle.py`, not the raw ~7 GB image folder). Nothing else
+depends on it, and it has already been run: `results/E3_finetuned_ladder.json` confirms
+patient leakage on a fine-tuned ResNet50 (+0.022 macro-F1, p < 0.001) — see RQ2 above.
 
 ### Cost, measured
 
@@ -218,7 +221,7 @@ on it.
 | Fingerprints (9,275 images) | 11.4 min | CPU, 14 threads |
 | Embeddings (9,275 images) | 17.6 min | CPU |
 | Everything else | < 10 min | CPU |
-| E2/E3 fine-tuned baselines | ~6 h | Colab T4 |
+| E3 fine-tuned baselines (2 rungs × cross-val) | ~1.5–2 h | Colab T4 |
 
 ---
 

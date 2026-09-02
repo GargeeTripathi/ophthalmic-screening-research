@@ -58,7 +58,8 @@ Cite and position against, honestly:
 | Provenance predicts label without pixels | E0a | Fig 2 |
 | Within a source the signal vanishes | E0c-ii | Fig 2 |
 | Protocol ladder — no inflation with a linear head | E1 | Fig 3 |
-| **Inflation appears with memorisation capacity** | **E1b** | **Fig 10** |
+| Inflation appears with memorisation capacity (CPU sweep) | E1b | Fig 10 |
+| **Confirmed on a fine-tuned, deployable model (p < 0.001)** | **E3** | **Fig 10** |
 | Model does not transfer across sources | E5 | Fig 11 |
 | Result survives demographic controls | E11 | Fig 13 |
 | Seed stability + Holm-Bonferroni | E13 | Fig 14 |
@@ -67,8 +68,10 @@ Cite and position against, honestly:
 collapse across sources. Three legs, one conclusion: performance on these benchmarks is
 substantially source-bound.
 
-**Report E1 and E1b together, in that order.** E1's null and its correction by E1b is the
-most instructive sequence in the paper, and hiding the null would be dishonest.
+**Report E1, E1b and E3 together, in that order.** E1's null, E1b's capacity sweep that
+explains it, and E3's fine-tuned confirmation is the most instructive sequence in the
+paper - it shows the reasoning, not just the conclusion - and hiding the null would be
+dishonest.
 
 ## 5. Document processing
 
@@ -144,7 +147,7 @@ If a figure does not appear in this table, it does not go in the paper.
 | "Your probe just detects file format." | E0b (normalised pixels) and E0c-i (geometry only). |
 | "The probe may be reading pathology." | E0c-ii — within-source, the signal vanishes. |
 | "ODIR is confounded too." | E11 — survives age and sex matching; demographics alone are useless. |
-| "You used too weak a model to see leakage." | E1b — a pure memoriser shows +0.045 at p ≈ 0. |
+| "You used too weak a model to see leakage." | E1b (pure memoriser, +0.045 at p ≈ 0) AND E3 (fine-tuned ResNet50, +0.022 at p < 0.001 — the actual deployable model). |
 | "One seed proves nothing." | E13 — three seeds. |
 | "Twelve tests, no correction." | E13 — Holm-Bonferroni over the whole family. |
 | "Synthetic documents prove nothing." | Conceded; framed as controlled robustness analysis throughout. |
