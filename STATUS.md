@@ -30,7 +30,7 @@ Everything below is already done. `run_all.py` rebuilds anything missing and ski
 | IDP | 360 synthetic referrals, layouts D–F sealed and opened once, OCR cached |
 | Figures | 14, in `figures/` (fig10 now includes the fine-tuned point) |
 | Report | `reports/RESULTS.md`, `reports/PAPER_OUTLINE.md` |
-| Demo | `reports/worklist.html` — self-contained, opens in any browser |
+| Demo | `reports/worklist_report.html` — self-contained, opens in any browser |
 | Reproducibility | `scripts/run_all.py` (one command, cached stages), `requirements.lock.txt` (45 pinned versions) |
 | Tests | 131 passing |
 

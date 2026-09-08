@@ -8,7 +8,11 @@ It is an interface, not a research contribution, and the page says so on every s
 
     python scripts/build_worklist.py
 
-Writes reports/worklist.html - openable in any browser, no server needed.
+Writes reports/worklist_report.html - openable in any browser, no server needed.
+
+Not to be confused with reports/worklist.html, which scripts/serve.py captures from the live
+app and scripts/build_site.py publishes. Both used to be called worklist.html, so whichever
+ran last won and the site could publish this page in the app's place.
 """
 
 from __future__ import annotations
@@ -207,7 +211,7 @@ def main() -> int:
     if not cases:
         print("No cases available - run scripts/run_deferral.py first.")
         return 2
-    path = output_dir("reports") / "worklist.html"
+    path = output_dir("reports") / "worklist_report.html"
     path.write_text(render(cases), encoding="utf-8")
     deferred = sum(1 for c in cases if c["deferred"])
     print(f"\n{len(cases)} cases  ({deferred} deferred, {len(cases) - deferred} accepted)")

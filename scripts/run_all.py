@@ -66,7 +66,7 @@ STAGES: list[tuple[str, str, str, list[str]]] = [
      ["results/E13_statistical_validation.json"]),
     ("figures", "make_figures.py", "all figures", []),          # always regenerate
     ("report", "summarise_results.py", "reports/RESULTS.md", []),
-    ("worklist", "build_worklist.py", "reports/worklist.html", []),
+    ("worklist", "build_worklist.py", "reports/worklist_report.html", []),
 ]
 
 

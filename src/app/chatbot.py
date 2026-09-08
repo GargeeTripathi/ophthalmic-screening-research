@@ -50,9 +50,9 @@ class Chatbot:
         return f"{preamble} {finding}" if preamble else finding
 
     def confidence(self) -> str:
-        # Do not claim calibration the pipeline has not performed. The current predictions
-        # come from an uncalibrated head; temperature scaling arrives with the GPU
-        # baselines, and this sentence changes only when that is actually true.
+        # Do not claim calibration the pipeline has not performed. The deployed head is
+        # temperature-scaled (T=0.831, deployment.json), but a case carries its own flag and
+        # this sentence follows the flag rather than assuming.
         calibrated = self.case.get("calibrated", False)
         basis = ("It has been temperature-scaled on validation data, so it is comparable "
                  "across cases." if calibrated else

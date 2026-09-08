@@ -204,6 +204,21 @@ def _to_case(case: dict) -> dict:
     }
 
 
+def capture() -> None:
+    """Freeze the two screens to reports/, which is what scripts/build_site.py publishes.
+
+    Without this the site publishes whatever reports/worklist.html happens to hold, so the
+    deployed screens drift from the app they claim to show.
+    """
+    reports = output_dir("reports")
+    (reports / "worklist.html").write_text(worklist(CASES), encoding="utf-8")
+    first = CASES[0]
+    (reports / "case_review.html").write_text(
+        case_review(first, Chatbot(_to_case(first)).summary()), encoding="utf-8")
+    print(f"captured  {reports / 'worklist.html'}")
+    print(f"captured  {reports / 'case_review.html'}  ({first['image_id']})")
+
+
 def main() -> int:
     global PIPELINE, CLASS_DISPLAY
 
@@ -240,6 +255,7 @@ def main() -> int:
         CASES.extend(build_demo_cases(args.cases))
         deferred = sum(1 for c in CASES if c["decision"] == "DEFER")
         print(f"\n{len(CASES)} cases  ({deferred} deferred, {len(CASES) - deferred} accepted)")
+        capture()
     else:
         print("\nno local ODIR checkout found - starting in UPLOAD-ONLY mode.")
         print("  the queue starts empty; upload a fundus photograph to screen a case.")

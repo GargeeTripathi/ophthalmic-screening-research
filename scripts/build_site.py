@@ -94,39 +94,59 @@ def markdown_to_html(source: str) -> str:
     return "\n".join(out)
 
 
-def shell(title: str, subtitle: str, body: str, extra_css: str = "") -> str:
+PAGES = (("./", "index", "Overview"), ("worklist.html", "worklist", "Worklist"),
+         ("case_review.html", "case", "Case review"), ("figures.html", "figures", "Figures"),
+         ("results.html", "results", "Full results"))
+
+
+def shell(title: str, subtitle: str, body: str, extra_css: str = "",
+          active: str = "index") -> str:
+    """Wrap page content in the dashboard frame — the same rail the live app uses.
+
+    `<div class="site wrap" id=main>` is load-bearing: build_standalone() extracts page
+    content by that marker, so it must stay a single element closing right before <footer>.
+    """
+    nav = "".join(f'<a class="{"on" if key == active else ""}" href="{href}">{label}</a>'
+                  for href, key, label in PAGES)
     return f"""<!doctype html><html lang=en><head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
 <title>{html.escape(title)}</title><style>{CSS}
-.site{{max-width:1100px;margin:0 auto;padding:0 32px}}
-nav{{display:flex;gap:18px;padding:14px 0;font-size:13px;border-bottom:1px solid var(--rule)}}
-nav a{{text-decoration:none}}
+.site{{max-width:1180px}}
 figure{{margin:0 0 28px}}
-figure img{{width:100%;border:1px solid var(--rule);border-radius:8px;background:var(--surface)}}
+figure img{{width:100%;border:1px solid var(--rule);border-radius:10px;background:var(--surface)}}
 figcaption{{font-size:12px;color:var(--muted);margin-top:8px}}
 .finding{{background:var(--surface);border:1px solid var(--rule);border-left:5px solid var(--accent);
-  border-radius:8px;padding:16px 20px;margin:14px 0}}
+  border-radius:10px;padding:16px 20px;margin:14px 0;box-shadow:var(--shadow)}}
 .finding h3{{margin:0 0 6px;font-size:15px}}
 .finding p{{margin:0;font-size:13px;color:var(--ink-2)}}
 li{{font-size:13px;color:var(--ink-2);margin:4px 0}}
 h2{{margin-top:34px;font-size:20px}} h3{{font-size:15px}}
-table{{margin:14px 0;font-size:12px}}
+table{{margin:14px 0;font-size:12px;border:1px solid var(--rule);border-radius:10px;
+  overflow:hidden}}
 {extra_css}</style></head><body>
-<header><div class=site>
-  <p class=eyebrow>Ophthalmic screening support</p>
-  <h1>{html.escape(title)}</h1>
-  <p class=sub>{html.escape(subtitle)}</p>
-</div></header>
-<div class=site>
-<nav><a href="./">Overview</a><a href="worklist.html">Worklist</a>
-<a href="case_review.html">Case review</a><a href="figures.html">Figures</a>
-<a href="results.html">Full results</a></nav>
-{body}
-</div>
+<div class=app>
+<aside class=rail>
+  <div class=brand><span class=mark>&#9673;</span>
+    <div><b>Fundus triage</b><span>Screening support</span></div></div>
+  <nav><p class=railhead>Project</p>{nav}</nav>
+  <div class=railfoot><b>Decision support only.</b>
+  Every case is read by a clinician. Not a medical device.</div>
+</aside>
+<main>
+<header>
+  <div>
+    <p class=eyebrow>Ophthalmic screening support</p>
+    <h1>{html.escape(title)}</h1>
+    <p class=sub>{html.escape(subtitle)}</p>
+  </div>
+</header>
+<div class="site wrap" id=main>{body}</div>
 <footer><b>Academic screening prototype. Not a medical device and not a diagnosis.</b>
 <p>A qualified clinician reviews every case and makes every decision. Trained on a public
 research dataset with 203 cataract and 182 glaucoma patients. Referral documents used in
 development were synthetic. No prospective clinical validation.</p></footer>
+</main>
+</div>
 </body></html>"""
 
 
@@ -152,7 +172,7 @@ def main() -> int:
 <figcaption><strong>{key}</strong> — {html.escape(FIGURE_CAPTIONS.get(key, figure.stem))}</figcaption></figure>""")
     (docs / "figures.html").write_text(
         shell("Figures", "Every figure is regenerated from results/ by scripts/make_figures.py.",
-              "".join(cards)), encoding="utf-8")
+              "".join(cards), active="figures"), encoding="utf-8")
 
     # --- results -------------------------------------------------------------------------
     results_md = REPO_ROOT / "reports" / "RESULTS.md"
@@ -160,7 +180,8 @@ def main() -> int:
         body = markdown_to_html(results_md.read_text(encoding="utf-8"))
         (docs / "results.html").write_text(
             shell("Results", "Generated from results/ by scripts/summarise_results.py — no "
-                             "number here is transcribed by hand.", body), encoding="utf-8")
+                             "number here is transcribed by hand.", body, active="results"),
+            encoding="utf-8")
         print("rendered RESULTS.md")
 
     # --- the two app screens, as captured ------------------------------------------------
@@ -179,6 +200,16 @@ def main() -> int:
     <code>python scripts/serve.py</code> — because screening runs a PyTorch model that a
     static host cannot execute.</p></div>
   </div>""", page, flags=re.S)
+        # Every other app route is equally absent here. Rail links move to their static
+        # equivalents; per-case links become plain text, because linking all ten rows to the
+        # one captured review would show the wrong case for nine of them.
+        page = re.sub(r'<a class="[^"]*" href="/">', '<a class="" href="./">', page)
+        page = page.replace('<a href="/#upload">Screen a new case</a>',
+                            '<a href="case_review.html">Case review</a>')
+        page = page.replace('href="/"', 'href="./"')
+        page = re.sub(r'<a href="/case/\d+">(.*?)</a>', r"\1", page)
+        page = page.replace("click a case to review it",
+                            "see Case review for one case end to end")
         (docs / name).write_text(page, encoding="utf-8")
         print(f"copied {name}")
 
@@ -186,8 +217,11 @@ def main() -> int:
     findings = [
         ("Acquisition provenance nearly determines the label",
          "Majority baseline 26.0%. A four-row source lookup table reaches 69.1%. A "
-         "metadata-only classifier reaches 66.7% without seeing a single pixel. Within one "
-         "source the signal vanishes (+0.004)."),
+         "metadata-only classifier reaches 66.7% without seeing a single pixel. Holding "
+         "source constant removes the signal in odir_jpg512 (+0.004) but not in crop_jpg256 "
+         "(+0.219) or png_highres (+0.284): provenance explains the diabetic-retinopathy and "
+         "normal classes almost entirely, and contributes little to separating cataract from "
+         "glaucoma. Both halves are reported."),
         ("Patient leakage is real, confirmed on a deployable model",
          "A linear head gains +0.005 (p=0.75) — it cannot memorise. A fine-tuned ResNet50 "
          "on a GPU gains +0.022 at p<0.001; a 1-NN retriever gains +0.045 at p≈0. Splitting "
@@ -304,7 +338,7 @@ def build_standalone() -> Path:
         results = markdown_to_html(results_md.read_text(encoding="utf-8"))
 
     index = (docs / "index.html").read_text(encoding="utf-8")
-    overview = re.search(r"<nav>.*?</nav>(.*?)</div>\s*<footer", index, re.S)
+    overview = re.search(r'<div class="site wrap" id=main>(.*?)</div>\s*<footer', index, re.S)
     overview_html = overview.group(1) if overview else ""
     overview_html = re.sub(r'<a href="(worklist|case_review|figures|results)\.html">',
                            lambda m: f'<a href="#{m.group(1)}">', overview_html)

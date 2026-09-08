@@ -136,7 +136,7 @@ scripts/     runnable entry points, one job each
 colab/       train_models.ipynb — the GPU half
 data/        manifests and splits committed; raw/processed/documents are not
 results/     append-only experiment records
-reports/     RESULTS.md, worklist.html
+reports/     RESULTS.md, worklist.html (app capture), worklist_report.html
 ```
 
 Source datasets are **read-only** and live outside this repo (`configs/paths.yaml`).
@@ -203,7 +203,7 @@ E12           run_xai.py                   explainability battery
 E13           statistical_validation.py    seed stability + Holm-Bonferroni
 figures       make_figures.py              14 figures
 report        summarise_results.py         reports/RESULTS.md
-worklist      build_worklist.py            reports/worklist.html
+worklist      build_worklist.py            reports/worklist_report.html
 ```
 
 </details>
