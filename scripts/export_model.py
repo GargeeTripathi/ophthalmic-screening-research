@@ -106,6 +106,56 @@ def fit_temperature(head: nn.Linear, labels: list[str], vectors: np.ndarray,
     return float(log_temperature.exp().item())
 
 
+class FusedScreener(nn.Module):
+    """The whole image pathway as one graph: backbone -> L2 -> head -> /T -> softmax.
+
+    Every step src/app/pipeline.py performs at runtime is folded in here, because a browser
+    running this has no Python to perform them. The L2 normalisation especially: leaving it
+    out feeds the head features ~12x too large and saturates every softmax to 100%, which is
+    the exact bug documented in pipeline.py.
+
+    Input is an ImageNet-normalised NCHW float tensor, matching TRANSFORM there. Output is
+    calibrated probabilities, so the browser needs no post-processing either.
+    """
+
+    def __init__(self, backbone: nn.Module, head: nn.Linear, temperature: float):
+        super().__init__()
+        self.backbone, self.head = backbone, head
+        self.register_buffer("temperature", torch.tensor(float(temperature)))
+
+    def forward(self, image: torch.Tensor) -> torch.Tensor:
+        features = torch.nn.functional.normalize(self.backbone(image), p=2, dim=1)
+        return torch.softmax(self.head(features) / self.temperature, dim=1)
+
+
+def export_fused_onnx(backbone: nn.Module, head: nn.Linear, temperature: float,
+                      path: Path) -> None:
+    """Write the fused graph, then assert it reproduces the PyTorch path exactly.
+
+    Exported without external data so it is a single self-contained file a static host can
+    serve; at ~90 MB it stays under the limits that matter.
+    """
+    model = FusedScreener(backbone, head, temperature).eval()
+    example = torch.randn(1, 3, 224, 224)
+
+    torch.onnx.export(model, example, str(path), input_names=["image"],
+                      output_names=["probabilities"], opset_version=17,
+                      dynamo=False, external_data=False)
+
+    # An export that silently disagrees with the research pipeline is worse than no export.
+    import onnxruntime as ort
+    session = ort.InferenceSession(str(path), providers=["CPUExecutionProvider"])
+    for _ in range(3):
+        probe = torch.randn(1, 3, 224, 224)
+        with torch.no_grad():
+            expected = model(probe).numpy()
+        actual = session.run(None, {"image": probe.numpy()})[0]
+        if not np.allclose(expected, actual, atol=1e-4):
+            raise SystemExit(f"ONNX export disagrees with PyTorch by "
+                             f"{np.abs(expected - actual).max():.2e} - refusing to ship it")
+    print("  ONNX verified against the PyTorch graph on 3 random inputs")
+
+
 def main() -> int:
     labels = load_config("data")["classes"]
     class_names = load_config("data")["class_names"]
@@ -172,6 +222,12 @@ def main() -> int:
                 "backbone": "resnet50", "backbone_weights": "IMAGENET1K_V2"}, head_path)
     print(f"  written {head_path}  ({head_path.stat().st_size / 1024:.0f} KB) "
           "<- committed; the backbone is fetched from torchvision at runtime")
+
+    # --- fused ONNX, for running the image pathway in a browser --------------------------
+    onnx_path = checkpoints / "screening_fused.onnx"
+    export_fused_onnx(backbone, head, temperature, onnx_path)
+    print(f"  written {onnx_path}  ({onnx_path.stat().st_size / 1e6:.0f} MB) "
+          "<- not committed; rebuild with this script")
 
     # --- extraction-reliability estimator -----------------------------------------------
     extractions = processed / "extractions_dev.csv"

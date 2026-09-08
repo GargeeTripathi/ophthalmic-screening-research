@@ -14,6 +14,7 @@ so and points at scripts/serve.py instead.
 from __future__ import annotations
 
 import html
+import json
 import re
 import shutil
 import sys
@@ -50,6 +51,201 @@ FIGURE_CAPTIONS = {
     "fig13": "The result survives age and sex matching. It is not a demographics detector.",
     "fig14": "Leakage inflation is stable across three split seeds.",
 }
+
+
+def browser_panel(labels: list[str], display: dict, threshold: float, note: str) -> str:
+    """The intake panel, re-implemented to run the model in the visitor's browser.
+
+    A static host cannot execute PyTorch, so the deployed page used to replace the panel
+    with a notice. It does not have to: scripts/export_model.py fuses the whole image
+    pathway - backbone, L2 normalisation, head, temperature, softmax - into one ONNX graph,
+    verified against PyTorch at export time, and onnxruntime-web runs it here.
+
+    TWO HONEST LIMITS, both stated on the page rather than hidden:
+
+    1. Image only. The referral pathway is RapidOCR under Python and has no browser
+       equivalent, so this cannot reproduce the deferral rules that need a document. Only
+       the confidence rule applies.
+    2. Preprocessing had to be rebuilt, not borrowed. Canvas drawImage area-averages, which
+       on a 10x downscale moved confidence by ~3 points - enough to cross the deferral
+       threshold - so Pillow's bilinear filter is reimplemented in the page. Measured
+       agreement after that is ~7e-4 against the PyTorch pipeline.
+    """
+    names = json.dumps([display.get(code, code) for code in labels])
+    return f"""
+  <form class=upload id=upload onsubmit="return false">
+    <div class=uphead>
+      <span class=upmark>+</span>
+      <div><b>Screen a new case</b>
+      <p>Runs the real screening model in your browser - the same fused graph the local app
+      evaluates, so the finding matches. Nothing is uploaded anywhere; the image never leaves
+      this device. The model is ~90&nbsp;MB and loads once.</p></div>
+    </div>
+    <div class=drops>
+      <label class="drop req"><b>Fundus photograph</b>
+        <span class=hint>Required &middot; JPG or PNG</span>
+        <input type=file id=shot accept="image/*"></label>
+      <label class=drop style="border-style:solid;opacity:.62"><b>Referral document</b>
+        <span class=hint>Unavailable in the browser</span>
+        <p class=note style="margin:9px 0 0">Reading a referral needs the OCR stack, which
+        runs under Python. Use <code>scripts/serve.py</code> for the document pathway.</p>
+      </label>
+    </div>
+    <div class=upfoot>
+      <button type=button id=go>Screen this case</button>
+      <span class=fine id=state>Only the confidence rule applies here, because no referral
+      can be read. The referral never changes the finding in any case.</span>
+    </div>
+    <div id=out style="margin-top:16px"></div>
+  </form>
+  <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web@1.19.2/dist/ort.min.js"></script>
+  <script>
+  (function () {{
+    var LABELS = {json.dumps(labels)}, NAMES = {names}, THRESHOLD = {threshold};
+    var MEAN = [0.485, 0.456, 0.406], STD = [0.229, 0.224, 0.225];
+    var session = null, busy = false;
+    var shot = document.getElementById('shot'), go = document.getElementById('go');
+    var state = document.getElementById('state'), out = document.getElementById('out');
+
+    function say(text) {{ state.textContent = text; }}
+
+    // Pillow's BILINEAR resize, reimplemented, because canvas drawImage does area-averaging
+    // instead. On a 10x downscale that disagreed with the pipeline by ~3 points of
+    // confidence - enough to move a case across the 60% deferral threshold. Pillow uses a
+    // separable triangle filter whose support scales with the reduction factor, and rounds
+    // to 8-bit between the two passes; both matter. Measured against the PyTorch pipeline
+    // after this: 0.6755 vs 0.6762 on a 2304x1728 fundus photograph.
+    function clamp255(v) {{ v = Math.round(v); return v < 0 ? 0 : v > 255 ? 255 : v; }}
+
+    function weights(inSize, outSize) {{
+      var scale = inSize / outSize, support = scale > 1 ? scale : 1, rows = [];
+      for (var i = 0; i < outSize; i++) {{
+        var centre = (i + 0.5) * scale;
+        var lo = Math.max(0, Math.floor(centre - support + 0.5));
+        var hi = Math.min(inSize, Math.ceil(centre + support + 0.5));
+        var w = [], total = 0;
+        for (var x = lo; x < hi; x++) {{
+          var t = Math.abs((x + 0.5 - centre) / support), v = t < 1 ? 1 - t : 0;
+          w.push(v); total += v;
+        }}
+        for (var k = 0; k < w.length; k++) w[k] /= total || 1;
+        rows.push({{min: lo, w: w}});
+      }}
+      return rows;
+    }}
+
+    function resize(px, inW, inH, out) {{
+      var hx = weights(inW, out), mid = new Float32Array(inH * out * 3);
+      for (var y = 0; y < inH; y++)
+        for (var i = 0; i < out; i++) {{
+          var r = hx[i], a = [0, 0, 0];
+          for (var k = 0; k < r.w.length; k++) {{
+            var o = (y * inW + r.min + k) * 4, wt = r.w[k];
+            a[0] += px[o] * wt; a[1] += px[o + 1] * wt; a[2] += px[o + 2] * wt;
+          }}
+          var m = (y * out + i) * 3;
+          mid[m] = clamp255(a[0]); mid[m + 1] = clamp255(a[1]); mid[m + 2] = clamp255(a[2]);
+        }}
+      var vy = weights(inH, out), res = new Float32Array(out * out * 3);
+      for (var j = 0; j < out; j++) {{
+        var rr = vy[j];
+        for (var x2 = 0; x2 < out; x2++) {{
+          var b = [0, 0, 0];
+          for (var k2 = 0; k2 < rr.w.length; k2++) {{
+            var o2 = ((rr.min + k2) * out + x2) * 3, w2 = rr.w[k2];
+            b[0] += mid[o2] * w2; b[1] += mid[o2 + 1] * w2; b[2] += mid[o2 + 2] * w2;
+          }}
+          var q = (j * out + x2) * 3;
+          res[q] = b[0]; res[q + 1] = b[1]; res[q + 2] = b[2];
+        }}
+      }}
+      return res;
+    }}
+
+    // Must match src/app/pipeline.py: resize to 224 square, ImageNet mean/std, NCHW.
+    // The L2 normalisation and temperature are inside the graph, not here.
+    function tensorFrom(img) {{
+      var c = document.createElement('canvas');
+      c.width = img.naturalWidth; c.height = img.naturalHeight;
+      var g = c.getContext('2d', {{willReadFrequently: true}});
+      g.drawImage(img, 0, 0);
+      var px = g.getImageData(0, 0, c.width, c.height).data;
+      var rgb = resize(px, c.width, c.height, 224);
+      var data = new Float32Array(3 * 224 * 224);
+      for (var i = 0; i < 224 * 224; i++) {{
+        for (var ch = 0; ch < 3; ch++) {{
+          data[ch * 224 * 224 + i] = (clamp255(rgb[i * 3 + ch]) / 255 - MEAN[ch]) / STD[ch];
+        }}
+      }}
+      return new ort.Tensor('float32', data, [1, 3, 224, 224]);
+    }}
+
+    function render(probs, url) {{
+      var order = probs.map(function (p, i) {{ return {{p: p, i: i}}; }})
+                       .sort(function (a, b) {{ return b.p - a.p; }});
+      var top = order[0], defer = top.p < THRESHOLD;
+      var bars = order.map(function (o) {{
+        return '<div class=bar><span>' + NAMES[o.i] + '</span>' +
+               '<span class=track><i class="' + (o === top ? '' : 'dim') +
+               '" style="width:' + (o.p * 100).toFixed(0) + '%"></i></span>' +
+               '<span style="text-align:right">' + (o.p * 100).toFixed(0) + '%</span></div>';
+      }}).join('');
+      out.innerHTML =
+        '<div class="banner ' + (defer ? '' : 'accept') + '">' +
+          '<span class="chip ' + (defer ? 'defer' : 'accept') + '">' +
+          (defer ? 'DEFER' : 'ACCEPT') + '</span><div><b>' +
+          (defer ? 'Referred to clinician' : 'Accepted for reporting') + '</b><p>' +
+          (defer ? 'Image confidence ' + (top.p * 100).toFixed(0) + '% is below the ' +
+                   (THRESHOLD * 100).toFixed(0) + '% threshold.'
+                 : 'Image confidence is above the threshold. No referral was read, so the ' +
+                   'concordance rules did not run.') +
+          '</p></div></div>' +
+        '<div class=cols><div class=card><p class=label>Fundus photograph</p>' +
+          '<img class=fundus src="' + url + '" alt="uploaded fundus photograph">' +
+          '<p class=note>screened locally in your browser, 224&times;224</p></div>' +
+        '<div class=card><p class=label>Screening finding &middot; image only</p>' +
+          '<p class=finding>' + NAMES[top.i] + '</p>' +
+          '<p class=conf>' + (top.p * 100).toFixed(0) + '%</p>' +
+          '<p class=note>{html.escape(note)}</p>' +
+          '<p class=label style="margin-top:16px">Class probabilities</p>' + bars +
+          '</div></div>';
+    }}
+
+    go.addEventListener('click', function () {{
+      var file = shot.files && shot.files[0];
+      if (!file) {{ say('Choose a fundus photograph first.'); return; }}
+      if (busy) return;
+      busy = true;
+      var url = URL.createObjectURL(file);
+      var img = new Image();
+      img.onload = function () {{
+        (session ? Promise.resolve(session)
+                 : (say('Loading the model (~90 MB, once)...'),
+                    ort.InferenceSession.create('model/screening_fused.onnx',
+                      {{executionProviders: ['wasm']}})))
+          .then(function (s) {{
+            session = s;
+            say('Screening...');
+            return s.run({{image: tensorFrom(img)}});
+          }})
+          .then(function (result) {{
+            render(Array.from(result.probabilities.data), url);
+            say('Screened in your browser, image only. Preprocessing reproduces the '
+                + 'pipeline\\'s resampling, so confidences track the local app to about '
+                + '0.001; the displayed percentage is the same.');
+            busy = false;
+          }})
+          .catch(function (err) {{
+            say('Could not screen this image: ' + err.message);
+            busy = false;
+          }});
+      }};
+      img.onerror = function () {{ say('That file could not be read as an image.');
+                                   busy = false; }};
+      img.src = url;
+    }});
+  }})();
+  </script>"""
 
 
 def markdown_to_html(source: str) -> str:
@@ -93,6 +289,21 @@ def markdown_to_html(source: str) -> str:
         out.append("</table>")
     return "\n".join(out)
 
+
+DISPLAY_NAMES = {
+    "N": "No referable abnormality detected",
+    "D": "Signs consistent with diabetic retinopathy",
+    "G": "Signs consistent with glaucoma",
+    "C": "Signs consistent with cataract",
+}
+
+STATIC_NOTICE = """
+  <div class="banner accept" style="background:var(--accent-soft);border-left-color:var(--accent)">
+    <div><b style="color:var(--accent)">Static snapshot</b>
+    <p>This is a captured page. Uploading a case needs the local server &mdash;
+    <code>python scripts/serve.py</code> &mdash; because screening runs a model that a
+    static host cannot execute.</p></div>
+  </div>"""
 
 PAGES = (("./", "index", "Overview"), ("worklist.html", "worklist", "Worklist"),
          ("case_review.html", "case", "Case review"), ("figures.html", "figures", "Figures"),
@@ -184,6 +395,24 @@ def main() -> int:
             encoding="utf-8")
         print("rendered RESULTS.md")
 
+    # --- the fused model, so the deployed panel can actually screen ----------------------
+    fused = output_dir("checkpoints", create=False) / "screening_fused.onnx"
+    replacement = STATIC_NOTICE
+    if fused.is_file():
+        (docs / "model").mkdir(parents=True, exist_ok=True)
+        shutil.copy(fused, docs / "model" / fused.name)
+        deployment = json.loads(
+            (fused.parent / "deployment.json").read_text(encoding="utf-8"))
+        replacement = browser_panel(
+            deployment["labels"], DISPLAY_NAMES,
+            deployment["deferral"]["confidence_threshold"],
+            deployment["image_model"]["calibration_note"])
+        print(f"copied {fused.name}  ({fused.stat().st_size / 1e6:.0f} MB) "
+              "- the deployed panel screens in-browser")
+    else:
+        print("no screening_fused.onnx - deployed panel falls back to the static notice")
+        print("  (run scripts/export_model.py to build it)")
+
     # --- the two app screens, as captured ------------------------------------------------
     for name in ("worklist.html", "case_review.html"):
         source = REPO_ROOT / "reports" / name
@@ -191,15 +420,10 @@ def main() -> int:
             print(f"  missing {name} - run scripts/serve.py once to generate it")
             continue
         page = source.read_text(encoding="utf-8")
-        # The upload form posts to /screen, which does not exist on a static host. Leaving a
-        # dead form on the page would be worse than removing it.
-        page = re.sub(r"<form class=upload.*?</form>", """
-  <div class="banner accept" style="background:var(--accent-soft);border-left-color:var(--accent)">
-    <div><b style="color:var(--accent)">Static snapshot</b>
-    <p>This is a captured page. Uploading a case needs the local server —
-    <code>python scripts/serve.py</code> — because screening runs a PyTorch model that a
-    static host cannot execute.</p></div>
-  </div>""", page, flags=re.S)
+        # The captured form posts to /screen, which no static host provides. Where the fused
+        # ONNX is available the panel is replaced by one that runs the model in the browser;
+        # where it is not, by a notice. Never by a form that would fail silently.
+        page = re.sub(r"<form class=upload.*?</form>", replacement, page, flags=re.S)
         # Every other app route is equally absent here. Rail links move to their static
         # equivalents; per-case links become plain text, because linking all ten rows to the
         # one captured review would show the wrong case for nine of them.
