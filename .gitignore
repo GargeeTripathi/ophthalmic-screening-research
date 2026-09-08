@@ -61,9 +61,11 @@ desktop.ini
 colab_bundle.zip
 
 # LaTeX build artefacts. The paper's SOURCE is committed - reports/paper_ieee.tex,
-# PAPER.md and PROJECT_EXPLAINER.md - and these all regenerate from it with pdflatex, so
-# only the outputs are ignored. The .pdf is 1.1 MB per revision and rebuilds exactly.
+# PAPER.md and PROJECT_EXPLAINER.md - and these regenerate from it with pdflatex.
+#
+# The .pdf is committed too, deliberately: it is the only form of the paper a reader can
+# open from GitHub without a LaTeX install. That costs ~1.1 MB per revision, so rebuild and
+# commit it when the .tex changes meaningfully, not on every intermediate edit.
 reports/*.aux
 reports/*.log
 reports/*.out
-reports/*.pdf
