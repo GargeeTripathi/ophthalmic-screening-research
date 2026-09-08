@@ -154,18 +154,39 @@ tunnel = subprocess.Popen(
      "--no-autoupdate"],
     stdout=subprocess.PIPE, stderr=subprocess.STDOUT, text=True)
 
-public = None
-for line in tunnel.stdout:
-    found = re.search(r"https://[-a-z0-9]+\\.trycloudflare\\.com", line)
-    if found:
-        public = found.group(0)
+# cloudflared keeps logging. Its output must be drained for the whole session: stopping at
+# the URL leaves the pipe to fill, and a full pipe blocks the tunnel process.
+found = {{}}
+def watch():
+    for line in tunnel.stdout:
+        hit = re.search(r"https://[-a-z0-9]+\\.trycloudflare\\.com", line)
+        if hit and "url" not in found:
+            found["url"] = hit.group(0)
+threading.Thread(target=watch, daemon=True).start()
+
+for _ in range(60):
+    if "url" in found:
         break
+    time.sleep(1)
+
+public = found.get("url")
+if not public:
+    raise SystemExit("the tunnel did not report a URL - re-run this cell")
+
+# Prove it end to end, through Cloudflare, before handing the link over.
+time.sleep(3)
+try:
+    check = urllib.request.urlopen(urllib.request.Request(
+        public, headers={{"User-Agent": "Mozilla/5.0"}}), timeout=60).status
+except Exception as exc:
+    check = f"unreachable ({{type(exc).__name__}})"
 
 print("\\n" + "=" * 68)
 print("  SHARE THIS URL:", public)
+print("  reachable from outside:", check, "(200 means it is genuinely live)")
 print("=" * 68)
 print("\\n  Upload a fundus photograph, and a referral letter image if you have one.")
-print("  The URL stays live only while this notebook is running.")
+print("  The URL stays live only while this notebook is running - leave the tab open.")
 '''),
         markdown("""## 4. While it runs
 
@@ -179,9 +200,21 @@ contradicts the image, or when the fields were read unreliably.
 
 The referral never changes the finding. It only changes whether the system answers.
 
-**To stop:** `Runtime -> Disconnect and delete runtime`, or run the cell below."""),
-        code('''tunnel.terminate(); server.terminate()
-print("demo stopped - the public URL is now dead")
+**To stop:** `Runtime -> Disconnect and delete runtime`, or set the flag in the cell below
+and run it.
+
+The flag exists because this notebook is meant to be run with `Run all`, and a teardown cell
+that runs unguarded would take the demo down a second after printing its URL."""),
+        code('''# Set this to True and run the cell to take the demo down.
+STOP = False
+
+if STOP:
+    tunnel.terminate(); server.terminate()
+    print("demo stopped - the public URL is now dead")
+else:
+    alive = server.poll() is None and tunnel.poll() is None
+    print("demo is still running" if alive else "demo is NOT running - re-run the cell above")
+    print("set STOP = True and re-run this cell to stop it")
 '''),
     ]
 
