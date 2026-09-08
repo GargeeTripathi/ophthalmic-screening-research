@@ -18,10 +18,11 @@ rather than by trusting a comment.
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
-import numpy as np
+import pandas as pd
 import torch
 import torch.nn as nn
 from PIL import Image
@@ -32,7 +33,6 @@ from src.utils.config import load_config, output_dir
 
 Image.MAX_IMAGE_PIXELS = None
 INPUT_SIZE = 224
-FOV_THRESHOLD = 0.10
 
 TRANSFORM = transforms.Compose([
     transforms.ToTensor(),
@@ -179,22 +179,40 @@ class ScreeningPipeline:
         confidence = None
         diagnosis = extracted.get("stated_diagnosis")
         if self._reliability is not None and diagnosis is not None and diagnosis.value:
-            features = [[diagnosis.features.get(f, 0.0)
-                         for f in self._reliability["features"]]]
+            names = self._reliability["features"]
+            # Named columns, because the estimator was fitted from a DataFrame — a bare list
+            # scores identically but warns on every document read.
+            features = pd.DataFrame([[diagnosis.features.get(f, 0.0) for f in names]],
+                                    columns=names)
             confidence = float(self._reliability["model"].predict_proba(features)[0, 1])
         return fields, confidence
 
     def classify_stated_diagnosis(self, text: str | None) -> str | None:
-        """Map free-text diagnosis onto one of the four classes, or None if unrecognised."""
+        """Map free-text diagnosis onto one of the four classes, or None if unrecognised.
+
+        Two traps this has to survive, both seen in real OCR output:
+
+        1. "normal" is a substring of "abNORMALity", so a referral reading "abnormality
+           present" used to classify as N. That is a false negative in the one direction a
+           screening tool must never fail in, so N is only assigned via an explicit negative
+           phrase, never via a bare "normal" that sits inside "abnormality".
+        2. RapidOCR drops inter-word spaces on some layouts and returns
+           "Noabnormalitydetected" at 0.98 confidence, so matching runs over a
+           space-stripped probe rather than the raw text.
+        """
         if not text:
             return None
-        probe = text.lower()
+        probe = re.sub(r"[^a-z]", "", text.lower())
         for code, keywords in (("C", ("cataract", "sclerosis", "sclerotic")),
                                ("D", ("diabetic", "retinopathy", "npdr")),
                                ("G", ("glaucoma",)),
-                               ("N", ("normal", "no abnormality", "within normal"))):
+                               ("N", ("noabnormality", "nabnormality", "withinnormal",
+                                      "unremarkable", "noreferable"))):
             if any(word in probe for word in keywords):
                 return code
+        # A bare "normal" only counts once no abnormality has been asserted.
+        if "normal" in probe and "abnormal" not in probe:
+            return "N"
         return None
 
     # ------------------------------------------------------------------------ decision
@@ -240,18 +258,3 @@ class ScreeningPipeline:
         result.deferral_reasons = reasons
         result.decision = "DEFER" if reasons else "ACCEPT"
         return result
-
-    def to_case(self, result: ScreeningResult) -> dict:
-        """Shape a result for the chatbot and the interface."""
-        return {
-            "image_id": result.image_id,
-            "y_pred": result.predicted_class,
-            "max_prob": result.confidence,
-            "agreement": result.agreement or 0.0,
-            "stated_label": result.stated_diagnosis_class,
-            "deferred": result.decision == "DEFER",
-            "deferral_reason": "; ".join(result.deferral_reasons),
-            "extraction_confidence": result.extraction_confidence,
-            "document_fields": result.document_fields,
-            "calibrated": result.calibrated,
-        }
