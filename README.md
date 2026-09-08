@@ -68,6 +68,19 @@ cannot screen a case. Expect this rather than reading it as a build gone wrong:
 The live page that corresponds to the local app is
 [/worklist](https://ophthalmic-screening.vercel.app/worklist), not the front page.
 
+### Showing the whole system to someone else
+
+`colab/live_demo.ipynb` puts the **complete** prototype - image model, OCR, extraction, the
+reliability estimator and the deferral rules - on a public URL, free, at full speed. Open it
+in Colab, `Runtime -> Run all`, share the printed link. The runtime bundle is embedded in the
+notebook, so there is nothing to upload and no clone of this private repository; rebuild it
+with `python scripts/build_demo_notebook.py` whenever the app or the checkpoints change.
+
+The URL lives only while the notebook runs, which suits a demonstration and not a permanent
+link. Permanent hosting for the document pathway needs a machine that runs Python, and the
+free options are poor: Hugging Face now bills Docker Spaces, and Render's free tier is
+512 MB and 0.1 CPU, which would need the ONNX swap and would still be slow.
+
 ### Redeploying
 
 ```bash
