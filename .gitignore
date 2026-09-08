@@ -59,3 +59,11 @@ desktop.ini
 
 # The Colab upload bundle: resized ODIR copies, ~200 MB, and not ours to redistribute.
 colab_bundle.zip
+
+# LaTeX build artefacts. The paper's SOURCE is committed - reports/paper_ieee.tex,
+# PAPER.md and PROJECT_EXPLAINER.md - and these all regenerate from it with pdflatex, so
+# only the outputs are ignored. The .pdf is 1.1 MB per revision and rebuilds exactly.
+reports/*.aux
+reports/*.log
+reports/*.out
+reports/*.pdf
