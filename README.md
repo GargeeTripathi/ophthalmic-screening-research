@@ -53,10 +53,31 @@ The site is public; this repository is private. It carries the results and the d
 not the code. It is served with `X-Robots-Tag: noindex` so an unlisted prototype does not
 end up in search results.
 
+### The site and the app are not the same thing
+
+They share a design system and look alike, but they open on different things and one of them
+cannot screen a case. Expect this rather than reading it as a build gone wrong:
+
+| | Local app (`scripts/serve.py`) | Live site (`docs/`) |
+|---|---|---|
+| Opens on | the worklist — the tool | the research overview |
+| Pages | 2: worklist, case review | 6: overview, worklist, case review, figures, results, standalone |
+| Intake panel | screens a real image | replaced by a "static snapshot" notice |
+| Case links | open that case | plain text — nine of ten would open the wrong case |
+
+The live page that corresponds to the local app is
+[/worklist](https://ophthalmic-screening.vercel.app/worklist), not the front page.
+
+### Redeploying
+
 ```bash
 python scripts/build_site.py                  # rebuild docs/ from results/
-npx vercel deploy docs --prod --yes           # redeploy
 ```
+
+Then follow [docs/DEPLOY.md](docs/DEPLOY.md). Do **not** run `vercel deploy` from inside
+this repository — the CLI attaches git metadata, which fails a GitHub-committer check and
+leaves the deployment silently `BLOCKED` with no error and no timeout. Deploy from a copy of
+`docs/` that has no `.git` ancestor, as DEPLOY.md sets out.
 
 `docs/standalone.html` is the same site as one 1.3 MB self-contained file, for anywhere that
 cannot host a directory. GitHub Pages is not used: Pages on a private repository needs a
