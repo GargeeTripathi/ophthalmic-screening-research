@@ -69,3 +69,6 @@ colab_bundle.zip
 reports/*.aux
 reports/*.log
 reports/*.out
+
+# Assembled deployment trees, rebuilt by scripts/build_space.py.
+build/

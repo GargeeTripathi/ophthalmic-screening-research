@@ -41,6 +41,8 @@ from src.app.render import case_review, worklist  # noqa: E402
 from src.utils.config import load_config, output_dir  # noqa: E402
 
 UPLOAD_DIR = output_dir("processed") / "uploads"
+MAX_UPLOAD = 12 * 1024 * 1024      # a fundus photograph; ODIR's largest is well under this
+MAX_CASES = 60                     # bound the in-memory queue on a long-lived instance
 CASES: list[dict] = []
 PIPELINE: ScreeningPipeline | None = None
 CLASS_DISPLAY: dict = {}
@@ -122,6 +124,17 @@ def build_demo_cases(limit: int) -> list[dict]:
     return cases
 
 
+def safe_name(filename: str) -> str:
+    """A filename that cannot escape the upload directory or surprise the filesystem.
+
+    Path().name alone is not enough on Linux, where a backslash is an ordinary character:
+    a Windows-style path arrives as one long filename rather than being stripped.
+    """
+    stem = Path(filename.replace("\\", "/")).name
+    cleaned = re.sub(r"[^A-Za-z0-9._-]", "_", stem).lstrip(".")
+    return cleaned[:80] or "upload"
+
+
 def parse_multipart(body: bytes, boundary: bytes) -> dict[str, tuple[str, bytes]]:
     """Minimal multipart/form-data parser — enough for two optional file fields."""
     parts = body.split(b"--" + boundary)
@@ -142,6 +155,22 @@ def parse_multipart(body: bytes, boundary: bytes) -> dict[str, tuple[str, bytes]
 class Handler(BaseHTTPRequestHandler):
     def log_message(self, *args):            # quiet; the startup banner is the useful output
         pass
+
+    def _drain(self, remaining: int, chunk: int = 65536,
+               ceiling: int = 64 * 1024 * 1024) -> None:
+        """Discard an unwanted request body in fixed-size pieces.
+
+        Never accumulates it, and gives up past `ceiling` rather than reading forever for a
+        client that lied about, or keeps extending, its length.
+        """
+        if remaining < 0 or remaining > ceiling:
+            self.close_connection = True
+            return
+        while remaining > 0:
+            block = self.rfile.read(min(chunk, remaining))
+            if not block:
+                break
+            remaining -= len(block)
 
     def _send(self, payload: str, status: int = 200) -> None:
         encoded = payload.encode("utf-8")
@@ -171,8 +200,24 @@ class Handler(BaseHTTPRequestHandler):
             self._send("<h1>400</h1><p>expected a multipart form</p>", 400)
             return
 
+        # Refuse oversized bodies BEFORE reading them. On localhost the declared length was
+        # safe to trust; anywhere reachable it is a memory-exhaustion lever, so the read is
+        # bounded whether or not the header is honest.
+        try:
+            declared = int(self.headers.get("Content-Length", 0))
+        except ValueError:
+            declared = -1
+        if declared < 0 or declared > MAX_UPLOAD:
+            # Answer, rather than resetting mid-upload: a client still writing its body sees
+            # a connection abort instead of the reason. The body is drained in fixed chunks
+            # so this stays bounded in memory - which is the thing the cap protects.
+            self._drain(declared)
+            self._send(f"<h1>413</h1><p>uploads are limited to "
+                       f"{MAX_UPLOAD // (1024 * 1024)} MB</p>", 413)
+            return
+
         boundary = content_type.split("boundary=")[1].strip().encode()
-        body = self.rfile.read(int(self.headers.get("Content-Length", 0)))
+        body = self.rfile.read(min(declared, MAX_UPLOAD))
         files = parse_multipart(body, boundary)
         if "image" not in files:
             self._send("<h1>400</h1><p>no fundus image supplied</p>", 400)
@@ -181,13 +226,19 @@ class Handler(BaseHTTPRequestHandler):
         UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
         saved = {}
         for field, (filename, content) in files.items():
-            path = UPLOAD_DIR / f"upload_{field}_{Path(filename).name}"
+            path = UPLOAD_DIR / f"upload_{field}_{safe_name(filename)}"
             path.write_bytes(content)
             saved[field] = str(path)
 
-        result = PIPELINE.screen(saved["image"], saved.get("document"))
+        try:
+            result = PIPELINE.screen(saved["image"], saved.get("document"))
+        except Exception:  # noqa: BLE001 - a bad upload must not take the server down
+            self._send("<h1>400</h1><p>that file could not be screened as a fundus "
+                       "photograph. <a href='/'>back to the worklist</a></p>", 400)
+            return
         case = decorate(result, saved["image"], saved.get("document"))
         CASES.insert(0, case)
+        del CASES[MAX_CASES:]        # a public instance would otherwise grow without bound
         self._send(case_review(case, Chatbot(_to_case(case)).summary()))
 
 

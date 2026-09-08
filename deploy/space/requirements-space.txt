@@ -1,0 +1,20 @@
+# Runtime dependencies for the deployed prototype only.
+#
+# Deliberately NOT requirements.txt: the research pipeline needs matplotlib, scipy and
+# pytest to rebuild figures and run experiments, and none of that runs in the Space. This
+# keeps the image to what scripts/serve.py actually imports.
+PyYAML>=6.0
+numpy>=1.26
+pandas>=2.1
+pillow>=10.1
+scikit-learn>=1.4
+joblib>=1.3
+
+# The image pathway. CPU wheels - see the extra index URL in the Dockerfile.
+torch>=2.2
+torchvision>=0.17
+
+# The document pathway: OCR, then layout-aware extraction.
+opencv-python-headless>=4.9
+rapidocr-onnxruntime>=1.3
+rapidfuzz>=3.6
