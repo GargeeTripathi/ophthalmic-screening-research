@@ -1,0 +1,190 @@
+{
+  "image_level": {
+    "images": 5058,
+    "patients": 2910,
+    "patients_spanning_folds": 1718,
+    "per_fold": {
+      "0": {
+        "images": 1012,
+        "patients": 922,
+        "C": 58,
+        "D": 322,
+        "G": 57,
+        "N": 575
+      },
+      "1": {
+        "images": 1012,
+        "patients": 922,
+        "C": 59,
+        "D": 321,
+        "G": 57,
+        "N": 575
+      },
+      "2": {
+        "images": 1012,
+        "patients": 929,
+        "C": 59,
+        "D": 321,
+        "G": 57,
+        "N": 575
+      },
+      "3": {
+        "images": 1011,
+        "patients": 927,
+        "C": 59,
+        "D": 322,
+        "G": 56,
+        "N": 574
+      },
+      "4": {
+        "images": 1011,
+        "patients": 928,
+        "C": 58,
+        "D": 322,
+        "G": 57,
+        "N": 574
+      }
+    }
+  },
+  "patient_disjoint": {
+    "images": 5058,
+    "patients": 2910,
+    "patients_spanning_folds": 0,
+    "per_fold": {
+      "0": {
+        "images": 1012,
+        "patients": 582,
+        "C": 59,
+        "D": 322,
+        "G": 57,
+        "N": 574
+      },
+      "1": {
+        "images": 1012,
+        "patients": 583,
+        "C": 58,
+        "D": 322,
+        "G": 57,
+        "N": 575
+      },
+      "2": {
+        "images": 1012,
+        "patients": 582,
+        "C": 59,
+        "D": 321,
+        "G": 57,
+        "N": 575
+      },
+      "3": {
+        "images": 1011,
+        "patients": 581,
+        "C": 58,
+        "D": 322,
+        "G": 57,
+        "N": 574
+      },
+      "4": {
+        "images": 1011,
+        "patients": 582,
+        "C": 59,
+        "D": 321,
+        "G": 56,
+        "N": 575
+      }
+    }
+  },
+  "patient_disjoint_dedup": {
+    "images": 5056,
+    "patients": 2909,
+    "patients_spanning_folds": 0,
+    "per_fold": {
+      "0": {
+        "images": 1012,
+        "patients": 582,
+        "C": 59,
+        "D": 322,
+        "G": 56,
+        "N": 575
+      },
+      "1": {
+        "images": 1011,
+        "patients": 582,
+        "C": 59,
+        "D": 321,
+        "G": 57,
+        "N": 574
+      },
+      "2": {
+        "images": 1011,
+        "patients": 581,
+        "C": 59,
+        "D": 321,
+        "G": 57,
+        "N": 574
+      },
+      "3": {
+        "images": 1011,
+        "patients": 582,
+        "C": 58,
+        "D": 322,
+        "G": 57,
+        "N": 574
+      },
+      "4": {
+        "images": 1011,
+        "patients": 582,
+        "C": 58,
+        "D": 322,
+        "G": 57,
+        "N": 574
+      }
+    }
+  },
+  "provenance_controlled": {
+    "images": 1535,
+    "patients": 892,
+    "patients_spanning_folds": 0,
+    "per_fold": {
+      "0": {
+        "images": 307,
+        "patients": 178,
+        "C": 13,
+        "D": 140,
+        "G": 7,
+        "N": 147
+      },
+      "1": {
+        "images": 307,
+        "patients": 178,
+        "C": 13,
+        "D": 140,
+        "G": 7,
+        "N": 147
+      },
+      "2": {
+        "images": 307,
+        "patients": 179,
+        "C": 14,
+        "D": 140,
+        "G": 7,
+        "N": 146
+      },
+      "3": {
+        "images": 307,
+        "patients": 178,
+        "C": 14,
+        "D": 140,
+        "G": 6,
+        "N": 147
+      },
+      "4": {
+        "images": 307,
+        "patients": 179,
+        "C": 14,
+        "D": 139,
+        "G": 7,
+        "N": 147
+      }
+    }
+  }
+}

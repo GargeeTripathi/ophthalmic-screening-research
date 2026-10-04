@@ -1,0 +1,61 @@
+# Single source of truth for the final project.
+# Training, evaluation, inference, Grad-CAM and the web app all read this file through
+# src/utils/config.py. Nothing else in the project hard-codes a model name or a checkpoint.
+
+model:
+  name: convnext_tiny
+  display_name: ConvNeXt-Tiny
+  pretrained: true
+  weights: ConvNeXt_Tiny_Weights.IMAGENET1K_V1      # torchvision, ImageNet-1k
+  n_classes: 4
+  frozen: "features[0:6] - stem and stages 1-3, held in eval()"
+  trainable: "features[6:8] (stage-4 downsample + stage 4) + LayerNorm(768) + Linear(768, 4)"
+  pooled_dim: 768
+  checkpoint_dir: checkpoints/convnext_tiny
+  checkpoint: checkpoints/convnext_tiny/best_model.pth
+  last_checkpoint: checkpoints/convnext_tiny/last_model.pth
+  deployed_fold: 0            # fixed in advance: the model served by the app is the fold-0 model
+
+data:
+  dataset: ODIR-5K (four single-label classes)
+  # Folder holding the ODIR-5K training JPEGs (0_left.jpg, 0_right.jpg, ...). Not redistributed.
+  # Leave empty and set the ODIR_IMAGES environment variable (or a .env file), or give a path
+  # relative to the project root. See data/README.md.
+  images_dir: ""
+  split_file: data/manifests/splits_patient_disjoint_dedup.csv
+  cache_dir: data/cache
+  labels: ["N", "D", "G", "C"]
+  class_names:
+    N: normal
+    D: diabetic_retinopathy
+    G: glaucoma
+    C: cataract
+
+preprocessing:
+  input_size: 224
+  resize: bilinear to a square, no crop
+  mean: [0.485, 0.456, 0.406]     # ImageNet
+  std: [0.229, 0.224, 0.225]
+  augmentation: none
+
+training:
+  seed: 42                        # fold k uses seed + k
+  folds: [0, 1, 2, 3, 4]          # test = fold k, validation = fold (k + 1) % 5, train = the other three
+  batch_size: 24
+  drop_last_train: true
+  optimizer: adamw
+  weight_decay: 0.0001
+  phase1: {epochs: 2, lr: 0.001}      # head only
+  phase2: {epochs: 8, lr: 0.0001}     # last stage + head, cosine annealing, early stopping
+  early_stopping_patience: 3          # on validation macro-F1
+  loss: cross_entropy
+  class_weights: balanced             # computed on the training folds only
+
+deferral:                             # rules carried over from the original project
+  confidence_threshold: 0.6
+  agreement_threshold: 0.25
+  reliability_threshold: 0.5
+
+outputs:
+  results: results
+  uploads: data/uploads

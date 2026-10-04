@@ -1,0 +1,176 @@
+{
+  "model": "ConvNeXt-Tiny",
+  "checkpoint": "best_model.pth",
+  "target_layer": "last_stage = torchvision features[7], output (768, 7, 7)",
+  "n_examples": 16,
+  "sanity_check": {
+    "method": "model randomisation (Adebayo et al. 2018): Spearman rank correlation between the trained model's heatmap and a randomly initialised model's heatmap",
+    "mean_spearman": 0.058,
+    "max_abs_spearman": 0.705,
+    "passes": true,
+    "pass_rule": "|mean correlation| < 0.5: the heatmap depends on the trained weights"
+  },
+  "examples": [
+    {
+      "file": "N_correct_odir_4590_right.png",
+      "image_id": "odir_4590_right",
+      "true": "N",
+      "predicted": "N",
+      "confidence": 0.966,
+      "kind": "correct",
+      "cam_nonzero_fraction": 0.32,
+      "spearman_vs_randomised_model": 0.137
+    },
+    {
+      "file": "N_correct_odir_3027_right.png",
+      "image_id": "odir_3027_right",
+      "true": "N",
+      "predicted": "N",
+      "confidence": 0.9442,
+      "kind": "correct",
+      "cam_nonzero_fraction": 0.247,
+      "spearman_vs_randomised_model": 0.567
+    },
+    {
+      "file": "N_incorrect_odir_3285_right.png",
+      "image_id": "odir_3285_right",
+      "true": "N",
+      "predicted": "G",
+      "confidence": 0.9328,
+      "kind": "incorrect",
+      "cam_nonzero_fraction": 0.103,
+      "spearman_vs_randomised_model": 0.456
+    },
+    {
+      "file": "N_incorrect_odir_2626_right.png",
+      "image_id": "odir_2626_right",
+      "true": "N",
+      "predicted": "D",
+      "confidence": 0.9113,
+      "kind": "incorrect",
+      "cam_nonzero_fraction": 0.137,
+      "spearman_vs_randomised_model": -0.1
+    },
+    {
+      "file": "D_correct_odir_4686_right.png",
+      "image_id": "odir_4686_right",
+      "true": "D",
+      "predicted": "D",
+      "confidence": 0.9959,
+      "kind": "correct",
+      "cam_nonzero_fraction": 0.273,
+      "spearman_vs_randomised_model": -0.414
+    },
+    {
+      "file": "D_correct_odir_582_left.png",
+      "image_id": "odir_582_left",
+      "true": "D",
+      "predicted": "D",
+      "confidence": 0.9917,
+      "kind": "correct",
+      "cam_nonzero_fraction": 0.123,
+      "spearman_vs_randomised_model": -0.617
+    },
+    {
+      "file": "D_incorrect_odir_4590_left.png",
+      "image_id": "odir_4590_left",
+      "true": "D",
+      "predicted": "N",
+      "confidence": 0.8688,
+      "kind": "incorrect",
+      "cam_nonzero_fraction": 0.336,
+      "spearman_vs_randomised_model": 0.131
+    },
+    {
+      "file": "D_incorrect_odir_320_left.png",
+      "image_id": "odir_320_left",
+      "true": "D",
+      "predicted": "N",
+      "confidence": 0.8655,
+      "kind": "incorrect",
+      "cam_nonzero_fraction": 0.283,
+      "spearman_vs_randomised_model": 0.62
+    },
+    {
+      "file": "G_correct_odir_1492_right.png",
+      "image_id": "odir_1492_right",
+      "true": "G",
+      "predicted": "G",
+      "confidence": 0.9576,
+      "kind": "correct",
+      "cam_nonzero_fraction": 0.093,
+      "spearman_vs_randomised_model": 0.498
+    },
+    {
+      "file": "G_correct_odir_1970_left.png",
+      "image_id": "odir_1970_left",
+      "true": "G",
+      "predicted": "G",
+      "confidence": 0.9402,
+      "kind": "correct",
+      "cam_nonzero_fraction": 0.19,
+      "spearman_vs_randomised_model": 0.69
+    },
+    {
+      "file": "G_incorrect_odir_1491_left.png",
+      "image_id": "odir_1491_left",
+      "true": "G",
+      "predicted": "N",
+      "confidence": 0.8987,
+      "kind": "incorrect",
+      "cam_nonzero_fraction": 0.211,
+      "spearman_vs_randomised_model": 0.199
+    },
+    {
+      "file": "G_incorrect_odir_1515_left.png",
+      "image_id": "odir_1515_left",
+      "true": "G",
+      "predicted": "C",
+      "confidence": 0.8586,
+      "kind": "incorrect",
+      "cam_nonzero_fraction": 0.22,
+      "spearman_vs_randomised_model": -0.544
+    },
+    {
+      "file": "C_correct_odir_2141_right.png",
+      "image_id": "odir_2141_right",
+      "true": "C",
+      "predicted": "C",
+      "confidence": 0.9955,
+      "kind": "correct",
+      "cam_nonzero_fraction": 0.328,
+      "spearman_vs_randomised_model": -0.669
+    },
+    {
+      "file": "C_correct_odir_2233_left.png",
+      "image_id": "odir_2233_left",
+      "true": "C",
+      "predicted": "C",
+      "confidence": 0.9949,
+      "kind": "correct",
+      "cam_nonzero_fraction": 0.281,
+      "spearman_vs_randomised_model": -0.534
+    },
+    {
+      "file": "C_incorrect_odir_254_left.png",
+      "image_id": "odir_254_left",
+      "true": "C",
+      "predicted": "N",
+      "confidence": 0.7938,
+      "kind": "incorrect",
+      "cam_nonzero_fraction": 0.184,
+      "spearman_vs_randomised_model": 0.705
+    },
+    {
+      "file": "C_incorrect_odir_2102_right.png",
+      "image_id": "odir_2102_right",
+      "true": "C",
+      "predicted": "D",
+      "confidence": 0.6853,
+      "kind": "incorrect",
+      "cam_nonzero_fraction": 0.172,
+      "spearman_vs_randomised_model": -0.199
+    }
+  ],
+  "caveat": "Heatmaps show where the class score is sensitive. No lesion annotations exist in this project, so they are not evidence that the model located pathology."
+}

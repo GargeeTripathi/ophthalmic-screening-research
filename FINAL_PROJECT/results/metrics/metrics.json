@@ -1,0 +1,275 @@
+{
+  "n_images": 5056,
+  "n_patients": 2909,
+  "accuracy": 0.6879,
+  "macro_precision": 0.6624,
+  "macro_recall_sensitivity": 0.6664,
+  "macro_specificity": 0.8537,
+  "macro_f1": 0.663,
+  "macro_auroc_ovr": 0.8618,
+  "macro_auprc_ovr": 0.717,
+  "macro_f1_ci95": {
+    "point": 0.663,
+    "ci_low": 0.6442,
+    "ci_high": 0.6812,
+    "n_resamples": 2000,
+    "resample_unit": "patient_id"
+  },
+  "accuracy_ci95": {
+    "point": 0.6879,
+    "ci_low": 0.6744,
+    "ci_high": 0.702,
+    "n_resamples": 2000,
+    "resample_unit": "patient_id"
+  },
+  "per_class": {
+    "N": {
+      "name": "normal",
+      "support": 2871,
+      "TP": 2203,
+      "TN": 1332,
+      "FP": 853,
+      "FN": 668,
+      "precision": 0.7209,
+      "recall_sensitivity": 0.7673,
+      "specificity": 0.6096,
+      "f1": 0.7434,
+      "auroc": 0.7623,
+      "auprc": 0.7753,
+      "prevalence": 0.5678
+    },
+    "D": {
+      "name": "diabetic_retinopathy",
+      "support": 1608,
+      "TP": 884,
+      "TN": 2917,
+      "FP": 531,
+      "FN": 724,
+      "precision": 0.6247,
+      "recall_sensitivity": 0.5498,
+      "specificity": 0.846,
+      "f1": 0.5848,
+      "auroc": 0.8006,
+      "auprc": 0.6929,
+      "prevalence": 0.318
+    },
+    "G": {
+      "name": "glaucoma",
+      "support": 284,
+      "TP": 130,
+      "TN": 4640,
+      "FP": 132,
+      "FN": 154,
+      "precision": 0.4962,
+      "recall_sensitivity": 0.4577,
+      "specificity": 0.9723,
+      "f1": 0.4762,
+      "auroc": 0.8989,
+      "auprc": 0.4784,
+      "prevalence": 0.0562
+    },
+    "C": {
+      "name": "cataract",
+      "support": 293,
+      "TP": 261,
+      "TN": 4701,
+      "FP": 62,
+      "FN": 32,
+      "precision": 0.808,
+      "recall_sensitivity": 0.8908,
+      "specificity": 0.987,
+      "f1": 0.8474,
+      "auroc": 0.9853,
+      "auprc": 0.9216,
+      "prevalence": 0.058
+    }
+  },
+  "confusion_matrix": [
+    [
+      2203,
+      512,
+      109,
+      47
+    ],
+    [
+      693,
+      884,
+      20,
+      11
+    ],
+    [
+      134,
+      16,
+      130,
+      4
+    ],
+    [
+      26,
+      3,
+      3,
+      261
+    ]
+  ],
+  "labels": [
+    "N",
+    "D",
+    "G",
+    "C"
+  ],
+  "averaging": "macro over 4 classes; AUROC/AUPRC one-vs-rest; CIs by patient-level bootstrap (2000)",
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "per_fold_macro_f1": {
+    "0": 0.679,
+    "1": 0.63,
+    "2": 0.6587,
+    "3": 0.6789,
+    "4": 0.6627
+  },
+  "mcnemar_vs_original_resnet50": {
+    "a_only": 612,
+    "b_only": 544,
+    "discordant": 1156,
+    "p_value": 0.048724,
+    "n_paired_images": 5056,
+    "a": "ConvNeXt-Tiny",
+    "b": "original project ResNet50 (partial fine-tuning)",
+    "resnet50_macro_f1_same_images": 0.6421,
+    "convnext_macro_f1_same_images": 0.663
+  },
+  "parameters_total": 27823204,
+  "parameters_trained": 15475204,
+  "inference_ms_per_image_cpu_batch1": 124.6,
+  "deployed_model": {
+    "n_images": 1012,
+    "n_patients": 582,
+    "accuracy": 0.6976,
+    "macro_precision": 0.7176,
+    "macro_recall_sensitivity": 0.6546,
+    "macro_specificity": 0.8613,
+    "macro_f1": 0.679,
+    "macro_auroc_ovr": 0.8789,
+    "macro_auprc_ovr": 0.7498,
+    "macro_f1_ci95": {
+      "point": 0.679,
+      "ci_low": 0.6334,
+      "ci_high": 0.7211,
+      "n_resamples": 2000,
+      "resample_unit": "patient_id"
+    },
+    "accuracy_ci95": {
+      "point": 0.6976,
+      "ci_low": 0.667,
+      "ci_high": 0.7282,
+      "n_resamples": 2000,
+      "resample_unit": "patient_id"
+    },
+    "per_class": {
+      "N": {
+        "name": "normal",
+        "support": 575,
+        "TP": 423,
+        "TN": 295,
+        "FP": 142,
+        "FN": 152,
+        "precision": 0.7487,
+        "recall_sensitivity": 0.7357,
+        "specificity": 0.6751,
+        "f1": 0.7421,
+        "auroc": 0.7902,
+        "auprc": 0.8015,
+        "prevalence": 0.5682
+      },
+      "D": {
+        "name": "diabetic_retinopathy",
+        "support": 322,
+        "TP": 212,
+        "TN": 545,
+        "FP": 145,
+        "FN": 110,
+        "precision": 0.5938,
+        "recall_sensitivity": 0.6584,
+        "specificity": 0.7899,
+        "f1": 0.6244,
+        "auroc": 0.8207,
+        "auprc": 0.7351,
+        "prevalence": 0.3182
+      },
+      "G": {
+        "name": "glaucoma",
+        "support": 56,
+        "TP": 23,
+        "TN": 943,
+        "FP": 13,
+        "FN": 33,
+        "precision": 0.6389,
+        "recall_sensitivity": 0.4107,
+        "specificity": 0.9864,
+        "f1": 0.5,
+        "auroc": 0.9256,
+        "auprc": 0.5662,
+        "prevalence": 0.0553
+      },
+      "C": {
+        "name": "cataract",
+        "support": 59,
+        "TP": 48,
+        "TN": 947,
+        "FP": 6,
+        "FN": 11,
+        "precision": 0.8889,
+        "recall_sensitivity": 0.8136,
+        "specificity": 0.9937,
+        "f1": 0.8496,
+        "auroc": 0.9791,
+        "auprc": 0.8962,
+        "prevalence": 0.0583
+      }
+    },
+    "confusion_matrix": [
+      [
+        423,
+        138,
+        10,
+        4
+      ],
+      [
+        106,
+        212,
+        3,
+        1
+      ],
+      [
+        27,
+        5,
+        23,
+        1
+      ],
+      [
+        9,
+        2,
+        0,
+        48
+      ]
+    ],
+    "labels": [
+      "N",
+      "D",
+      "G",
+      "C"
+    ],
+    "averaging": "macro over 4 classes; AUROC/AUPRC one-vs-rest; CIs by patient-level bootstrap (2000)",
+    "ece_uncalibrated": 0.1106,
+    "ece_temperature_scaled": 0.0202,
+    "seconds_per_image_end_to_end_cpu": 0.2226,
+    "test_fold": 0,
+    "temperature": 1.9582,
+    "max_abs_probability_difference_vs_cached_path": 1e-06,
+    "prediction_agreement_vs_cached_path": 1.0
+  }
+}

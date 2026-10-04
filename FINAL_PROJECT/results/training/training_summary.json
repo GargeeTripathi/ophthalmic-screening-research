@@ -1,0 +1,104 @@
+{
+  "model": "ConvNeXt-Tiny",
+  "weights": "ConvNeXt_Tiny_Weights.IMAGENET1K_V1",
+  "frozen": "features[0:6] - stem and stages 1-3, held in eval()",
+  "trainable": "features[6:8] (stage-4 downsample + stage 4) + LayerNorm(768) + Linear(768, 4)",
+  "training": {
+    "seed": 42,
+    "folds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "batch_size": 24,
+    "drop_last_train": true,
+    "optimizer": "adamw",
+    "weight_decay": 0.0001,
+    "phase1": {
+      "epochs": 2,
+      "lr": 0.001
+    },
+    "phase2": {
+      "epochs": 8,
+      "lr": 0.0001
+    },
+    "early_stopping_patience": 3,
+    "loss": "cross_entropy",
+    "class_weights": "balanced"
+  },
+  "preprocessing": {
+    "input_size": 224,
+    "resize": "bilinear to a square, no crop",
+    "mean": [
+      0.485,
+      0.456,
+      0.406
+    ],
+    "std": [
+      0.229,
+      0.224,
+      0.225
+    ],
+    "augmentation": "none"
+  },
+  "folds_completed": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "leakage_checks": {
+    "images": 5056,
+    "patients": 2909,
+    "patients_in_more_than_one_fold": 0,
+    "duplicate_image_ids": 0,
+    "duplicate_filenames": 0
+  },
+  "sanity_check": {
+    "input_shape": [
+      2,
+      3,
+      224,
+      224
+    ],
+    "stem_output_shape": [
+      2,
+      384,
+      14,
+      14
+    ],
+    "output_shape": [
+      2,
+      4
+    ],
+    "loss": 1.4133,
+    "trainable_parameters": 15475204,
+    "frozen_parameters": 12348000,
+    "status": "PASS"
+  },
+  "best_epochs": {
+    "0": 7,
+    "1": 3,
+    "2": 7,
+    "3": 7,
+    "4": 3
+  },
+  "class_weights_fold0": {
+    "N": 0.4403,
+    "D": 0.7858,
+    "G": 4.4342,
+    "C": 4.3329
+  },
+  "train_minutes_total": 76.4,
+  "hardware": {
+    "device": "cpu",
+    "processor": "Intel64 Family 6 Model 170 Stepping 4, GenuineIntel",
+    "torch": "2.14.0+cpu",
+    "threads": 14,
+    "platform": "Windows-10-10.0.26300-SP0"
+  },
+  "smoke_test": false
+}

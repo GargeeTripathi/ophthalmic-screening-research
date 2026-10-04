@@ -1,0 +1,12 @@
+ConvNeXt-Tiny, pooled out-of-fold test predictions (5056 images, folds [0, 1, 2, 3, 4])
+
+                      precision    recall  f1-score   support
+
+              normal     0.7209    0.7673    0.7434      2871
+diabetic_retinopathy     0.6247    0.5498    0.5848      1608
+            glaucoma     0.4962    0.4577    0.4762       284
+            cataract     0.8080    0.8908    0.8474       293
+
+            accuracy                         0.6879      5056
+           macro avg     0.6625    0.6664    0.6630      5056
+        weighted avg     0.6827    0.6879    0.6840      5056

@@ -1,0 +1,30 @@
+{
+  "test_fold": 3,
+  "validation_fold": 4,
+  "n_images": {
+    "train": 3034,
+    "validation": 1011,
+    "test": 1011
+  },
+  "n_patients": {
+    "train": 1745,
+    "validation": 582,
+    "test": 582
+  },
+  "class_weights": {
+    "N": 0.4402,
+    "D": 0.7868,
+    "G": 4.4618,
+    "C": 4.2853
+  },
+  "best_epoch_phase2": 7,
+  "best_validation_macro_f1": 0.6792,
+  "last_epoch_phase2": 8,
+  "temperature": 1.8623,
+  "test_metrics_at_training_time": {
+    "loss": 0.802,
+    "accuracy": 0.6924,
+    "macro_f1": 0.6789
+  },
+  "train_seconds": 1054.5
+}

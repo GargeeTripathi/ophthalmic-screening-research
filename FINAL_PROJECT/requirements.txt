@@ -1,0 +1,25 @@
+# Ophthalmic disease detection - final project (ConvNeXt-Tiny)
+# Tested with Python 3.11 on Windows 11 (CPU) and Google Colab (GPU runtime).
+#
+# CPU-only install of PyTorch (smaller download):
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+#   pip install -r requirements.txt
+
+torch>=2.2
+torchvision>=0.17          # ConvNeXt-Tiny + ImageNet weights (ConvNeXt_Tiny_Weights.IMAGENET1K_V1)
+numpy>=1.26
+pandas>=2.1
+scipy>=1.11                # exact McNemar test, Spearman correlation
+scikit-learn>=1.4          # metrics, class weights
+joblib>=1.3                # OCR reliability estimator
+pillow>=10.1
+matplotlib>=3.8
+PyYAML>=6.0
+openpyxl>=3.1              # results/final_results.xlsx
+
+# referral-letter OCR in the web app (optional: the app runs without a letter)
+rapidocr-onnxruntime>=1.3
+rapidfuzz>=3.6
+
+# tests
+pytest>=8.0

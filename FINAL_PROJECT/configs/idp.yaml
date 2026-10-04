@@ -1,0 +1,68 @@
+# Synthetic ophthalmic referral corpus.
+#
+# The single most important rule in this file is the dev/sealed layout split. Extractors
+# are developed against dev layouts only. Sealed layouts are rendered into a separate
+# directory and opened exactly once, after the extractors are frozen. If they leak, the
+# extraction numbers mean nothing.
+
+layouts:
+  dev: ["A", "B", "C"]
+  sealed: ["D", "E", "F"]
+
+layout_styles:
+  A: "key_value_form"
+  B: "two_column_form"
+  C: "letterhead_referral"
+  D: "table_structured_report"
+  E: "narrative_paragraph"
+  F: "form_with_margin_annotations"
+
+records_per_layout: 12
+seed: 42
+
+fields:
+  - patient_id
+  - age
+  - sex
+  - eye
+  - exam_date
+  - visual_acuity
+  - iop
+  - stated_diagnosis
+  - referral_reason
+
+# Fields that may legitimately be absent, so precision is earned rather than free.
+optional_fields: ["iop", "visual_acuity", "referral_reason"]
+missing_field_rate: 0.25
+
+# Fields that look like targets but are not.
+distractors:
+  - "insurance ID resembling an IOP reading"
+  - "clinic address containing a date"
+  - "appointment reference resembling a visual acuity fraction"
+
+degradation:
+  levels: [0, 1, 2, 3, 4]
+  names: ["clean", "mild", "moderate", "severe", "very_severe"]
+  # Exact parameters per level. Recorded so a run is reproducible from config alone.
+  params:
+    0: {blur: 0.0, noise_sigma: 0, rotation_deg: 0.0, jpeg_quality: 95, downscale: 1.0}
+    1: {blur: 0.5, noise_sigma: 4, rotation_deg: 0.5, jpeg_quality: 80, downscale: 1.0}
+    2: {blur: 0.9, noise_sigma: 9, rotation_deg: 1.2, jpeg_quality: 55, downscale: 0.85}
+    3: {blur: 1.4, noise_sigma: 16, rotation_deg: 2.0, jpeg_quality: 32, downscale: 0.70}
+    4: {blur: 2.0, noise_sigma: 24, rotation_deg: 3.0, jpeg_quality: 20, downscale: 0.55}
+
+ocr:
+  engine: rapidocr        # RapidOCR on ONNX Runtime, CPU (src/idp/ocr.py)
+  return_word_boxes: true
+
+extractors:
+  E1: "rule_fuzzy"        # regex + synonym lexicon + fuzzy label matching
+  E2: "layout_aware"      # OCR word boxes + geometry
+
+# Corruption of the STATED DIAGNOSIS field, used by the robustness study.
+# Corrupted documents MUST appear in training too, or test-time corruption is
+# out-of-distribution by construction and the robustness claim is invalid.
+diagnosis_corruption:
+  train_rate: 0.15
+  test_rates: [0.10, 0.20, 0.30]
